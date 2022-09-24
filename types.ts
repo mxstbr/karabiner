@@ -1,35 +1,28 @@
 export interface KarabinerRules {
   description: string;
-  manipulators?: ManipulatorsEntity[] | null;
+  manipulators?: Manipulator[];
 }
-export interface ManipulatorsEntity {
+
+export interface Manipulator {
   description?: string;
   type: "basic";
   from: From;
-  to?: ToEntity[] | null;
-  to_if_alone?: ToIfAloneEntityOrToEntity[] | null;
+  to?: To[];
+  to_if_alone?: To[];
 }
+
 export interface From {
   key_code: string;
   modifiers?: Modifiers;
 }
+
 export interface Modifiers {
-  optional?: string[] | null;
-  mandatory?: string[] | null;
+  optional?: string[];
+  mandatory?: string[];
 }
-export interface ToEntity {
-  key_code?: string | null;
-  modifiers?: string[] | null;
-  mouse_key?: MouseKey | null;
-  pointing_button?: string | null;
-  shell_command?: string | null;
-}
-export interface MouseKey {
-  x?: number | null;
-  horizontal_wheel?: number | null;
-  y?: number | null;
-  vertical_wheel?: number | null;
-}
-export interface ToIfAloneEntityOrToEntity {
-  key_code: string;
+
+export interface To {
+  key_code?: string;
+  modifiers?: string[];
+  shell_command?: string;
 }

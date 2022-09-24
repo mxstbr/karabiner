@@ -1,16 +1,21 @@
 import fs from "fs";
-import { KarabinerRules, ManipulatorsEntity, ToEntity } from "./types";
+import { KarabinerRules, Manipulator, To } from "./types";
 
 /**
- * Create a Hyper + something combination
+ * Custom way to describe a command in a layer
  */
-function hyper(
-  key_code: string,
-  to: ToEntity[],
-  description?: string
-): ManipulatorsEntity {
+interface LayerCommand {
+  to: To[];
+  description?: string;
+}
+
+/**
+ * Create a Hyper + {key_code} trigger
+ */
+function hyper(key_code: string, command: LayerCommand): Manipulator {
   return {
-    description,
+    description: command.description,
+    to: command.to,
     type: "basic",
     from: {
       key_code,
@@ -23,25 +28,14 @@ function hyper(
         ],
       },
     },
-    to,
   };
-}
-
-/**
- * Custom way to describe a command in a layer
- */
-interface LayerCommand {
-  to: ToEntity[];
-  description?: string;
 }
 
 /**
  * Create the Hyper Layer
  */
 function createHyperLayer(commands: { [key_code: string]: LayerCommand }) {
-  return Object.keys(commands).map((key) =>
-    hyper(key, commands[key].to, commands[key].description)
-  );
+  return Object.keys(commands).map((key) => hyper(key, commands[key]));
 }
 
 /**
