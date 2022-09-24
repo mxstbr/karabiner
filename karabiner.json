@@ -41,7 +41,7 @@
             ]
           },
           {
-            "description": "Window Management",
+            "description": "Hyper layer",
             "manipulators": [
               {
                 "type": "basic",
@@ -88,13 +88,9 @@
                     ]
                   }
                 ]
-              }
-            ]
-          },
-          {
-            "description": "Applications",
-            "manipulators": [
+              },
               {
+                "description": "Hyper + c: Cron",
                 "type": "basic",
                 "from": {
                   "key_code": "c",
@@ -114,6 +110,7 @@
                 ]
               },
               {
+                "description": "Hyper + g: Google Chrome",
                 "type": "basic",
                 "from": {
                   "key_code": "g",
@@ -133,6 +130,7 @@
                 ]
               },
               {
+                "description": "Hyper + v: Visual Studio Code",
                 "type": "basic",
                 "from": {
                   "key_code": "v",

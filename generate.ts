@@ -1,8 +1,16 @@
 import fs from "fs";
-import { KarabinerRules, ToEntity } from "./types";
+import { KarabinerRules, ManipulatorsEntity, ToEntity } from "./types";
 
-function hyper(key_code: string, to: ToEntity[]) {
+/**
+ * Create a Hyper + something combination
+ */
+function hyper(
+  key_code: string,
+  to: ToEntity[],
+  description?: string
+): ManipulatorsEntity {
   return {
+    description,
     type: "basic",
     from: {
       key_code,
@@ -19,13 +27,20 @@ function hyper(key_code: string, to: ToEntity[]) {
   };
 }
 
+/**
+ * Shortcut to apps
+ */
 function apps(apps: { [key_code: string]: string }) {
   return Object.keys(apps).map((key) =>
-    hyper(key, [
-      {
-        shell_command: `open -a '${apps[key]}.app'`,
-      },
-    ])
+    hyper(
+      key,
+      [
+        {
+          shell_command: `open -a '${apps[key]}.app'`,
+        },
+      ],
+      `Hyper + ${key}: ${apps[key]}`
+    )
   );
 }
 
@@ -54,7 +69,7 @@ const rules: KarabinerRules[] = [
     ],
   },
   {
-    description: "Window Management",
+    description: "Hyper layer",
     manipulators: [
       hyper("h", [
         {
@@ -68,15 +83,12 @@ const rules: KarabinerRules[] = [
           modifiers: ["right_control", "right_option"],
         },
       ]),
+      ...apps({
+        c: "Cron",
+        g: "Google Chrome",
+        v: "Visual Studio Code",
+      }),
     ],
-  },
-  {
-    description: "Applications",
-    manipulators: apps({
-      c: "Cron",
-      g: "Google Chrome",
-      v: "Visual Studio Code",
-    }),
   },
 ];
 
