@@ -108,6 +108,11 @@ const rules: KarabinerRules[] = [
       c: app("Cron"),
       g: app("Google Chrome"),
       v: app("Visual Studio Code"),
+      d: app("Discord"),
+      s: app("Slack"),
+      e: app("Superhuman"),
+      n: app("Notion"),
+      t: app("Terminal"),
     }),
   },
 ];
