@@ -122,7 +122,7 @@ const rules: KarabinerRules[] = [
     ],
   },
   {
-    description: 'Hyper Key sublayer: O ("Open") ',
+    description: 'Hyper Key sublayer: O ("Open")',
     manipulators: createHyperSubLayer("o", {
       g: app("Google Chrome"),
       c: app("Cron"),
@@ -135,8 +135,8 @@ const rules: KarabinerRules[] = [
     }),
   },
   {
-    description: "Hyper Key layer",
-    manipulators: createHyperLayer({
+    description: 'Hyper Key sublayer: W ("Window")',
+    manipulators: createHyperSubLayer("w", {
       h: {
         description: "Window: First Third",
         to: [

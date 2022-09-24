@@ -22,6 +22,7 @@ export interface SimultaneousFrom {
 
 export interface SimultaneousOptions {
   key_down_order?: "insensitive" | "strict" | "strict_inverse";
+  detect_key_down_uninterruptedly?: boolean;
 }
 
 export interface From {

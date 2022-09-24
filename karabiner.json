@@ -34,7 +34,7 @@
             ]
           },
           {
-            "description": "Hyper Key sublayer: O (\"Open\") ",
+            "description": "Hyper Key sublayer: O (\"Open\")",
             "manipulators": [
               {
                 "to": [
@@ -303,7 +303,7 @@
             ]
           },
           {
-            "description": "Hyper Key layer",
+            "description": "Hyper Key sublayer: W (\"Window\")",
             "manipulators": [
               {
                 "description": "Window: First Third",
@@ -317,8 +317,21 @@
                   }
                 ],
                 "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 9999999999
+                },
                 "from": {
-                  "key_code": "h",
+                  "simultaneous_options": {
+                    "key_down_order": "strict"
+                  },
+                  "simultaneous": [
+                    {
+                      "key_code": "w"
+                    },
+                    {
+                      "key_code": "h"
+                    }
+                  ],
                   "modifiers": {
                     "mandatory": [
                       "left_command",
@@ -341,8 +354,21 @@
                   }
                 ],
                 "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 9999999999
+                },
                 "from": {
-                  "key_code": "l",
+                  "simultaneous_options": {
+                    "key_down_order": "strict"
+                  },
+                  "simultaneous": [
+                    {
+                      "key_code": "w"
+                    },
+                    {
+                      "key_code": "l"
+                    }
+                  ],
                   "modifiers": {
                     "mandatory": [
                       "left_command",
