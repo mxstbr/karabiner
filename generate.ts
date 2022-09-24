@@ -28,26 +28,40 @@ function hyper(
 }
 
 /**
- * Shortcut to apps
+ * Custom way to describe a command in a layer
  */
-function apps(apps: { [key_code: string]: string }) {
-  return Object.keys(apps).map((key) =>
-    hyper(
-      key,
-      [
-        {
-          shell_command: `open -a '${apps[key]}.app'`,
-        },
-      ],
-      `Hyper + ${key}: ${apps[key]}`
-    )
+interface LayerCommand {
+  to: ToEntity[];
+  description?: string;
+}
+
+/**
+ * Create the Hyper Layer
+ */
+function createHyperLayer(commands: { [key_code: string]: LayerCommand }) {
+  return Object.keys(commands).map((key) =>
+    hyper(key, commands[key].to, commands[key].description)
   );
+}
+
+/**
+ * Open an app layer command
+ */
+function app(name: string): LayerCommand {
+  return {
+    to: [
+      {
+        shell_command: `open -a '${name}.app'`,
+      },
+    ],
+    description: `Open ${name}`,
+  };
 }
 
 const rules: KarabinerRules[] = [
   // Hyper key
   {
-    description: "Caps Lock → Hyper Key (⌃⌥⇧⌘) (Escape if alone)",
+    description: "Hyper Key (⌃⌥⇧⌘)",
     manipulators: [
       {
         from: {
@@ -68,27 +82,33 @@ const rules: KarabinerRules[] = [
       },
     ],
   },
+
+  // Hyper layer
   {
-    description: "Hyper layer",
-    manipulators: [
-      hyper("h", [
-        {
-          key_code: "left_arrow",
-          modifiers: ["right_control", "right_option"],
-        },
-      ]),
-      hyper("l", [
-        {
-          key_code: "right_arrow",
-          modifiers: ["right_control", "right_option"],
-        },
-      ]),
-      ...apps({
-        c: "Cron",
-        g: "Google Chrome",
-        v: "Visual Studio Code",
-      }),
-    ],
+    description: "Hyper Key layer",
+    manipulators: createHyperLayer({
+      h: {
+        description: "Window: First Third",
+        to: [
+          {
+            key_code: "left_arrow",
+            modifiers: ["right_control", "right_option"],
+          },
+        ],
+      },
+      l: {
+        description: "Window: Last Third",
+        to: [
+          {
+            key_code: "right_arrow",
+            modifiers: ["right_control", "right_option"],
+          },
+        ],
+      },
+      c: app("Cron"),
+      g: app("Google Chrome"),
+      v: app("Visual Studio Code"),
+    }),
   },
 ];
 

@@ -4,7 +4,7 @@ export interface KarabinerRules {
 }
 export interface ManipulatorsEntity {
   description?: string;
-  type: string;
+  type: "basic";
   from: From;
   to?: ToEntity[] | null;
   to_if_alone?: ToIfAloneEntityOrToEntity[] | null;

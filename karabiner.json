@@ -15,7 +15,7 @@
         },
         "rules": [
           {
-            "description": "Caps Lock → Hyper Key (⌃⌥⇧⌘) (Escape if alone)",
+            "description": "Hyper Key (⌃⌥⇧⌘)",
             "manipulators": [
               {
                 "from": {
@@ -41,9 +41,10 @@
             ]
           },
           {
-            "description": "Hyper layer",
+            "description": "Hyper Key layer",
             "manipulators": [
               {
+                "description": "Window: First Third",
                 "type": "basic",
                 "from": {
                   "key_code": "h",
@@ -67,6 +68,7 @@
                 ]
               },
               {
+                "description": "Window: Last Third",
                 "type": "basic",
                 "from": {
                   "key_code": "l",
@@ -90,7 +92,7 @@
                 ]
               },
               {
-                "description": "Hyper + c: Cron",
+                "description": "Open Cron",
                 "type": "basic",
                 "from": {
                   "key_code": "c",
@@ -110,7 +112,7 @@
                 ]
               },
               {
-                "description": "Hyper + g: Google Chrome",
+                "description": "Open Google Chrome",
                 "type": "basic",
                 "from": {
                   "key_code": "g",
@@ -130,7 +132,7 @@
                 ]
               },
               {
-                "description": "Hyper + v: Visual Studio Code",
+                "description": "Open Visual Studio Code",
                 "type": "basic",
                 "from": {
                   "key_code": "v",
