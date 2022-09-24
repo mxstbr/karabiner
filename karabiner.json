@@ -34,6 +34,275 @@
             ]
           },
           {
+            "description": "Hyper Key sublayer: O (\"Open\") ",
+            "manipulators": [
+              {
+                "to": [
+                  {
+                    "shell_command": "open -a 'Google Chrome.app'"
+                  }
+                ],
+                "description": "Open Google Chrome",
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 9999999999
+                },
+                "from": {
+                  "simultaneous_options": {
+                    "key_down_order": "strict"
+                  },
+                  "simultaneous": [
+                    {
+                      "key_code": "o"
+                    },
+                    {
+                      "key_code": "g"
+                    }
+                  ],
+                  "modifiers": {
+                    "mandatory": [
+                      "left_command",
+                      "left_control",
+                      "left_shift",
+                      "left_option"
+                    ]
+                  }
+                }
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open -a 'Cron.app'"
+                  }
+                ],
+                "description": "Open Cron",
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 9999999999
+                },
+                "from": {
+                  "simultaneous_options": {
+                    "key_down_order": "strict"
+                  },
+                  "simultaneous": [
+                    {
+                      "key_code": "o"
+                    },
+                    {
+                      "key_code": "c"
+                    }
+                  ],
+                  "modifiers": {
+                    "mandatory": [
+                      "left_command",
+                      "left_control",
+                      "left_shift",
+                      "left_option"
+                    ]
+                  }
+                }
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open -a 'Visual Studio Code.app'"
+                  }
+                ],
+                "description": "Open Visual Studio Code",
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 9999999999
+                },
+                "from": {
+                  "simultaneous_options": {
+                    "key_down_order": "strict"
+                  },
+                  "simultaneous": [
+                    {
+                      "key_code": "o"
+                    },
+                    {
+                      "key_code": "v"
+                    }
+                  ],
+                  "modifiers": {
+                    "mandatory": [
+                      "left_command",
+                      "left_control",
+                      "left_shift",
+                      "left_option"
+                    ]
+                  }
+                }
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open -a 'Discord.app'"
+                  }
+                ],
+                "description": "Open Discord",
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 9999999999
+                },
+                "from": {
+                  "simultaneous_options": {
+                    "key_down_order": "strict"
+                  },
+                  "simultaneous": [
+                    {
+                      "key_code": "o"
+                    },
+                    {
+                      "key_code": "d"
+                    }
+                  ],
+                  "modifiers": {
+                    "mandatory": [
+                      "left_command",
+                      "left_control",
+                      "left_shift",
+                      "left_option"
+                    ]
+                  }
+                }
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open -a 'Slack.app'"
+                  }
+                ],
+                "description": "Open Slack",
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 9999999999
+                },
+                "from": {
+                  "simultaneous_options": {
+                    "key_down_order": "strict"
+                  },
+                  "simultaneous": [
+                    {
+                      "key_code": "o"
+                    },
+                    {
+                      "key_code": "s"
+                    }
+                  ],
+                  "modifiers": {
+                    "mandatory": [
+                      "left_command",
+                      "left_control",
+                      "left_shift",
+                      "left_option"
+                    ]
+                  }
+                }
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open -a 'Superhuman.app'"
+                  }
+                ],
+                "description": "Open Superhuman",
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 9999999999
+                },
+                "from": {
+                  "simultaneous_options": {
+                    "key_down_order": "strict"
+                  },
+                  "simultaneous": [
+                    {
+                      "key_code": "o"
+                    },
+                    {
+                      "key_code": "e"
+                    }
+                  ],
+                  "modifiers": {
+                    "mandatory": [
+                      "left_command",
+                      "left_control",
+                      "left_shift",
+                      "left_option"
+                    ]
+                  }
+                }
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open -a 'Notion.app'"
+                  }
+                ],
+                "description": "Open Notion",
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 9999999999
+                },
+                "from": {
+                  "simultaneous_options": {
+                    "key_down_order": "strict"
+                  },
+                  "simultaneous": [
+                    {
+                      "key_code": "o"
+                    },
+                    {
+                      "key_code": "n"
+                    }
+                  ],
+                  "modifiers": {
+                    "mandatory": [
+                      "left_command",
+                      "left_control",
+                      "left_shift",
+                      "left_option"
+                    ]
+                  }
+                }
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open -a 'Terminal.app'"
+                  }
+                ],
+                "description": "Open Terminal",
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 9999999999
+                },
+                "from": {
+                  "simultaneous_options": {
+                    "key_down_order": "strict"
+                  },
+                  "simultaneous": [
+                    {
+                      "key_code": "o"
+                    },
+                    {
+                      "key_code": "t"
+                    }
+                  ],
+                  "modifiers": {
+                    "mandatory": [
+                      "left_command",
+                      "left_control",
+                      "left_shift",
+                      "left_option"
+                    ]
+                  }
+                }
+              }
+            ]
+          },
+          {
             "description": "Hyper Key layer",
             "manipulators": [
               {
@@ -74,166 +343,6 @@
                 "type": "basic",
                 "from": {
                   "key_code": "l",
-                  "modifiers": {
-                    "mandatory": [
-                      "left_command",
-                      "left_control",
-                      "left_shift",
-                      "left_option"
-                    ]
-                  }
-                }
-              },
-              {
-                "description": "Open Cron",
-                "to": [
-                  {
-                    "shell_command": "open -a 'Cron.app'"
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "c",
-                  "modifiers": {
-                    "mandatory": [
-                      "left_command",
-                      "left_control",
-                      "left_shift",
-                      "left_option"
-                    ]
-                  }
-                }
-              },
-              {
-                "description": "Open Google Chrome",
-                "to": [
-                  {
-                    "shell_command": "open -a 'Google Chrome.app'"
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "g",
-                  "modifiers": {
-                    "mandatory": [
-                      "left_command",
-                      "left_control",
-                      "left_shift",
-                      "left_option"
-                    ]
-                  }
-                }
-              },
-              {
-                "description": "Open Visual Studio Code",
-                "to": [
-                  {
-                    "shell_command": "open -a 'Visual Studio Code.app'"
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "v",
-                  "modifiers": {
-                    "mandatory": [
-                      "left_command",
-                      "left_control",
-                      "left_shift",
-                      "left_option"
-                    ]
-                  }
-                }
-              },
-              {
-                "description": "Open Discord",
-                "to": [
-                  {
-                    "shell_command": "open -a 'Discord.app'"
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "d",
-                  "modifiers": {
-                    "mandatory": [
-                      "left_command",
-                      "left_control",
-                      "left_shift",
-                      "left_option"
-                    ]
-                  }
-                }
-              },
-              {
-                "description": "Open Slack",
-                "to": [
-                  {
-                    "shell_command": "open -a 'Slack.app'"
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "s",
-                  "modifiers": {
-                    "mandatory": [
-                      "left_command",
-                      "left_control",
-                      "left_shift",
-                      "left_option"
-                    ]
-                  }
-                }
-              },
-              {
-                "description": "Open Superhuman",
-                "to": [
-                  {
-                    "shell_command": "open -a 'Superhuman.app'"
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "e",
-                  "modifiers": {
-                    "mandatory": [
-                      "left_command",
-                      "left_control",
-                      "left_shift",
-                      "left_option"
-                    ]
-                  }
-                }
-              },
-              {
-                "description": "Open Notion",
-                "to": [
-                  {
-                    "shell_command": "open -a 'Notion.app'"
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "n",
-                  "modifiers": {
-                    "mandatory": [
-                      "left_command",
-                      "left_control",
-                      "left_shift",
-                      "left_option"
-                    ]
-                  }
-                }
-              },
-              {
-                "description": "Open Terminal",
-                "to": [
-                  {
-                    "shell_command": "open -a 'Terminal.app'"
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "t",
                   "modifiers": {
                     "mandatory": [
                       "left_command",
