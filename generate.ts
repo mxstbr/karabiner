@@ -13,35 +13,6 @@ interface LayerCommand {
 }
 
 /**
- * Create a Hyper + {key_code} trigger
- */
-function hyper(key_code: string, command: LayerCommand): Manipulator {
-  return {
-    description: command.description,
-    to: command.to,
-    type: "basic",
-    from: {
-      key_code,
-      modifiers: {
-        mandatory: [
-          "left_command",
-          "left_control",
-          "left_shift",
-          "left_option",
-        ],
-      },
-    },
-  };
-}
-
-/**
- * Create the Hyper Layer
- */
-function createHyperLayer(commands: { [key_code: string]: LayerCommand }) {
-  return Object.keys(commands).map((key) => hyper(key, commands[key]));
-}
-
-/**
  * Create a Hyper Key sublayer, where every command is prefixed with a key
  * e.g. Hyper + O ("Open") is the "open applications" layer, I can press
  * e.g. Hyper + O + G ("Google Chrome") to open Chrome
@@ -50,37 +21,60 @@ function createHyperSubLayer(
   sublayer_key: string,
   commands: { [key_code: string]: LayerCommand }
 ): Manipulator[] {
-  return Object.keys(commands).map((command_key) => ({
-    ...commands[command_key],
-    type: "basic",
-    parameters: {
-      // By combining "infinity" simultanous threshold with key_down_order strict,
-      // I can press e.g. Hyper + O > G relatively slowly; since the Hyper key is
-      // unique anyway, this works great for my use cases to create hyper "sub layers"
-      "basic.simultaneous_threshold_milliseconds": JSON_INFINITY_MS,
-    },
-    from: {
-      simultaneous_options: {
-        key_down_order: "strict",
-      },
-      simultaneous: [
-        {
-          key_code: sublayer_key,
+  const subLayerVariableName = `hyper_sublayer_${sublayer_key}`;
+  return [
+    // When Hyper + sublayer_key is pressed, set the variable to true; on key_up, set it to false again
+    {
+      description: `Toggle Hyper sublayer ${sublayer_key}`,
+      type: "basic",
+      from: {
+        key_code: sublayer_key,
+        modifiers: {
+          mandatory: [
+            "left_command",
+            "left_control",
+            "left_shift",
+            "left_option",
+          ],
         },
+      },
+      to_after_key_up: [
         {
-          key_code: command_key,
+          set_variable: {
+            name: subLayerVariableName,
+            value: false,
+          },
         },
       ],
-      modifiers: {
-        mandatory: [
-          "left_command",
-          "left_control",
-          "left_shift",
-          "left_option",
-        ],
-      },
+      to: [
+        {
+          set_variable: {
+            name: subLayerVariableName,
+            value: true,
+          },
+        },
+      ],
     },
-  }));
+    ...Object.keys(commands).map((command_key) => ({
+      ...commands[command_key],
+      type: "basic" as const,
+      from: {
+        key_code: command_key,
+        // Without this, it doesn't work.
+        modifiers: {
+          optional: ["any"],
+        },
+      },
+      // Only trigger this command if the variable is true (i.e., if Hyper + sublayer is held)
+      conditions: [
+        {
+          type: "variable_if",
+          name: subLayerVariableName,
+          value: true,
+        },
+      ],
+    })),
+  ];
 }
 
 /**
@@ -141,8 +135,9 @@ const rules: KarabinerRules[] = [
         description: "Window: First Third",
         to: [
           {
-            key_code: "left_arrow",
-            modifiers: ["right_control", "right_option"],
+            // NOTE: Requires Rectangle v60+
+            shell_command:
+              'open -g "rectangle://execute-action?name=first-third"',
           },
         ],
       },
@@ -150,8 +145,9 @@ const rules: KarabinerRules[] = [
         description: "Window: Last Third",
         to: [
           {
-            key_code: "right_arrow",
-            modifiers: ["right_control", "right_option"],
+            // NOTE: Requires Rectangle v60+
+            shell_command:
+              'open -g "rectangle://execute-action?name=last-third"',
           },
         ],
       },

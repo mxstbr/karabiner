@@ -8,6 +8,7 @@ export interface Manipulator {
   type: "basic";
   from: From;
   to?: To[];
+  to_after_key_up?: To[];
   to_if_alone?: To[];
   parameters?: Parameters;
 }
@@ -41,4 +42,8 @@ export interface To {
   key_code?: string;
   modifiers?: string[];
   shell_command?: string;
+  set_variable?: {
+    name: string;
+    value: boolean | number | string;
+  };
 }
