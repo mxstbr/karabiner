@@ -523,6 +523,52 @@
                     "value": true
                   }
                 ]
+              },
+              {
+                "to": [
+                  {
+                    "key_code": "play_or_pause"
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "p",
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_s",
+                    "value": true
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "key_code": "fastforward"
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "semicolon",
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_s",
+                    "value": true
+                  }
+                ]
               }
             ]
           },
