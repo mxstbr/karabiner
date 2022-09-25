@@ -182,6 +182,9 @@ const rules: KarabinerRules[] = [
       l: {
         to: [{ key_code: "right_arrow" }],
       },
+      m: {
+        to: [{ key_code: "f", modifiers: ["right_control"] }],
+      },
     }),
   },
 ];

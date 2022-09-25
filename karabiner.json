@@ -496,6 +496,32 @@
                     "value": true
                   }
                 ]
+              },
+              {
+                "to": [
+                  {
+                    "key_code": "f",
+                    "modifiers": [
+                      "right_control"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "m",
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_v",
+                    "value": true
+                  }
+                ]
               }
             ]
           }
