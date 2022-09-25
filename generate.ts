@@ -60,9 +60,9 @@ function createHyperSubLayer(
       type: "basic" as const,
       from: {
         key_code: command_key,
-        // Without this, it doesn't work.
         modifiers: {
-          optional: ["any"],
+          // Mandatory modifiers are *not* added to the "to" event
+          mandatory: ["any"],
         },
       },
       // Only trigger this command if the variable is true (i.e., if Hyper + sublayer is held)
@@ -97,6 +97,7 @@ const rules: KarabinerRules[] = [
     description: "Hyper Key (⌃⌥⇧⌘)",
     manipulators: [
       {
+        description: "Caps Lock -> Hyper Key",
         from: {
           key_code: "caps_lock",
         },
@@ -112,6 +113,21 @@ const rules: KarabinerRules[] = [
           },
         ],
         type: "basic",
+      },
+      {
+        type: "basic",
+        description: "Disable CMD + Tab to force Hyper Key usage",
+        from: {
+          key_code: "tab",
+          modifiers: {
+            mandatory: ["left_command"],
+          },
+        },
+        to: [
+          {
+            key_code: "tab",
+          },
+        ],
       },
     ],
   },
@@ -135,9 +151,8 @@ const rules: KarabinerRules[] = [
         description: "Window: First Third",
         to: [
           {
-            // NOTE: Requires Rectangle v60+
-            shell_command:
-              'open -g "rectangle://execute-action?name=first-third"',
+            key_code: "left_arrow",
+            modifiers: ["right_option", "right_control"],
           },
         ],
       },
@@ -145,11 +160,27 @@ const rules: KarabinerRules[] = [
         description: "Window: Last Third",
         to: [
           {
-            // NOTE: Requires Rectangle v60+
-            shell_command:
-              'open -g "rectangle://execute-action?name=last-third"',
+            key_code: "right_arrow",
+            modifiers: ["right_option", "right_control"],
           },
         ],
+      },
+    }),
+  },
+  {
+    description: 'Hyper Key sublayer: V ("MoVement")',
+    manipulators: createHyperSubLayer("v", {
+      h: {
+        to: [{ key_code: "left_arrow" }],
+      },
+      j: {
+        to: [{ key_code: "down_arrow" }],
+      },
+      k: {
+        to: [{ key_code: "up_arrow" }],
+      },
+      l: {
+        to: [{ key_code: "right_arrow" }],
       },
     }),
   },
