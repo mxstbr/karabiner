@@ -118,15 +118,22 @@ function generateSubLayerVariableName(key: KeyCode) {
 }
 
 /**
- * Shortcut for "Open an app" command (of which there are a bunch)
+ * Shortcut for "open" shell command
  */
-export function app(name: string): LayerCommand {
+export function open(what: string): LayerCommand {
   return {
     to: [
       {
-        shell_command: `open -a '${name}.app'`,
+        shell_command: `open ${what}`,
       },
     ],
-    description: `Open ${name}`,
+    description: `Open ${what}`,
   };
+}
+
+/**
+ * Shortcut for "Open an app" command (of which there are a bunch)
+ */
+export function app(name: string): LayerCommand {
+  return open(`-a '${name}.app'`);
 }

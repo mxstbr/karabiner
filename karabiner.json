@@ -108,7 +108,7 @@
                     "shell_command": "open -a 'Google Chrome.app'"
                   }
                 ],
-                "description": "Open Google Chrome",
+                "description": "Open -a 'Google Chrome.app'",
                 "type": "basic",
                 "from": {
                   "key_code": "g",
@@ -132,7 +132,7 @@
                     "shell_command": "open -a 'Cron.app'"
                   }
                 ],
-                "description": "Open Cron",
+                "description": "Open -a 'Cron.app'",
                 "type": "basic",
                 "from": {
                   "key_code": "c",
@@ -156,7 +156,7 @@
                     "shell_command": "open -a 'Visual Studio Code.app'"
                   }
                 ],
-                "description": "Open Visual Studio Code",
+                "description": "Open -a 'Visual Studio Code.app'",
                 "type": "basic",
                 "from": {
                   "key_code": "v",
@@ -180,7 +180,7 @@
                     "shell_command": "open -a 'Discord.app'"
                   }
                 ],
-                "description": "Open Discord",
+                "description": "Open -a 'Discord.app'",
                 "type": "basic",
                 "from": {
                   "key_code": "d",
@@ -204,7 +204,7 @@
                     "shell_command": "open -a 'Slack.app'"
                   }
                 ],
-                "description": "Open Slack",
+                "description": "Open -a 'Slack.app'",
                 "type": "basic",
                 "from": {
                   "key_code": "s",
@@ -228,7 +228,7 @@
                     "shell_command": "open -a 'Superhuman.app'"
                   }
                 ],
-                "description": "Open Superhuman",
+                "description": "Open -a 'Superhuman.app'",
                 "type": "basic",
                 "from": {
                   "key_code": "e",
@@ -252,7 +252,7 @@
                     "shell_command": "open -a 'Notion.app'"
                   }
                 ],
-                "description": "Open Notion",
+                "description": "Open -a 'Notion.app'",
                 "type": "basic",
                 "from": {
                   "key_code": "n",
@@ -276,10 +276,34 @@
                     "shell_command": "open -a 'Terminal.app'"
                   }
                 ],
-                "description": "Open Terminal",
+                "description": "Open -a 'Terminal.app'",
                 "type": "basic",
                 "from": {
                   "key_code": "t",
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_o",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open notion://www.notion.so/graphcdn/7b33b924746647499d906c55f89d5026?v=7f9a78e5477d40088f54bdbaf212f304"
+                  }
+                ],
+                "description": "Open notion://www.notion.so/graphcdn/7b33b924746647499d906c55f89d5026?v=7f9a78e5477d40088f54bdbaf212f304",
+                "type": "basic",
+                "from": {
+                  "key_code": "h",
                   "modifiers": {
                     "mandatory": [
                       "any"

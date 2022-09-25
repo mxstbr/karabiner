@@ -1,6 +1,6 @@
 import fs from "fs";
 import { KarabinerRules } from "./types";
-import { createHyperSubLayers, app } from "./utils";
+import { createHyperSubLayers, app, open } from "./utils";
 
 const rules: KarabinerRules[] = [
   // Define the Hyper key itself
@@ -53,6 +53,10 @@ const rules: KarabinerRules[] = [
       e: app("Superhuman"),
       n: app("Notion"),
       t: app("Terminal"),
+      // Open todo list managed via *H*ypersonic
+      h: open(
+        "notion://www.notion.so/graphcdn/7b33b924746647499d906c55f89d5026?v=7f9a78e5477d40088f54bdbaf212f304"
+      ),
     },
 
     // w = "Window" via rectangle.app
@@ -185,7 +189,7 @@ const rules: KarabinerRules[] = [
       },
     },
 
-    // v = "moVement," which isn't "m" because we want it to be on the left hand
+    // v = "moVe" which isn't "m" because we want it to be on the left hand
     // so that hjkl work like they do in vim
     v: {
       h: {
