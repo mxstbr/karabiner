@@ -168,6 +168,41 @@ const rules: KarabinerRules[] = [
     }),
   },
   {
+    description: 'Hyper Key sublayer: S ("System")',
+    manipulators: createHyperSubLayer("s", {
+      u: {
+        to: [
+          {
+            key_code: "volume_increment",
+          },
+        ],
+      },
+      j: {
+        to: [
+          {
+            key_code: "volume_decrement",
+          },
+        ],
+      },
+      i: {
+        to: [
+          {
+            key_code: "display_brightness_increment",
+          },
+        ],
+      },
+      k: {
+        to: [
+          {
+            key_code: "display_brightness_decrement",
+          },
+        ],
+      },
+    }),
+  },
+  {
+    // We don't choose M because then the right hand couldn't press hj anymore
+    // so this sublayer key has to be on the left hand
     description: 'Hyper Key sublayer: V ("MoVement")',
     manipulators: createHyperSubLayer("v", {
       h: {
