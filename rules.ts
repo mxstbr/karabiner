@@ -174,6 +174,14 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
+      e: {
+        to: [
+          {
+            key_code: "spacebar",
+            modifiers: ["right_control", "right_command"],
+          },
+        ],
+      },
     },
 
     // v = "moVement," which isn't "m" because we want it to be on the left hand
