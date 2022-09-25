@@ -43,6 +43,7 @@ const rules: KarabinerRules[] = [
     ],
   },
   ...createHyperSubLayers({
+    // o = "Open" applications
     o: {
       g: app("Google Chrome"),
       c: app("Cron"),
@@ -53,6 +54,7 @@ const rules: KarabinerRules[] = [
       n: app("Notion"),
       t: app("Terminal"),
     },
+    // w = "Window" via rectangle.app
     w: {
       h: {
         description: "Window: First Third",
@@ -118,6 +120,7 @@ const rules: KarabinerRules[] = [
         ],
       },
     },
+    // s = "System"
     s: {
       u: {
         to: [
@@ -170,6 +173,8 @@ const rules: KarabinerRules[] = [
         ],
       },
     },
+    // v = "moVement," which isn't "m" because we want it to be on the left hand
+    // so that hjkl work like they do in vim
     v: {
       h: {
         to: [{ key_code: "left_arrow" }],
@@ -183,6 +188,7 @@ const rules: KarabinerRules[] = [
       l: {
         to: [{ key_code: "right_arrow" }],
       },
+      // Magicmove via homerow.app
       m: {
         to: [{ key_code: "f", modifiers: ["right_control"] }],
       },
