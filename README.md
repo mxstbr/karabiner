@@ -14,7 +14,7 @@
 yarn run generate
 ```
 
-generates the `karabiner.json` from the `generate.ts`.
+generates the `karabiner.json` from the `rules.ts`.
 
 ```
 yarn run watch
