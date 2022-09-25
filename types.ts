@@ -11,6 +11,8 @@ export interface Manipulator {
   to_after_key_up?: To[];
   to_if_alone?: To[];
   parameters?: Parameters;
+  // TODO: Type this
+  conditions?: any;
 }
 
 export interface Parameters {

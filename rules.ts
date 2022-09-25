@@ -1,6 +1,6 @@
 import fs from "fs";
 import { KarabinerRules } from "./types";
-import { createHyperSubLayer, app } from "./utils";
+import { createHyperSubLayer, createHyperSubLayers, app } from "./utils";
 
 const rules: KarabinerRules[] = [
   // Define the Hyper key itself
@@ -42,9 +42,8 @@ const rules: KarabinerRules[] = [
       },
     ],
   },
-  {
-    description: 'Hyper Key sublayer: O ("Open")',
-    manipulators: createHyperSubLayer("o", {
+  ...createHyperSubLayers({
+    o: {
       g: app("Google Chrome"),
       c: app("Cron"),
       v: app("Visual Studio Code"),
@@ -53,11 +52,8 @@ const rules: KarabinerRules[] = [
       e: app("Superhuman"),
       n: app("Notion"),
       t: app("Terminal"),
-    }),
-  },
-  {
-    description: 'Hyper Key sublayer: W ("Window")',
-    manipulators: createHyperSubLayer("w", {
+    },
+    w: {
       h: {
         description: "Window: First Third",
         to: [
@@ -76,7 +72,7 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      g: {
+      y: {
         description: "Window: Left Half",
         to: [
           {
@@ -85,11 +81,20 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      semicolon: {
+      o: {
         description: "Window: Right Half",
         to: [
           {
             key_code: "right_arrow",
+            modifiers: ["right_option", "right_command"],
+          },
+        ],
+      },
+      f: {
+        description: "Window: Full Screen",
+        to: [
+          {
+            key_code: "f",
             modifiers: ["right_option", "right_command"],
           },
         ],
@@ -112,11 +117,8 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-    }),
-  },
-  {
-    description: 'Hyper Key sublayer: S ("System")',
-    manipulators: createHyperSubLayer("s", {
+    },
+    s: {
       u: {
         to: [
           {
@@ -167,13 +169,8 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-    }),
-  },
-  {
-    // We don't choose M because then the right hand couldn't press hj anymore
-    // so this sublayer key has to be on the left hand
-    description: 'Hyper Key sublayer: V ("MoVement")',
-    manipulators: createHyperSubLayer("v", {
+    },
+    v: {
       h: {
         to: [{ key_code: "left_arrow" }],
       },
@@ -189,8 +186,8 @@ const rules: KarabinerRules[] = [
       m: {
         to: [{ key_code: "f", modifiers: ["right_control"] }],
       },
-    }),
-  },
+    },
+  }),
 ];
 
 fs.writeFileSync(
