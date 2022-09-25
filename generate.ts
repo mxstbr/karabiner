@@ -1,9 +1,6 @@
 import fs from "fs";
 import { KarabinerRules, KeyCode, Manipulator, To } from "./types";
 
-// JSON does not support Infinity, so this is to "fake" that
-const JSON_INFINITY_MS = 9999999999;
-
 /**
  * Custom way to describe a command in a layer
  */
@@ -56,6 +53,7 @@ function createHyperSubLayer(
         },
       ],
     },
+    // Define the individual commands that are meant to trigger in the sublayer
     ...(Object.keys(commands) as (keyof typeof commands)[]).map(
       (command_key) => ({
         ...commands[command_key],
@@ -81,7 +79,7 @@ function createHyperSubLayer(
 }
 
 /**
- * Open an app layer command
+ * "Open an app" command
  */
 function app(name: string): LayerCommand {
   return {
