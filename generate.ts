@@ -1,5 +1,5 @@
 import fs from "fs";
-import { KarabinerRules, Manipulator, To } from "./types";
+import { KarabinerRules, KeyCode, Manipulator, To } from "./types";
 
 // JSON does not support Infinity, so this is to "fake" that
 const JSON_INFINITY_MS = 9999999999;
@@ -18,8 +18,9 @@ interface LayerCommand {
  * e.g. Hyper + O + G ("Google Chrome") to open Chrome
  */
 function createHyperSubLayer(
-  sublayer_key: string,
-  commands: { [key_code: string]: LayerCommand }
+  sublayer_key: KeyCode,
+  // The ? is necessary, otherwise we'd have to define something for _every_ key code
+  commands: { [key_code in KeyCode]?: LayerCommand }
 ): Manipulator[] {
   const subLayerVariableName = `hyper_sublayer_${sublayer_key}`;
   return [
@@ -55,25 +56,27 @@ function createHyperSubLayer(
         },
       ],
     },
-    ...Object.keys(commands).map((command_key) => ({
-      ...commands[command_key],
-      type: "basic" as const,
-      from: {
-        key_code: command_key,
-        modifiers: {
-          // Mandatory modifiers are *not* added to the "to" event
-          mandatory: ["any"],
+    ...(Object.keys(commands) as (keyof typeof commands)[]).map(
+      (command_key) => ({
+        ...commands[command_key],
+        type: "basic" as const,
+        from: {
+          key_code: command_key,
+          modifiers: {
+            // Mandatory modifiers are *not* added to the "to" event
+            mandatory: ["any"],
+          },
         },
-      },
-      // Only trigger this command if the variable is true (i.e., if Hyper + sublayer is held)
-      conditions: [
-        {
-          type: "variable_if",
-          name: subLayerVariableName,
-          value: true,
-        },
-      ],
-    })),
+        // Only trigger this command if the variable is true (i.e., if Hyper + sublayer is held)
+        conditions: [
+          {
+            type: "variable_if",
+            name: subLayerVariableName,
+            value: true,
+          },
+        ],
+      })
+    ),
   ];
 }
 
