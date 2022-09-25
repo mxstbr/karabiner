@@ -177,6 +177,7 @@ const rules: KarabinerRules[] = [
       e: {
         to: [
           {
+            // Emoji picker
             key_code: "spacebar",
             modifiers: ["right_control", "right_command"],
           },
