@@ -56,6 +56,7 @@ export function createHyperSubLayer(
         },
       ],
       // This enables us to press other sublayer keys in the current sublayer
+      // (e.g. Hyper + O > M even though Hyper + M is also a sublayer)
       // basically, only trigger a sublayer if no other sublayer is active
       conditions: allSubLayerVariables
         .filter((subLayerVariable) => subLayerVariable !== subLayerVariableName)
@@ -90,6 +91,11 @@ export function createHyperSubLayer(
   ];
 }
 
+/**
+ * Create all hyper sublayers. This needs to be a single function, as well need to
+ * have all the hyper variable names in order to filter them and make sure only one
+ * activates at a time
+ */
 export function createHyperSubLayers(subLayers: {
   [key_code in KeyCode]?: { [key_code in KeyCode]?: LayerCommand };
 }): KarabinerRules[] {
@@ -112,7 +118,7 @@ function generateSubLayerVariableName(key: KeyCode) {
 }
 
 /**
- * "Open an app" command
+ * Shortcut for "Open an app" command (of which there are a bunch)
  */
 export function app(name: string): LayerCommand {
   return {
