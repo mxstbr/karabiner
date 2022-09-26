@@ -42,9 +42,9 @@ const rules: KarabinerRules[] = [
       },
       {
         type: "basic",
-        description: "Backslash -> Hyper Key",
+        description: "Slash -> Hyper Key",
         from: {
-          key_code: "backslash",
+          key_code: "slash",
         },
         to: [
           {
@@ -54,7 +54,7 @@ const rules: KarabinerRules[] = [
         ],
         to_if_alone: [
           {
-            key_code: "backslash",
+            key_code: "slash",
           },
         ],
       },
