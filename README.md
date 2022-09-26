@@ -11,9 +11,6 @@ Best way to go about using this if you want to? Probably delete all the sublayer
 1. Delete the default `~/.config/karabiner` folder
 1. Create a symlink with `ln -s ~/github/mxstbr/karabiner ~/.config` (where `~/github/mxstbr/karabiner` is your local path to where you cloned the repository)
 1. [Restart karabiner_console_user_server](https://karabiner-elements.pqrs.org/docs/manual/misc/configuration-file-path/) with ```launchctl kickstart -k gui/`id -u`/org.pqrs.karabiner.karabiner_console_user_server```
-  ```
-  launchctl kickstart -k gui/`id -u`/org.pqrs.karabiner.karabiner_console_user_server
-  ```
 
 ## Development
 
