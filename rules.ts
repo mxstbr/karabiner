@@ -57,6 +57,7 @@ const rules: KarabinerRules[] = [
       h: open(
         "notion://www.notion.so/graphcdn/7b33b924746647499d906c55f89d5026?v=7f9a78e5477d40088f54bdbaf212f304"
       ),
+      z: app("zoom.us"),
     },
 
     // w = "Window" via rectangle.app
