@@ -40,6 +40,24 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
+      {
+        type: "basic",
+        description: "Backslash -> Hyper Key",
+        from: {
+          key_code: "backslash",
+        },
+        to: [
+          {
+            key_code: "left_shift",
+            modifiers: ["left_command", "left_control", "left_option"],
+          },
+        ],
+        to_if_alone: [
+          {
+            key_code: "backslash",
+          },
+        ],
+      },
     ],
   },
   ...createHyperSubLayers({
