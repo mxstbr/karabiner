@@ -215,6 +215,21 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
+      // Turn on Elgato KeyLight
+      y: {
+        to: [
+          {
+            shell_command: `curl -H 'Content-Type: application/json' --request PUT --data '{ "numberOfLights": 1, "lights": [ { "on": 1, "brightness": 50, "temperature": 175 } ] }' http://192.168.8.84:9123/elgato/lights`,
+          },
+        ],
+      },
+      h: {
+        to: [
+          {
+            shell_command: `curl -H 'Content-Type: application/json' --request PUT --data '{ "numberOfLights": 1, "lights": [ { "on": 0, "brightness": 50, "temperature": 175 } ] }' http://192.168.8.84:9123/elgato/lights`,
+          },
+        ],
+      },
     },
 
     // v = "moVe" which isn't "m" because we want it to be on the left hand
