@@ -143,6 +143,15 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
+      n: {
+        description: "Window: Next Window",
+        to: [
+          {
+            key_code: "grave_accent_and_tilde",
+            modifiers: ["right_command"],
+          },
+        ],
+      },
     },
 
     // s = "System"
