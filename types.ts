@@ -48,6 +48,13 @@ export interface To {
     name: string;
     value: boolean | number | string;
   };
+  mouse_key?: MouseKey;
+}
+
+export interface MouseKey {
+  y?: number;
+  x?: number;
+  speed_multiplier?: number;
 }
 
 export type KeyCode =
