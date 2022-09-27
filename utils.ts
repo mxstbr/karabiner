@@ -88,6 +88,33 @@ export function createHyperSubLayer(
         ],
       })
     ),
+    ...(Object.keys(commands) as (keyof typeof commands)[]).map(
+      (command_key): Manipulator => ({
+        ...commands[command_key],
+        type: "basic" as const,
+        parameters: {
+          "basic.simultaneous_threshold_milliseconds": 500,
+        },
+        from: {
+          simultaneous: [
+            {
+              key_code: sublayer_key,
+            },
+            {
+              key_code: command_key,
+            },
+          ],
+          simultaneous_options: {
+            key_down_order: "strict",
+            key_up_order: "strict_inverse",
+          },
+          modifiers: {
+            // Mandatory modifiers are *not* added to the "to" event
+            mandatory: ["any"],
+          },
+        },
+      })
+    ),
   ];
 }
 

@@ -363,6 +363,316 @@
                     "value": 1
                   }
                 ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open -a 'Google Chrome.app'"
+                  }
+                ],
+                "description": "Open -a 'Google Chrome.app'",
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "o"
+                    },
+                    {
+                      "key_code": "g"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse"
+                  },
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                }
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open -a 'Cron.app'"
+                  }
+                ],
+                "description": "Open -a 'Cron.app'",
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "o"
+                    },
+                    {
+                      "key_code": "c"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse"
+                  },
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                }
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open -a 'Visual Studio Code.app'"
+                  }
+                ],
+                "description": "Open -a 'Visual Studio Code.app'",
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "o"
+                    },
+                    {
+                      "key_code": "v"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse"
+                  },
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                }
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open -a 'Discord.app'"
+                  }
+                ],
+                "description": "Open -a 'Discord.app'",
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "o"
+                    },
+                    {
+                      "key_code": "d"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse"
+                  },
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                }
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open -a 'Slack.app'"
+                  }
+                ],
+                "description": "Open -a 'Slack.app'",
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "o"
+                    },
+                    {
+                      "key_code": "s"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse"
+                  },
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                }
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open -a 'Superhuman.app'"
+                  }
+                ],
+                "description": "Open -a 'Superhuman.app'",
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "o"
+                    },
+                    {
+                      "key_code": "e"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse"
+                  },
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                }
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open -a 'Notion.app'"
+                  }
+                ],
+                "description": "Open -a 'Notion.app'",
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "o"
+                    },
+                    {
+                      "key_code": "n"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse"
+                  },
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                }
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open -a 'Terminal.app'"
+                  }
+                ],
+                "description": "Open -a 'Terminal.app'",
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "o"
+                    },
+                    {
+                      "key_code": "t"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse"
+                  },
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                }
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open notion://www.notion.so/graphcdn/7b33b924746647499d906c55f89d5026?v=7f9a78e5477d40088f54bdbaf212f304"
+                  }
+                ],
+                "description": "Open notion://www.notion.so/graphcdn/7b33b924746647499d906c55f89d5026?v=7f9a78e5477d40088f54bdbaf212f304",
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "o"
+                    },
+                    {
+                      "key_code": "h"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse"
+                  },
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                }
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open -a 'zoom.us.app'"
+                  }
+                ],
+                "description": "Open -a 'zoom.us.app'",
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "o"
+                    },
+                    {
+                      "key_code": "z"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse"
+                  },
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                }
               }
             ]
           },
@@ -611,6 +921,250 @@
                     "value": 1
                   }
                 ]
+              },
+              {
+                "description": "Window: First Third",
+                "to": [
+                  {
+                    "key_code": "left_arrow",
+                    "modifiers": [
+                      "right_option",
+                      "right_control"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "w"
+                    },
+                    {
+                      "key_code": "h"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse"
+                  },
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                }
+              },
+              {
+                "description": "Window: Last Third",
+                "to": [
+                  {
+                    "key_code": "right_arrow",
+                    "modifiers": [
+                      "right_option",
+                      "right_control"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "w"
+                    },
+                    {
+                      "key_code": "l"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse"
+                  },
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                }
+              },
+              {
+                "description": "Window: Left Half",
+                "to": [
+                  {
+                    "key_code": "left_arrow",
+                    "modifiers": [
+                      "right_option",
+                      "right_command"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "w"
+                    },
+                    {
+                      "key_code": "y"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse"
+                  },
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                }
+              },
+              {
+                "description": "Window: Right Half",
+                "to": [
+                  {
+                    "key_code": "right_arrow",
+                    "modifiers": [
+                      "right_option",
+                      "right_command"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "w"
+                    },
+                    {
+                      "key_code": "o"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse"
+                  },
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                }
+              },
+              {
+                "description": "Window: Full Screen",
+                "to": [
+                  {
+                    "key_code": "f",
+                    "modifiers": [
+                      "right_option",
+                      "right_command"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "w"
+                    },
+                    {
+                      "key_code": "f"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse"
+                  },
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                }
+              },
+              {
+                "description": "Window: Previous Tab",
+                "to": [
+                  {
+                    "key_code": "tab",
+                    "modifiers": [
+                      "right_control",
+                      "right_shift"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "w"
+                    },
+                    {
+                      "key_code": "u"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse"
+                  },
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                }
+              },
+              {
+                "description": "Window: Next Tab",
+                "to": [
+                  {
+                    "key_code": "tab",
+                    "modifiers": [
+                      "right_control"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "w"
+                    },
+                    {
+                      "key_code": "i"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse"
+                  },
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                }
               }
             ]
           },
@@ -856,6 +1410,254 @@
                     "value": 1
                   }
                 ]
+              },
+              {
+                "to": [
+                  {
+                    "key_code": "volume_increment"
+                  }
+                ],
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "s"
+                    },
+                    {
+                      "key_code": "u"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse"
+                  },
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                }
+              },
+              {
+                "to": [
+                  {
+                    "key_code": "volume_decrement"
+                  }
+                ],
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "s"
+                    },
+                    {
+                      "key_code": "j"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse"
+                  },
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                }
+              },
+              {
+                "to": [
+                  {
+                    "key_code": "display_brightness_increment"
+                  }
+                ],
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "s"
+                    },
+                    {
+                      "key_code": "i"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse"
+                  },
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                }
+              },
+              {
+                "to": [
+                  {
+                    "key_code": "display_brightness_decrement"
+                  }
+                ],
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "s"
+                    },
+                    {
+                      "key_code": "k"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse"
+                  },
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                }
+              },
+              {
+                "to": [
+                  {
+                    "key_code": "q",
+                    "modifiers": [
+                      "right_control",
+                      "right_command"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "s"
+                    },
+                    {
+                      "key_code": "l"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse"
+                  },
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                }
+              },
+              {
+                "to": [
+                  {
+                    "key_code": "play_or_pause"
+                  }
+                ],
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "s"
+                    },
+                    {
+                      "key_code": "p"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse"
+                  },
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                }
+              },
+              {
+                "to": [
+                  {
+                    "key_code": "fastforward"
+                  }
+                ],
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "s"
+                    },
+                    {
+                      "key_code": "semicolon"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse"
+                  },
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                }
+              },
+              {
+                "to": [
+                  {
+                    "key_code": "spacebar",
+                    "modifiers": [
+                      "right_control",
+                      "right_command"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "s"
+                    },
+                    {
+                      "key_code": "e"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse"
+                  },
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                }
               }
             ]
           },
@@ -1053,6 +1855,192 @@
                     "value": 1
                   }
                 ]
+              },
+              {
+                "to": [
+                  {
+                    "key_code": "left_arrow"
+                  }
+                ],
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "v"
+                    },
+                    {
+                      "key_code": "h"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse"
+                  },
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                }
+              },
+              {
+                "to": [
+                  {
+                    "key_code": "down_arrow"
+                  }
+                ],
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "v"
+                    },
+                    {
+                      "key_code": "j"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse"
+                  },
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                }
+              },
+              {
+                "to": [
+                  {
+                    "key_code": "up_arrow"
+                  }
+                ],
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "v"
+                    },
+                    {
+                      "key_code": "k"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse"
+                  },
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                }
+              },
+              {
+                "to": [
+                  {
+                    "key_code": "right_arrow"
+                  }
+                ],
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "v"
+                    },
+                    {
+                      "key_code": "l"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse"
+                  },
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                }
+              },
+              {
+                "to": [
+                  {
+                    "key_code": "f",
+                    "modifiers": [
+                      "right_control"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "v"
+                    },
+                    {
+                      "key_code": "m"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse"
+                  },
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                }
+              },
+              {
+                "to": [
+                  {
+                    "key_code": "j",
+                    "modifiers": [
+                      "right_control"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "parameters": {
+                  "basic.simultaneous_threshold_milliseconds": 500
+                },
+                "from": {
+                  "simultaneous": [
+                    {
+                      "key_code": "v"
+                    },
+                    {
+                      "key_code": "s"
+                    }
+                  ],
+                  "simultaneous_options": {
+                    "key_down_order": "strict",
+                    "key_up_order": "strict_inverse"
+                  },
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                }
               }
             ]
           }
