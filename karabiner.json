@@ -418,6 +418,33 @@
                 ]
               },
               {
+                "description": "Window: Hide",
+                "to": [
+                  {
+                    "key_code": "h",
+                    "modifiers": [
+                      "right_command"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "h",
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_w",
+                    "value": 1
+                  }
+                ]
+              },
+              {
                 "description": "Window: First Third",
                 "to": [
                   {
@@ -430,7 +457,7 @@
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "h",
+                  "key_code": "j",
                   "modifiers": {
                     "mandatory": [
                       "any"
@@ -458,7 +485,7 @@
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "l",
+                  "key_code": "k",
                   "modifiers": {
                     "mandatory": [
                       "any"
@@ -486,7 +513,7 @@
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "y",
+                  "key_code": "l",
                   "modifiers": {
                     "mandatory": [
                       "any"
@@ -514,7 +541,7 @@
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "o",
+                  "key_code": "semicolon",
                   "modifiers": {
                     "mandatory": [
                       "any"
