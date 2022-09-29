@@ -76,6 +76,7 @@ const rules: KarabinerRules[] = [
         "notion://www.notion.so/graphcdn/7b33b924746647499d906c55f89d5026?v=7f9a78e5477d40088f54bdbaf212f304"
       ),
       z: app("zoom.us"),
+      m: app("Muse"),
     },
 
     // w = "Window" via rectangle.app
@@ -247,14 +248,14 @@ const rules: KarabinerRules[] = [
       y: {
         to: [
           {
-            shell_command: `curl -H 'Content-Type: application/json' --request PUT --data '{ "numberOfLights": 1, "lights": [ { "on": 1, "brightness": 50, "temperature": 175 } ] }' http://192.168.8.84:9123/elgato/lights`,
+            shell_command: `curl -H 'Content-Type: application/json' --request PUT --data '{ "numberOfLights": 1, "lights": [ { "on": 1, "brightness": 100, "temperature": 215 } ] }' http://192.168.8.84:9123/elgato/lights`,
           },
         ],
       },
       h: {
         to: [
           {
-            shell_command: `curl -H 'Content-Type: application/json' --request PUT --data '{ "numberOfLights": 1, "lights": [ { "on": 0, "brightness": 50, "temperature": 175 } ] }' http://192.168.8.84:9123/elgato/lights`,
+            shell_command: `curl -H 'Content-Type: application/json' --request PUT --data '{ "numberOfLights": 1, "lights": [ { "on": 0, "brightness": 100, "temperature": 215 } ] }' http://192.168.8.84:9123/elgato/lights`,
           },
         ],
       },
