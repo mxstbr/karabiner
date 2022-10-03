@@ -77,6 +77,7 @@ const rules: KarabinerRules[] = [
       ),
       z: app("zoom.us"),
       m: app("Muse"),
+      f: app("Figma"),
     },
 
     // w = "Window" via rectangle.app
