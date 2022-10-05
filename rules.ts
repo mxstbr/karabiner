@@ -78,6 +78,7 @@ const rules: KarabinerRules[] = [
       z: app("zoom.us"),
       m: app("Muse"),
       f: app("Figma"),
+      r: app("Telegram"),
     },
 
     // w = "Window" via rectangle.app
@@ -100,7 +101,7 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      k: {
+      semicolon: {
         description: "Window: Last Third",
         to: [
           {
@@ -109,7 +110,7 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      l: {
+      k: {
         description: "Window: Left Half",
         to: [
           {
@@ -118,7 +119,7 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      semicolon: {
+      l: {
         description: "Window: Right Half",
         to: [
           {
