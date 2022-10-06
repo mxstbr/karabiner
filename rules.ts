@@ -79,6 +79,8 @@ const rules: KarabinerRules[] = [
       m: app("Muse"),
       f: app("Figma"),
       r: app("Telegram"),
+      // "i"Message
+      i: app("Messages"),
     },
 
     // w = "Window" via rectangle.app
