@@ -85,7 +85,7 @@ const rules: KarabinerRules[] = [
 
     // w = "Window" via rectangle.app
     w: {
-      h: {
+      semicolon: {
         description: "Window: Hide",
         to: [
           {
@@ -94,7 +94,7 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      j: {
+      h: {
         description: "Window: First Third",
         to: [
           {
@@ -103,7 +103,7 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      semicolon: {
+      l: {
         description: "Window: Last Third",
         to: [
           {
@@ -112,7 +112,7 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      k: {
+      j: {
         description: "Window: Left Half",
         to: [
           {
@@ -121,7 +121,7 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      l: {
+      k: {
         description: "Window: Right Half",
         to: [
           {
