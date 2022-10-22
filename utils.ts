@@ -21,38 +21,6 @@ export function createHyperSubLayer(
 ): Manipulator[] {
   const subLayerVariableName = generateSubLayerVariableName(sublayer_key);
 
-  const setVariableAction = {
-    set_variable: {
-      name: subLayerVariableName,
-      value: 1,
-    },
-  }
-
-  // If the object has a 'to' field, it is a leaf sublayer
-  // rather than a hyper sublayer
-  const to = commands.to ? [...commands.to, setVariableAction] : [setVariableAction]
-  const subLayerCommands = commands.to ? [] : (Object.keys(commands) as (keyof typeof commands)[]).map(
-    (command_key): Manipulator => ({
-      ...commands[command_key],
-      type: "basic" as const,
-      from: {
-        key_code: command_key,
-        modifiers: {
-          // Mandatory modifiers are *not* added to the "to" event
-          mandatory: ["any"],
-        },
-      },
-      // Only trigger this command if the variable is 1 (i.e., if Hyper + sublayer is held)
-      conditions: [
-        {
-          type: "variable_if",
-          name: subLayerVariableName,
-          value: 1,
-        },
-      ],
-    })
-  )
-
   return [
     // When Hyper + sublayer_key is pressed, set the variable to 1; on key_up, set it to 0 again
     {
@@ -79,7 +47,14 @@ export function createHyperSubLayer(
           },
         },
       ],
-      to,
+      to: [
+        {
+          set_variable: {
+            name: subLayerVariableName,
+            value: 1,
+          },
+        },
+      ],
       // This enables us to press other sublayer keys in the current sublayer
       // (e.g. Hyper + O > M even though Hyper + M is also a sublayer)
       // basically, only trigger a sublayer if no other sublayer is active
@@ -92,7 +67,27 @@ export function createHyperSubLayer(
         })),
     },
     // Define the individual commands that are meant to trigger in the sublayer
-    ...subLayerCommands
+    ...(Object.keys(commands) as (keyof typeof commands)[]).map(
+      (command_key): Manipulator => ({
+        ...commands[command_key],
+        type: "basic" as const,
+        from: {
+          key_code: command_key,
+          modifiers: {
+            // Mandatory modifiers are *not* added to the "to" event
+            mandatory: ["any"],
+          },
+        },
+        // Only trigger this command if the variable is 1 (i.e., if Hyper + sublayer is held)
+        conditions: [
+          {
+            type: "variable_if",
+            name: subLayerVariableName,
+            value: 1,
+          },
+        ],
+      })
+    ),
   ];
 }
 
