@@ -8,6 +8,11 @@ export interface LayerCommand {
   description?: string;
 }
 
+type HyperKeySublayer = {
+  // The ? is necessary, otherwise we'd have to define something for _every_ key code
+  [key_code in KeyCode]?: LayerCommand;
+};
+
 /**
  * Create a Hyper Key sublayer, where every command is prefixed with a key
  * e.g. Hyper + O ("Open") is the "open applications" layer, I can press
@@ -15,8 +20,7 @@ export interface LayerCommand {
  */
 export function createHyperSubLayer(
   sublayer_key: KeyCode,
-  // The ? is necessary, otherwise we'd have to define something for _every_ key code
-  commands: { [key_code in KeyCode]?: LayerCommand },
+  commands: HyperKeySublayer,
   allSubLayerVariables: string[]
 ): Manipulator[] {
   const subLayerVariableName = generateSubLayerVariableName(sublayer_key);
@@ -97,20 +101,44 @@ export function createHyperSubLayer(
  * activates at a time
  */
 export function createHyperSubLayers(subLayers: {
-  [key_code in KeyCode]?: { [key_code in KeyCode]?: LayerCommand };
+  [key_code in KeyCode]?: HyperKeySublayer | LayerCommand;
 }): KarabinerRules[] {
   const allSubLayerVariables = (
     Object.keys(subLayers) as (keyof typeof subLayers)[]
   ).map((sublayer_key) => generateSubLayerVariableName(sublayer_key));
 
-  return Object.entries(subLayers).map(([key, value]) => ({
-    description: `Hyper Key sublayer "${key}"`,
-    manipulators: createHyperSubLayer(
-      key as KeyCode,
-      value,
-      allSubLayerVariables
-    ),
-  }));
+  return Object.entries(subLayers).map(([key, value]) =>
+    "to" in value
+      ? {
+          description: `Hyper Key + ${key}`,
+          manipulators: [
+            {
+              ...value,
+              type: "basic" as const,
+              from: {
+                key_code: key as KeyCode,
+                modifiers: {
+                  // Mandatory modifiers are *not* added to the "to" event
+                  mandatory: [
+                    "left_command",
+                    "left_control",
+                    "left_shift",
+                    "left_option",
+                  ],
+                },
+              },
+            },
+          ],
+        }
+      : {
+          description: `Hyper Key sublayer "${key}"`,
+          manipulators: createHyperSubLayer(
+            key as KeyCode,
+            value,
+            allSubLayerVariables
+          ),
+        }
+  );
 }
 
 function generateSubLayerVariableName(key: KeyCode) {
