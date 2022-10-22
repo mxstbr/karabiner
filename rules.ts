@@ -81,6 +81,7 @@ const rules: KarabinerRules[] = [
       r: app("Telegram"),
       // "i"Message
       i: app("Messages"),
+      p: app("Spotify"),
     },
 
     // w = "Window" via rectangle.app
@@ -287,6 +288,19 @@ const rules: KarabinerRules[] = [
       // Scroll mode via homerow.app
       s: {
         to: [{ key_code: "j", modifiers: ["right_control"] }],
+      },
+    },
+
+    // c = Musi*c* which isn't "m" because we want it to be on the left hand
+    c: {
+      p: {
+        to: [{ key_code: "play_or_pause" }],
+      },
+      n: {
+        to: [{ key_code: "fastforward" }],
+      },
+      b: {
+        to: [{ key_code: "rewind" }],
       },
     },
   }),
