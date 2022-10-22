@@ -603,6 +603,62 @@
                 ]
               },
               {
+                "description": "Window: Top Half",
+                "to": [
+                  {
+                    "key_code": "up_arrow",
+                    "modifiers": [
+                      "right_option",
+                      "right_command"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "k",
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_w",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "description": "Window: Bottom Half",
+                "to": [
+                  {
+                    "key_code": "down_arrow",
+                    "modifiers": [
+                      "right_option",
+                      "right_command"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "j",
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_w",
+                    "value": 1
+                  }
+                ]
+              },
+              {
                 "description": "Window: Last Third",
                 "to": [
                   {
@@ -643,7 +699,7 @@
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "j",
+                  "key_code": "y",
                   "modifiers": {
                     "mandatory": [
                       "any"
@@ -671,7 +727,7 @@
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "k",
+                  "key_code": "o",
                   "modifiers": {
                     "mandatory": [
                       "any"

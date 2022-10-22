@@ -104,6 +104,24 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
+      k: {
+        description: "Window: Top Half",
+        to: [
+          {
+            key_code: "up_arrow",
+            modifiers: ["right_option", "right_command"],
+          },
+        ],
+      },
+      j: {
+        description: "Window: Bottom Half",
+        to: [
+          {
+            key_code: "down_arrow",
+            modifiers: ["right_option", "right_command"],
+          },
+        ],
+      },
       l: {
         description: "Window: Last Third",
         to: [
@@ -113,7 +131,7 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      j: {
+      y: {
         description: "Window: Left Half",
         to: [
           {
@@ -122,7 +140,7 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      k: {
+      o: {
         description: "Window: Right Half",
         to: [
           {
