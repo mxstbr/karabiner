@@ -4,6 +4,10 @@ You probably don't want to use my exact configuration, as it's optimized for my 
 
 Best way to go about using this if you want to? Probably delete all the sublayers in `rules.ts` and add your own based on your own needs!
 
+Watch the video about this repo:
+
+[![YouTube video by Max Stoiber explaining how and why to use this repo](https://img.youtube.com/vi/j4b_uQX3Vu0/0.jpg)](https://www.youtube.com/watch?v=j4b_uQX3Vu0)
+
 ## Installation
 
 1. Install & start [Karabiner Elements](https://karabiner-elements.pqrs.org/)
