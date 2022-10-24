@@ -11,12 +11,17 @@ export interface Manipulator {
   to_after_key_up?: To[];
   to_if_alone?: To[];
   parameters?: Parameters;
-  // TODO: Type this
-  conditions?: any;
+  conditions?: Conditions[];
 }
 
 export interface Parameters {
   "basic.simultaneous_threshold_milliseconds"?: number;
+}
+
+export interface Conditions {
+  type: string;
+  name: string; 
+  value: number;
 }
 
 export interface SimultaneousFrom {
