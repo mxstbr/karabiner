@@ -73,7 +73,7 @@ const rules: KarabinerRules[] = [
       t: app("Terminal"),
       // Open todo list managed via *H*ypersonic
       h: open(
-        "notion://www.notion.so/graphcdn/7b33b924746647499d906c55f89d5026?v=7f9a78e5477d40088f54bdbaf212f304"
+        "notion://notion.so/stellatehq/Max-Stoiber-CEO-90ea5326add5408f967278461f37c39b#29b31b030a5a4192b05f3883f7d47fe3"
       ),
       z: app("zoom.us"),
       m: app("Muse"),
@@ -82,6 +82,7 @@ const rules: KarabinerRules[] = [
       // "i"Message
       i: app("Messages"),
       p: app("Spotify"),
+      a: app("iA Presenter"),
     },
 
     // w = "Window" via rectangle.app
@@ -201,6 +202,24 @@ const rules: KarabinerRules[] = [
           {
             key_code: "close_bracket",
             modifiers: ["right_command"],
+          },
+        ],
+      },
+      9: {
+        description: "Window: Next display",
+        to: [
+          {
+            key_code: "right_arrow",
+            modifiers: ["right_control", "right_option", "right_command"],
+          },
+        ],
+      },
+      6: {
+        description: "Window: Previous display",
+        to: [
+          {
+            key_code: "left_arrow",
+            modifiers: ["right_control", "right_option", "right_command"],
           },
         ],
       },
