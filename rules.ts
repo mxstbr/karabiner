@@ -83,6 +83,7 @@ const rules: KarabinerRules[] = [
       i: app("Messages"),
       p: app("Spotify"),
       a: app("iA Presenter"),
+      w: open("https://web.whatsapp.com")
     },
 
     // w = "Window" via rectangle.app
