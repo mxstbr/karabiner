@@ -48,28 +48,6 @@
                     "key_code": "tab"
                   }
                 ]
-              },
-              {
-                "type": "basic",
-                "description": "Slash -> Hyper Key",
-                "from": {
-                  "key_code": "slash"
-                },
-                "to": [
-                  {
-                    "key_code": "left_shift",
-                    "modifiers": [
-                      "left_command",
-                      "left_control",
-                      "left_option"
-                    ]
-                  }
-                ],
-                "to_if_alone": [
-                  {
-                    "key_code": "slash"
-                  }
-                ]
               }
             ]
           },
@@ -523,6 +501,30 @@
                 "type": "basic",
                 "from": {
                   "key_code": "w",
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_o",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open Linear"
+                  }
+                ],
+                "description": "Open Linear",
+                "type": "basic",
+                "from": {
+                  "key_code": "l",
                   "modifiers": {
                     "mandatory": [
                       "any"

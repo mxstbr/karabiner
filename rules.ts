@@ -40,24 +40,6 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      {
-        type: "basic",
-        description: "Slash -> Hyper Key",
-        from: {
-          key_code: "slash",
-        },
-        to: [
-          {
-            key_code: "left_shift",
-            modifiers: ["left_command", "left_control", "left_option"],
-          },
-        ],
-        to_if_alone: [
-          {
-            key_code: "slash",
-          },
-        ],
-      },
     ],
   },
   ...createHyperSubLayers({
@@ -83,7 +65,8 @@ const rules: KarabinerRules[] = [
       i: app("Messages"),
       p: app("Spotify"),
       a: app("iA Presenter"),
-      w: open("https://web.whatsapp.com")
+      w: open("https://web.whatsapp.com"),
+      l: open("Linear"),
     },
 
     // w = "Window" via rectangle.app
