@@ -1509,6 +1509,52 @@
                     "value": 1
                   }
                 ]
+              },
+              {
+                "to": [
+                  {
+                    "key_code": "page_down"
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "u",
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_v",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "key_code": "page_up"
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "i",
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_v",
+                    "value": 1
+                  }
+                ]
               }
             ]
           },
