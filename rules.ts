@@ -58,7 +58,7 @@ const rules: KarabinerRules[] = [
         "notion://notion.so/stellatehq/Max-Stoiber-CEO-90ea5326add5408f967278461f37c39b#29b31b030a5a4192b05f3883f7d47fe3"
       ),
       z: app("zoom.us"),
-      m: app("Muse"),
+      m: app("Mochi"),
       f: app("Figma"),
       r: app("Telegram"),
       // "i"Message

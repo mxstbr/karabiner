@@ -350,10 +350,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Muse.app'"
+                    "shell_command": "open -a 'Mochi.app'"
                   }
                 ],
-                "description": "Open -a 'Muse.app'",
+                "description": "Open -a 'Mochi.app'",
                 "type": "basic",
                 "from": {
                   "key_code": "m",
