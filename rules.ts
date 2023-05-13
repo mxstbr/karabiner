@@ -1,349 +1,121 @@
-import fs from "fs";
-import { KarabinerRules } from "./types";
-import { createHyperSubLayers, app, open } from "./utils";
+import {
+  layer,
+  map,
+  rule,
+  to$,
+  toApp,
+  withMapper,
+  withModifier,
+  writeToProfile,
+} from "karabiner.ts";
 
-const rules: KarabinerRules[] = [
-  // Define the Hyper key itself
-  {
-    description: "Hyper Key (⌃⌥⇧⌘)",
-    manipulators: [
-      {
-        description: "Caps Lock -> Hyper Key",
-        from: {
-          key_code: "caps_lock",
-        },
-        to: [
-          {
-            key_code: "left_shift",
-            modifiers: ["left_command", "left_control", "left_option"],
-          },
-        ],
-        to_if_alone: [
-          {
-            key_code: "escape",
-          },
-        ],
-        type: "basic",
-      },
-//      {
-//        type: "basic",
-//        description: "Disable CMD + Tab to force Hyper Key usage",
-//        from: {
-//          key_code: "tab",
-//          modifiers: {
-//            mandatory: ["left_command"],
-//          },
-//        },
-//        to: [
-//          {
-//            key_code: "tab",
-//          },
-//        ],
-//      },
-    ],
-  },
-  ...createHyperSubLayers({
-    // o = "Open" applications
-    o: {
-      g: app("Google Chrome"),
-      c: app("Cron"),
-      v: app("Visual Studio Code"),
-      d: app("Discord"),
-      s: app("Slack"),
-      e: app("Superhuman"),
-      n: app("Notion"),
-      t: app("Terminal"),
-      // Open todo list managed via *H*ypersonic
-      h: open(
-        "notion://notion.so/stellatehq/Max-Stoiber-CEO-90ea5326add5408f967278461f37c39b#29b31b030a5a4192b05f3883f7d47fe3"
-      ),
-      z: app("zoom.us"),
-      m: app("Mochi"),
-      f: app("Figma"),
-      r: app("Telegram"),
-      // "i"Message
-      i: app("Messages"),
-      p: app("Spotify"),
-      a: app("iA Presenter"),
-      w: open("https://web.whatsapp.com"),
-      l: open("Linear"),
-    },
+writeToProfile("--dry-run", [
+  rule("Hyper Key (⌃⌥⇧⌘)").manipulators([
+    map("⇪").toHyper().toIfAlone("⎋"), //
+  ]),
 
-    // w = "Window" via rectangle.app
-    w: {
-      semicolon: {
-        description: "Window: Hide",
-        to: [
-          {
-            key_code: "h",
-            modifiers: ["right_command"],
-          },
-        ],
-      },
-      y: {
-        description: "Window: First Third",
-        to: [
-          {
-            key_code: "left_arrow",
-            modifiers: ["right_option", "right_control"],
-          },
-        ],
-      },
-      k: {
-        description: "Window: Top Half",
-        to: [
-          {
-            key_code: "up_arrow",
-            modifiers: ["right_option", "right_command"],
-          },
-        ],
-      },
-      j: {
-        description: "Window: Bottom Half",
-        to: [
-          {
-            key_code: "down_arrow",
-            modifiers: ["right_option", "right_command"],
-          },
-        ],
-      },
-      o: {
-        description: "Window: Last Third",
-        to: [
-          {
-            key_code: "right_arrow",
-            modifiers: ["right_option", "right_control"],
-          },
-        ],
-      },
-      h: {
-        description: "Window: Left Half",
-        to: [
-          {
-            key_code: "left_arrow",
-            modifiers: ["right_option", "right_command"],
-          },
-        ],
-      },
-      l: {
-        description: "Window: Right Half",
-        to: [
-          {
-            key_code: "right_arrow",
-            modifiers: ["right_option", "right_command"],
-          },
-        ],
-      },
-      f: {
-        description: "Window: Full Screen",
-        to: [
-          {
-            key_code: "f",
-            modifiers: ["right_option", "right_command"],
-          },
-        ],
-      },
-      u: {
-        description: "Window: Previous Tab",
-        to: [
-          {
-            key_code: "tab",
-            modifiers: ["right_control", "right_shift"],
-          },
-        ],
-      },
-      i: {
-        description: "Window: Next Tab",
-        to: [
-          {
-            key_code: "tab",
-            modifiers: ["right_control"],
-          },
-        ],
-      },
-      n: {
-        description: "Window: Next Window",
-        to: [
-          {
-            key_code: "grave_accent_and_tilde",
-            modifiers: ["right_command"],
-          },
-        ],
-      },
-      b: {
-        description: "Window: Back",
-        to: [
-          {
-            key_code: "open_bracket",
-            modifiers: ["right_command"],
-          },
-        ],
-      },
-      // Note: No literal connection. Both f and n are already taken.
-      m: {
-        description: "Window: Forward",
-        to: [
-          {
-            key_code: "close_bracket",
-            modifiers: ["right_command"],
-          },
-        ],
-      },
-      d: {
-        description: "Window: Next display",
-        to: [
-          {
-            key_code: "right_arrow",
-            modifiers: ["right_control", "right_option", "right_command"],
-          },
-        ],
-      },
-    },
+  layer("o", "hyper-o")
+    .modifiers("Hyper")
+    .description('"Open" applications')
+    .manipulators([
+      withMapper({
+        g: toApp("Google Chrome"),
+        c: toApp("Cron"),
+        v: toApp("Visual Studio Code"),
+        d: toApp("Discord"),
+        s: toApp("Slack"),
+        e: toApp("Superhuman"),
+        n: toApp("Notion"),
+        t: toApp("Terminal"),
+        // Open todo list managed via *H*ypersonic
+        h: to$(
+          "open notion://notion.so/stellatehq/Max-Stoiber-CEO-90ea5326add5408f967278461f37c39b#29b31b030a5a4192b05f3883f7d47fe3"
+        ),
+        z: toApp("zoom.us"),
+        m: toApp("Mochi"),
+        f: toApp("Figma"),
+        r: toApp("Telegram"),
+        // "i"Message
+        i: toApp("Messages"),
+        p: toApp("Spotify"),
+        a: toApp("iA Presenter"),
+        w: to$("open https://web.whatsapp.com"),
+        l: to$("open Linear"),
+      })((k, v) => map(k, "any").to(v)),
+    ]),
 
-    // s = "System"
-    s: {
-      u: {
-        to: [
-          {
-            key_code: "volume_increment",
-          },
-        ],
-      },
-      j: {
-        to: [
-          {
-            key_code: "volume_decrement",
-          },
-        ],
-      },
-      i: {
-        to: [
-          {
-            key_code: "display_brightness_increment",
-          },
-        ],
-      },
-      k: {
-        to: [
-          {
-            key_code: "display_brightness_decrement",
-          },
-        ],
-      },
-      l: {
-        to: [
-          {
-            key_code: "q",
-            modifiers: ["right_control", "right_command"],
-          },
-        ],
-      },
-      p: {
-        to: [
-          {
-            key_code: "play_or_pause",
-          },
-        ],
-      },
-      semicolon: {
-        to: [
-          {
-            key_code: "fastforward",
-          },
-        ],
-      },
-      e: {
-        to: [
-          {
-            // Emoji picker
-            key_code: "spacebar",
-            modifiers: ["right_control", "right_command"],
-          },
-        ],
-      },
-      // Turn on Elgato KeyLight
-      y: {
-        to: [
-          {
-            shell_command: `curl -H 'Content-Type: application/json' --request PUT --data '{ "numberOfLights": 1, "lights": [ { "on": 1, "brightness": 100, "temperature": 215 } ] }' http://192.168.8.84:9123/elgato/lights`,
-          },
-        ],
-      },
-      h: {
-        to: [
-          {
-            shell_command: `curl -H 'Content-Type: application/json' --request PUT --data '{ "numberOfLights": 1, "lights": [ { "on": 0, "brightness": 100, "temperature": 215 } ] }' http://192.168.8.84:9123/elgato/lights`,
-          },
-        ],
-      },
-    },
+  layer("w", "hyper-w")
+    .modifiers("Hyper")
+    .description('"Window" via rectangle.app')
+    .manipulators([
+      withModifier("any")([
+        map(";").to("h", "›⌘").description("Window: Hide"),
+        map("y").to("←", "›⌥⌃").description("Window: First Third"),
+        map("k").to("↑", "›⌘⌥").description("Window: Top Half"),
+        map("j").to("↓", "›⌘⌥").description("Window: Bottom Half"),
+        map("o").to("→", "›⌥⌃").description("Window: Last Third"),
+        map("h").to("←", "‹⌘⌥").description("Window: Left Half"),
+        map("l").to("→", "›⌘⌥").description("Window: Right Half"),
+        map("f").to("f", "›⌘⌥").description("Window: Full Screen"),
+        map("u").to("⇥", "›⌃⇧").description("Window: Previous Tab"),
+        map("i").to("⇥", "›⌃").description("Window: Next Tab"),
+        map("n").to("`", "›⌘").description("Window: Next Window"),
+        map("b").to("[", "›⌘").description("Window: Back"),
+        map("m").to("]", "›⌘").description("Window: Forward"), // Note: No literal connection. Both f and n are already taken.
+        map("d").to("→", "›⌘⌥⌃").description("Window: Next display"),
+      ]),
+    ]),
 
-    // v = "moVe" which isn't "m" because we want it to be on the left hand
-    // so that hjkl work like they do in vim
-    v: {
-      h: {
-        to: [{ key_code: "left_arrow" }],
-      },
-      j: {
-        to: [{ key_code: "down_arrow" }],
-      },
-      k: {
-        to: [{ key_code: "up_arrow" }],
-      },
-      l: {
-        to: [{ key_code: "right_arrow" }],
-      },
-      // Magicmove via homerow.app
-      m: {
-        to: [{ key_code: "f", modifiers: ["right_control"] }],
-      },
-      // Scroll mode via homerow.app
-      s: {
-        to: [{ key_code: "j", modifiers: ["right_control"] }],
-      },
-      d: {
-        to: [{ key_code: "d", modifiers: ["right_shift", "right_command"] }],
-      },
-      u: {
-        to: [{ key_code: "page_down" }],
-      },
-      i: {
-        to: [{ key_code: "page_up" }],
-      },
-    },
+  layer("s", "hyper-s")
+    .modifiers("Hyper")
+    .description('"System"')
+    .manipulators([
+      withModifier("any")([
+        map("u").to("volume_increment"),
+        map("j").to("volume_decrement"),
+        map("i").to("display_brightness_increment"),
+        map("k").to("display_brightness_decrement"),
+        map("l").to("q", "›⌘⌃"),
+        map("p").to("play_or_pause"),
+        map(";").to("fastforward"),
+        map("e").to("␣", "›⌘⌃"), // Emoji picker
+        map("y").to$(
+          `curl -H 'Content-Type: application/json' --request PUT --data '{ "numberOfLights": 1, "lights": [ { "on": 1, "brightness": 100, "temperature": 215 } ] }' http://192.168.8.84:9123/elgato/lights`
+        ), // Turn on Elgato KeyLight
+        map("h").to$(
+          `curl -H 'Content-Type: application/json' --request PUT --data '{ "numberOfLights": 1, "lights": [ { "on": 0, "brightness": 100, "temperature": 215 } ] }' http://192.168.8.84:9123/elgato/lights`
+        ),
+      ]),
+    ]),
 
-    // c = Musi*c* which isn't "m" because we want it to be on the left hand
-    c: {
-      p: {
-        to: [{ key_code: "play_or_pause" }],
-      },
-      n: {
-        to: [{ key_code: "fastforward" }],
-      },
-      b: {
-        to: [{ key_code: "rewind" }],
-      },
-    },
-  }),
-];
+  // v = "moVe" which isn't "m" because we want it to be on the left hand
+  // so that hjkl work like they do in vim
+  layer("v", "hyper-v")
+    .modifiers("Hyper")
+    .description("moVe")
+    .manipulators([
+      withModifier("any")([
+        map("h").to("←"),
+        map("j").to("↓"),
+        map("k").to("↑"),
+        map("l").to("→"),
+        map("m").to("f", "›⌃"), // Magicmove via homerow.app
+        map("s").to("j", "›⌃"), // Scroll mode via homerow.app
+        map("d").to("d"),
+        map("u").to("page_down"),
+        map("i").to("page_up"),
+      ]),
+    ]),
 
-fs.writeFileSync(
-  "karabiner.json",
-  JSON.stringify(
-    {
-      global: {
-        show_in_menu_bar: false,
-      },
-      profiles: [
-        {
-          name: "Default",
-          complex_modifications: {
-            rules,
-          },
-        },
-      ],
-    },
-    null,
-    2
-  )
-);
+  // c = Musi*c* which isn't "m" because we want it to be on the left hand
+  layer("c", "hyper-v")
+    .modifiers("Hyper")
+    .description("Musi*c*")
+    .manipulators([
+      withModifier("any")([
+        map("p").to("play_or_pause"),
+        map("n").to("fastforward"),
+        map("b").to("rewind"),
+      ]),
+    ]),
+]);
