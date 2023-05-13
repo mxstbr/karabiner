@@ -6,9 +6,11 @@
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^18.7.19",
+    "karabiner.ts": "latest",
     "nodemon": "^2.0.20",
     "prettier": "^2.7.1",
-    "tsm": "^2.2.2"
+    "tsm": "^2.2.2",
+    "typescript": "^5.0.4"
   },
   "scripts": {
     "build": "tsm rules.ts",

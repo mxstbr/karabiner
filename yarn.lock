@@ -257,6 +257,11 @@ is-number@^7.0.0:
   resolved "https://registry.yarnpkg.com/is-number/-/is-number-7.0.0.tgz#7535345b896734d5f80c4d06c50955527a14f12b"
   integrity sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==
 
+karabiner.ts@latest:
+  version "1.15.0"
+  resolved "https://registry.yarnpkg.com/karabiner.ts/-/karabiner.ts-1.15.0.tgz#67bb7b03c7d0b6e6163cd0dd056e7cdf871bb958"
+  integrity sha512-qGERVfACwsW8NA/r46UIZ2LZkD62CIYQykVFT8AbuMuLqz0lByvBB43h/8wmjQuF2w3CEENKJnAQ0SRAGpD5xA==
+
 minimatch@^3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.1.2.tgz#19cd194bfd3e428f049a70817c038d89ab4be35b"
@@ -363,6 +368,11 @@ tsm@^2.2.2:
   integrity sha512-bXkt675NbbqfwRHSSn8kSNEEHvoIUFDM9G6tUENkjEKpAEbrEzieO3PxUiRJylMw8fEGpcf5lSjadzzz12pc2A==
   dependencies:
     esbuild "^0.14.0"
+
+typescript@^5.0.4:
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.0.4.tgz#b217fd20119bd61a94d4011274e0ab369058da3b"
+  integrity sha512-cW9T5W9xY37cc+jfEnaUvX91foxtHkza3Nw3wkoF4sSlKn0MONdkdEndig/qPBWXNkmplh3NzayQzCiHM4/hqw==
 
 undefsafe@^2.0.5:
   version "2.0.5"
