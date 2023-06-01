@@ -25,21 +25,21 @@ const rules: KarabinerRules[] = [
         ],
         type: "basic",
       },
-//      {
-//        type: "basic",
-//        description: "Disable CMD + Tab to force Hyper Key usage",
-//        from: {
-//          key_code: "tab",
-//          modifiers: {
-//            mandatory: ["left_command"],
-//          },
-//        },
-//        to: [
-//          {
-//            key_code: "tab",
-//          },
-//        ],
-//      },
+      //      {
+      //        type: "basic",
+      //        description: "Disable CMD + Tab to force Hyper Key usage",
+      //        from: {
+      //          key_code: "tab",
+      //          modifiers: {
+      //            mandatory: ["left_command"],
+      //          },
+      //        },
+      //        to: [
+      //          {
+      //            key_code: "tab",
+      //          },
+      //        ],
+      //      },
     ],
   },
   ...createHyperSubLayers({
@@ -323,6 +323,26 @@ const rules: KarabinerRules[] = [
       b: {
         to: [{ key_code: "rewind" }],
       },
+    },
+
+    // r = "Raycast"
+    r: {
+      l: open(
+        "raycast://extensions/stellate/mxstbr-commands/create-mxs-is-shortlink"
+      ),
+      e: open("raycast://extensions/raycast/emoji/search-emoji"),
+      c: open("raycast://extensions/raycast/raycast/confetti"),
+      a: open("raycast://extensions/raycast/raycast-ai/ai-chat"),
+      s: open("raycast://extensions/peduarte/silent-mention/index"),
+      h: open(
+        "raycast://extensions/raycast/clipboard-history/clipboard-history"
+      ),
+      1: open(
+        "raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-1"
+      ),
+      2: open(
+        "raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-2"
+      ),
     },
   }),
 ];
