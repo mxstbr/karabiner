@@ -506,10 +506,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open Linear"
+                    "shell_command": "open raycast://extensions/stellate/mxstbr-commands/open-mxs-is-shortlink"
                   }
                 ],
-                "description": "Open Linear",
+                "description": "Open raycast://extensions/stellate/mxstbr-commands/open-mxs-is-shortlink",
                 "type": "basic",
                 "from": {
                   "key_code": "l",

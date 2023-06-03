@@ -66,7 +66,9 @@ const rules: KarabinerRules[] = [
       p: app("Spotify"),
       a: app("iA Presenter"),
       w: open("https://web.whatsapp.com"),
-      l: open("Linear"),
+      l: open(
+        "raycast://extensions/stellate/mxstbr-commands/open-mxs-is-shortlink"
+      ),
     },
 
     // w = "Window" via rectangle.app
