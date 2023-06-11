@@ -165,3 +165,35 @@ export function open(what: string): LayerCommand {
 export function app(name: string): LayerCommand {
   return open(`-a '${name}.app'`);
 }
+
+/**
+ * Shortcut for "Open multiple apps" command (of which there are a bunch)
+ */
+export function apps(appsNames: string[]): LayerCommand {
+  const finalCommand: string[] = [];
+
+  appsNames.forEach(function (value) {
+    finalCommand.push(`-a '${value}.app'`);
+  });
+  return openMultiple(finalCommand);
+}
+
+/**
+ * Shortcut for "open" multiple apps shell command
+ */
+export function openMultiple(what: string[]): LayerCommand {
+  var finalCommand = "";
+  what.forEach(function (value) {
+    finalCommand += `open ${value} ;`
+  }); 
+  return {
+    to: [
+      {
+        shell_command: finalCommand,
+      },
+    ],
+    description: `Open ${finalCommand}`,
+  };
+}
+
+
