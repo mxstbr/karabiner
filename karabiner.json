@@ -290,10 +290,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open notion://notion.so/stellatehq/Max-Stoiber-CEO-90ea5326add5408f967278461f37c39b#29b31b030a5a4192b05f3883f7d47fe3"
+                    "shell_command": "open https://www.notion.so/stellatehq/7b33b924746647499d906c55f89d5026"
                   }
                 ],
-                "description": "Open notion://notion.so/stellatehq/Max-Stoiber-CEO-90ea5326add5408f967278461f37c39b#29b31b030a5a4192b05f3883f7d47fe3",
+                "description": "Open https://www.notion.so/stellatehq/7b33b924746647499d906c55f89d5026",
                 "type": "basic",
                 "from": {
                   "key_code": "h",

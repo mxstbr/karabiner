@@ -55,7 +55,7 @@ const rules: KarabinerRules[] = [
       t: app("Terminal"),
       // Open todo list managed via *H*ypersonic
       h: open(
-        "notion://notion.so/stellatehq/Max-Stoiber-CEO-90ea5326add5408f967278461f37c39b#29b31b030a5a4192b05f3883f7d47fe3"
+        "https://www.notion.so/stellatehq/7b33b924746647499d906c55f89d5026"
       ),
       z: app("zoom.us"),
       m: app("Mochi"),
