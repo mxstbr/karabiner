@@ -46,7 +46,7 @@ const rules: KarabinerRules[] = [
     // o = "Open" applications
     o: {
       g: app("Google Chrome"),
-      c: app("Cron"),
+      c: app("Notion Calendar"),
       v: app("Visual Studio Code"),
       d: app("Discord"),
       s: app("Slack"),
@@ -332,7 +332,9 @@ const rules: KarabinerRules[] = [
       l: open(
         "raycast://extensions/stellate/mxstbr-commands/create-mxs-is-shortlink"
       ),
-      e: open("raycast://extensions/raycast/emoji/search-emoji"),
+      e: open(
+        "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
+      ),
       c: open("raycast://extensions/raycast/raycast/confetti"),
       a: open("raycast://extensions/raycast/raycast-ai/ai-chat"),
       s: open("raycast://extensions/peduarte/silent-mention/index"),

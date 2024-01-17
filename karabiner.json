@@ -122,10 +122,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Cron.app'"
+                    "shell_command": "open -a 'Notion Calendar.app'"
                   }
                 ],
-                "description": "Open -a 'Cron.app'",
+                "description": "Open -a 'Notion Calendar.app'",
                 "type": "basic",
                 "from": {
                   "key_code": "c",
@@ -1829,10 +1829,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/raycast/emoji/search-emoji"
+                    "shell_command": "open raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
                   }
                 ],
-                "description": "Open raycast://extensions/raycast/emoji/search-emoji",
+                "description": "Open raycast://extensions/raycast/emoji-symbols/search-emoji-symbols",
                 "type": "basic",
                 "from": {
                   "key_code": "e",
