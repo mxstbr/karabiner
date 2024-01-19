@@ -59,7 +59,7 @@ const rules: KarabinerRules[] = [
       ),
       z: app("zoom.us"),
       m: app("Mochi"),
-      f: app("Figma"),
+      f: app("Finder"),
       r: app("Telegram"),
       // "i"Message
       i: app("Messages"),
