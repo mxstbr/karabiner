@@ -290,10 +290,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Terminal.app'"
+                    "shell_command": "open -a 'Warp.app'"
                   }
                 ],
-                "description": "Open -a 'Terminal.app'",
+                "description": "Open -a 'Warp.app'",
                 "type": "basic",
                 "from": {
                   "key_code": "t",
