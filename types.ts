@@ -104,12 +104,22 @@ export interface To {
     value: boolean | number | string;
   };
   mouse_key?: MouseKey;
+  /**
+   * Power Management plugin 
+   * @example: sleep system
+   * @see: {@link https://karabiner-elements.pqrs.org/docs/json/complex-modifications-manipulator-definition/to/software_function/iokit_power_management_sleep_system/}
+   */
+  software_function?: SoftwareFunction;
 }
 
 export interface MouseKey {
   y?: number;
   x?: number;
   speed_multiplier?: number;
+}
+
+export interface SoftwareFunction {
+  iokit_power_management_sleep_system?: {};
 }
 
 export type KeyCode =
