@@ -1,6 +1,6 @@
 import fs from "fs";
 import { KarabinerRules } from "./types";
-import { createHyperSubLayers, app, open } from "./utils";
+import { createHyperSubLayers, app, open, apps } from "./utils";
 
 const rules: KarabinerRules[] = [
   // Define the Hyper key itself
@@ -70,6 +70,7 @@ const rules: KarabinerRules[] = [
       l: open(
         "raycast://extensions/stellate/mxstbr-commands/open-mxs-is-shortlink"
       ),
+      q: apps(["Notion", "Figma", "Spotify"]),
     },
 
     // w = "Window" via rectangle.app

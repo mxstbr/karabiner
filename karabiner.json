@@ -550,6 +550,30 @@
                     "value": 1
                   }
                 ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open -a 'Notion.app' ;open -a 'Figma.app' ;open -a 'Spotify.app' ;"
+                  }
+                ],
+                "description": "Open open -a 'Notion.app' ;open -a 'Figma.app' ;open -a 'Spotify.app' ;",
+                "type": "basic",
+                "from": {
+                  "key_code": "q",
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_o",
+                    "value": 1
+                  }
+                ]
               }
             ]
           },
