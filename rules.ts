@@ -43,6 +43,10 @@ const rules: KarabinerRules[] = [
     ],
   },
   ...createHyperSubLayers({
+    // b = "B"rowse
+    b: {
+      t: open("https://twitter.com"),
+    },
     // o = "Open" applications
     o: {
       1: app("1Password"),
@@ -59,17 +63,19 @@ const rules: KarabinerRules[] = [
         "notion://www.notion.so/stellatehq/7b33b924746647499d906c55f89d5026"
       ),
       z: app("zoom.us"),
-      m: app("Mochi"),
+      // "M"essages
+      m: app("Texts"),
       f: app("Finder"),
-      r: app("Telegram"),
+      r: app("Texts"),
       // "i"Message
-      i: app("Messages"),
+      i: app("Texts"),
       p: app("Spotify"),
       a: app("iA Presenter"),
       w: open("https://web.whatsapp.com"),
       l: open(
         "raycast://extensions/stellate/mxstbr-commands/open-mxs-is-shortlink"
       ),
+      q: open("https://qrtr.ly/plan"),
     },
 
     // w = "Window" via rectangle.app
