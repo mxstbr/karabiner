@@ -336,6 +336,7 @@ const rules: KarabinerRules[] = [
 
     // r = "Raycast"
     r: {
+      n: open("raycast://script-commands/dismiss-notifications"),
       l: open(
         "raycast://extensions/stellate/mxstbr-commands/create-mxs-is-shortlink"
       ),
