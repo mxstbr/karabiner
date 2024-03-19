@@ -145,14 +145,18 @@ function generateSubLayerVariableName(key: KeyCode) {
   return `hyper_sublayer_${key}`;
 }
 
+type OpenOptions = {
+  background?: boolean;
+};
+
 /**
  * Shortcut for "open" shell command
  */
-export function open(what: string): LayerCommand {
+export function open(what: string, options?: OpenOptions): LayerCommand {
   return {
     to: [
       {
-        shell_command: `open ${what}`,
+        shell_command: `open ${options?.background ? "-g" : ""} ${what}`,
       },
     ],
     description: `Open ${what}`,

@@ -103,7 +103,7 @@
               {
                 "to": [
                   {
-                    "shell_command": "open https://twitter.com"
+                    "shell_command": "open  https://twitter.com"
                   }
                 ],
                 "description": "Open https://twitter.com",
@@ -195,7 +195,7 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a '1Password.app'"
+                    "shell_command": "open  -a '1Password.app'"
                   }
                 ],
                 "description": "Open -a '1Password.app'",
@@ -219,7 +219,7 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Google Chrome.app'"
+                    "shell_command": "open  -a 'Google Chrome.app'"
                   }
                 ],
                 "description": "Open -a 'Google Chrome.app'",
@@ -243,7 +243,7 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Notion Calendar.app'"
+                    "shell_command": "open  -a 'Notion Calendar.app'"
                   }
                 ],
                 "description": "Open -a 'Notion Calendar.app'",
@@ -267,7 +267,7 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Visual Studio Code.app'"
+                    "shell_command": "open  -a 'Visual Studio Code.app'"
                   }
                 ],
                 "description": "Open -a 'Visual Studio Code.app'",
@@ -291,7 +291,7 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Discord.app'"
+                    "shell_command": "open  -a 'Discord.app'"
                   }
                 ],
                 "description": "Open -a 'Discord.app'",
@@ -315,7 +315,7 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Slack.app'"
+                    "shell_command": "open  -a 'Slack.app'"
                   }
                 ],
                 "description": "Open -a 'Slack.app'",
@@ -339,7 +339,7 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Superhuman.app'"
+                    "shell_command": "open  -a 'Superhuman.app'"
                   }
                 ],
                 "description": "Open -a 'Superhuman.app'",
@@ -363,7 +363,7 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Notion.app'"
+                    "shell_command": "open  -a 'Notion.app'"
                   }
                 ],
                 "description": "Open -a 'Notion.app'",
@@ -387,7 +387,7 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Warp.app'"
+                    "shell_command": "open  -a 'Warp.app'"
                   }
                 ],
                 "description": "Open -a 'Warp.app'",
@@ -411,7 +411,7 @@
               {
                 "to": [
                   {
-                    "shell_command": "open notion://www.notion.so/stellatehq/7b33b924746647499d906c55f89d5026"
+                    "shell_command": "open  notion://www.notion.so/stellatehq/7b33b924746647499d906c55f89d5026"
                   }
                 ],
                 "description": "Open notion://www.notion.so/stellatehq/7b33b924746647499d906c55f89d5026",
@@ -435,7 +435,7 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'zoom.us.app'"
+                    "shell_command": "open  -a 'zoom.us.app'"
                   }
                 ],
                 "description": "Open -a 'zoom.us.app'",
@@ -459,7 +459,7 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Texts.app'"
+                    "shell_command": "open  -a 'Texts.app'"
                   }
                 ],
                 "description": "Open -a 'Texts.app'",
@@ -483,7 +483,7 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Finder.app'"
+                    "shell_command": "open  -a 'Finder.app'"
                   }
                 ],
                 "description": "Open -a 'Finder.app'",
@@ -507,7 +507,7 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Texts.app'"
+                    "shell_command": "open  -a 'Texts.app'"
                   }
                 ],
                 "description": "Open -a 'Texts.app'",
@@ -531,7 +531,7 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Texts.app'"
+                    "shell_command": "open  -a 'Texts.app'"
                   }
                 ],
                 "description": "Open -a 'Texts.app'",
@@ -555,7 +555,7 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Spotify.app'"
+                    "shell_command": "open  -a 'Spotify.app'"
                   }
                 ],
                 "description": "Open -a 'Spotify.app'",
@@ -579,7 +579,7 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'iA Presenter.app'"
+                    "shell_command": "open  -a 'iA Presenter.app'"
                   }
                 ],
                 "description": "Open -a 'iA Presenter.app'",
@@ -603,7 +603,7 @@
               {
                 "to": [
                   {
-                    "shell_command": "open https://web.whatsapp.com"
+                    "shell_command": "open  https://web.whatsapp.com"
                   }
                 ],
                 "description": "Open https://web.whatsapp.com",
@@ -627,7 +627,7 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/stellate/mxstbr-commands/open-mxs-is-shortlink"
+                    "shell_command": "open  raycast://extensions/stellate/mxstbr-commands/open-mxs-is-shortlink"
                   }
                 ],
                 "description": "Open raycast://extensions/stellate/mxstbr-commands/open-mxs-is-shortlink",
@@ -651,7 +651,7 @@
               {
                 "to": [
                   {
-                    "shell_command": "open https://qrtr.ly/plan"
+                    "shell_command": "open  https://qrtr.ly/plan"
                   }
                 ],
                 "description": "Open https://qrtr.ly/plan",
@@ -768,16 +768,12 @@
                 ]
               },
               {
-                "description": "Window: First Third",
                 "to": [
                   {
-                    "key_code": "left_arrow",
-                    "modifiers": [
-                      "right_option",
-                      "right_control"
-                    ]
+                    "shell_command": "open -g rectangle://execute-action?name=first-third"
                   }
                 ],
+                "description": "Open rectangle://execute-action?name=first-third",
                 "type": "basic",
                 "from": {
                   "key_code": "y",
@@ -796,16 +792,12 @@
                 ]
               },
               {
-                "description": "Window: Top Half",
                 "to": [
                   {
-                    "key_code": "up_arrow",
-                    "modifiers": [
-                      "right_option",
-                      "right_command"
-                    ]
+                    "shell_command": "open -g rectangle://execute-action?name=top-half"
                   }
                 ],
+                "description": "Open rectangle://execute-action?name=top-half",
                 "type": "basic",
                 "from": {
                   "key_code": "k",
@@ -824,16 +816,12 @@
                 ]
               },
               {
-                "description": "Window: Bottom Half",
                 "to": [
                   {
-                    "key_code": "down_arrow",
-                    "modifiers": [
-                      "right_option",
-                      "right_command"
-                    ]
+                    "shell_command": "open -g rectangle://execute-action?name=bottom-half"
                   }
                 ],
+                "description": "Open rectangle://execute-action?name=bottom-half",
                 "type": "basic",
                 "from": {
                   "key_code": "j",
@@ -852,16 +840,12 @@
                 ]
               },
               {
-                "description": "Window: Last Third",
                 "to": [
                   {
-                    "key_code": "right_arrow",
-                    "modifiers": [
-                      "right_option",
-                      "right_control"
-                    ]
+                    "shell_command": "open -g rectangle://execute-action?name=last-third"
                   }
                 ],
+                "description": "Open rectangle://execute-action?name=last-third",
                 "type": "basic",
                 "from": {
                   "key_code": "o",
@@ -880,16 +864,12 @@
                 ]
               },
               {
-                "description": "Window: Left Half",
                 "to": [
                   {
-                    "key_code": "left_arrow",
-                    "modifiers": [
-                      "right_option",
-                      "right_command"
-                    ]
+                    "shell_command": "open -g rectangle://execute-action?name=left-half"
                   }
                 ],
+                "description": "Open rectangle://execute-action?name=left-half",
                 "type": "basic",
                 "from": {
                   "key_code": "h",
@@ -908,16 +888,12 @@
                 ]
               },
               {
-                "description": "Window: Right Half",
                 "to": [
                   {
-                    "key_code": "right_arrow",
-                    "modifiers": [
-                      "right_option",
-                      "right_command"
-                    ]
+                    "shell_command": "open -g rectangle://execute-action?name=right-half"
                   }
                 ],
+                "description": "Open rectangle://execute-action?name=right-half",
                 "type": "basic",
                 "from": {
                   "key_code": "l",
@@ -936,16 +912,12 @@
                 ]
               },
               {
-                "description": "Window: Full Screen",
                 "to": [
                   {
-                    "key_code": "f",
-                    "modifiers": [
-                      "right_option",
-                      "right_command"
-                    ]
+                    "shell_command": "open -g rectangle://execute-action?name=maximize"
                   }
                 ],
+                "description": "Open rectangle://execute-action?name=maximize",
                 "type": "basic",
                 "from": {
                   "key_code": "f",
@@ -1927,7 +1899,7 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-1"
+                    "shell_command": "open  raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-1"
                   }
                 ],
                 "description": "Open raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-1",
@@ -1951,7 +1923,7 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-2"
+                    "shell_command": "open  raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-2"
                   }
                 ],
                 "description": "Open raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-2",
@@ -1975,7 +1947,7 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://script-commands/dismiss-notifications"
+                    "shell_command": "open  raycast://script-commands/dismiss-notifications"
                   }
                 ],
                 "description": "Open raycast://script-commands/dismiss-notifications",
@@ -1999,7 +1971,7 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/stellate/mxstbr-commands/create-mxs-is-shortlink"
+                    "shell_command": "open  raycast://extensions/stellate/mxstbr-commands/create-mxs-is-shortlink"
                   }
                 ],
                 "description": "Open raycast://extensions/stellate/mxstbr-commands/create-mxs-is-shortlink",
@@ -2023,7 +1995,7 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
+                    "shell_command": "open  raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
                   }
                 ],
                 "description": "Open raycast://extensions/raycast/emoji-symbols/search-emoji-symbols",
@@ -2047,7 +2019,7 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/raycast/system/open-camera"
+                    "shell_command": "open  raycast://extensions/raycast/system/open-camera"
                   }
                 ],
                 "description": "Open raycast://extensions/raycast/system/open-camera",
@@ -2071,7 +2043,7 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/raycast/raycast/confetti"
+                    "shell_command": "open  raycast://extensions/raycast/raycast/confetti"
                   }
                 ],
                 "description": "Open raycast://extensions/raycast/raycast/confetti",
@@ -2095,7 +2067,7 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/raycast/raycast-ai/ai-chat"
+                    "shell_command": "open  raycast://extensions/raycast/raycast-ai/ai-chat"
                   }
                 ],
                 "description": "Open raycast://extensions/raycast/raycast-ai/ai-chat",
@@ -2119,7 +2091,7 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/peduarte/silent-mention/index"
+                    "shell_command": "open  raycast://extensions/peduarte/silent-mention/index"
                   }
                 ],
                 "description": "Open raycast://extensions/peduarte/silent-mention/index",
@@ -2143,7 +2115,7 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/raycast/clipboard-history/clipboard-history"
+                    "shell_command": "open  raycast://extensions/raycast/clipboard-history/clipboard-history"
                   }
                 ],
                 "description": "Open raycast://extensions/raycast/clipboard-history/clipboard-history",

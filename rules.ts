@@ -89,69 +89,25 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      y: {
-        description: "Window: First Third",
-        to: [
-          {
-            key_code: "left_arrow",
-            modifiers: ["right_option", "right_control"],
-          },
-        ],
-      },
-      k: {
-        description: "Window: Top Half",
-        to: [
-          {
-            key_code: "up_arrow",
-            modifiers: ["right_option", "right_command"],
-          },
-        ],
-      },
-      j: {
-        description: "Window: Bottom Half",
-        to: [
-          {
-            key_code: "down_arrow",
-            modifiers: ["right_option", "right_command"],
-          },
-        ],
-      },
-      o: {
-        description: "Window: Last Third",
-        to: [
-          {
-            key_code: "right_arrow",
-            modifiers: ["right_option", "right_control"],
-          },
-        ],
-      },
-      h: {
-        description: "Window: Left Half",
-        to: [
-          {
-            key_code: "left_arrow",
-            modifiers: ["right_option", "right_command"],
-          },
-        ],
-      },
-      l: {
-        description: "Window: Right Half",
-        to: [
-          {
-            key_code: "right_arrow",
-            modifiers: ["right_option", "right_command"],
-          },
-        ],
-      },
-      f: {
-        description: "Window: Full Screen",
-        to: [
-          {
-            key_code: "f",
-            modifiers: ["right_option", "right_command"],
-          },
-        ],
-      },
+      y: open("rectangle://execute-action?name=first-third", {
+        background: true,
+      }),
+      k: open("rectangle://execute-action?name=top-half", { background: true }),
+      j: open("rectangle://execute-action?name=bottom-half", {
+        background: true,
+      }),
+      o: open("rectangle://execute-action?name=last-third", {
+        background: true,
+      }),
+      h: open("rectangle://execute-action?name=left-half", {
+        background: true,
+      }),
+      l: open("rectangle://execute-action?name=right-half", {
+        background: true,
+      }),
+      f: open("rectangle://execute-action?name=maximize", {
+        background: true,
+      }),
       u: {
         description: "Window: Previous Tab",
         to: [
