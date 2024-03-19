@@ -773,7 +773,7 @@
                     "shell_command": "open -g rectangle://execute-action?name=first-third"
                   }
                 ],
-                "description": "Open rectangle://execute-action?name=first-third",
+                "description": "Window: first-third",
                 "type": "basic",
                 "from": {
                   "key_code": "y",
@@ -797,7 +797,7 @@
                     "shell_command": "open -g rectangle://execute-action?name=top-half"
                   }
                 ],
-                "description": "Open rectangle://execute-action?name=top-half",
+                "description": "Window: top-half",
                 "type": "basic",
                 "from": {
                   "key_code": "k",
@@ -821,7 +821,7 @@
                     "shell_command": "open -g rectangle://execute-action?name=bottom-half"
                   }
                 ],
-                "description": "Open rectangle://execute-action?name=bottom-half",
+                "description": "Window: bottom-half",
                 "type": "basic",
                 "from": {
                   "key_code": "j",
@@ -845,7 +845,7 @@
                     "shell_command": "open -g rectangle://execute-action?name=last-third"
                   }
                 ],
-                "description": "Open rectangle://execute-action?name=last-third",
+                "description": "Window: last-third",
                 "type": "basic",
                 "from": {
                   "key_code": "o",
@@ -869,7 +869,7 @@
                     "shell_command": "open -g rectangle://execute-action?name=left-half"
                   }
                 ],
-                "description": "Open rectangle://execute-action?name=left-half",
+                "description": "Window: left-half",
                 "type": "basic",
                 "from": {
                   "key_code": "h",
@@ -893,7 +893,7 @@
                     "shell_command": "open -g rectangle://execute-action?name=right-half"
                   }
                 ],
-                "description": "Open rectangle://execute-action?name=right-half",
+                "description": "Window: right-half",
                 "type": "basic",
                 "from": {
                   "key_code": "l",
@@ -917,7 +917,7 @@
                     "shell_command": "open -g rectangle://execute-action?name=maximize"
                   }
                 ],
-                "description": "Open rectangle://execute-action?name=maximize",
+                "description": "Window: maximize",
                 "type": "basic",
                 "from": {
                   "key_code": "f",

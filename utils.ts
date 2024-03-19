@@ -145,21 +145,31 @@ function generateSubLayerVariableName(key: KeyCode) {
   return `hyper_sublayer_${key}`;
 }
 
-type OpenOptions = {
-  background?: boolean;
-};
-
 /**
  * Shortcut for "open" shell command
  */
-export function open(what: string, options?: OpenOptions): LayerCommand {
+export function open(what: string): LayerCommand {
   return {
     to: [
       {
-        shell_command: `open ${options?.background ? "-g" : ""} ${what}`,
+        shell_command: `open ${what}`,
       },
     ],
     description: `Open ${what}`,
+  };
+}
+
+/**
+ * Shortcut for managing window sizing with Rectangle
+ */
+export function rectangle(name: string): LayerCommand {
+  return {
+    to: [
+      {
+        shell_command: `open -g rectangle://execute-action?name=${name}`,
+      },
+    ],
+    description: `Window: ${name}`,
   };
 }
 

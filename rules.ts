@@ -1,6 +1,6 @@
 import fs from "fs";
 import { KarabinerRules } from "./types";
-import { createHyperSubLayers, app, open } from "./utils";
+import { createHyperSubLayers, app, open, rectangle } from "./utils";
 
 const rules: KarabinerRules[] = [
   // Define the Hyper key itself
@@ -89,25 +89,13 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      y: open("rectangle://execute-action?name=first-third", {
-        background: true,
-      }),
-      k: open("rectangle://execute-action?name=top-half", { background: true }),
-      j: open("rectangle://execute-action?name=bottom-half", {
-        background: true,
-      }),
-      o: open("rectangle://execute-action?name=last-third", {
-        background: true,
-      }),
-      h: open("rectangle://execute-action?name=left-half", {
-        background: true,
-      }),
-      l: open("rectangle://execute-action?name=right-half", {
-        background: true,
-      }),
-      f: open("rectangle://execute-action?name=maximize", {
-        background: true,
-      }),
+      y: rectangle("first-third"),
+      k: rectangle("top-half"),
+      j: rectangle("bottom-half"),
+      o: rectangle("last-third"),
+      h: rectangle("left-half"),
+      l: rectangle("right-half"),
+      f: rectangle("maximize"),
       u: {
         description: "Window: Previous Tab",
         to: [
