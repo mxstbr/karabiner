@@ -133,7 +133,7 @@
                 "description": "Open https://qrtr.ly/plan",
                 "type": "basic",
                 "from": {
-                  "key_code": "q",
+                  "key_code": "p",
                   "modifiers": {
                     "mandatory": [
                       "any"
