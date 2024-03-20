@@ -147,6 +147,78 @@
                     "value": 1
                   }
                 ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open https://news.ycombinator.com"
+                  }
+                ],
+                "description": "Open https://news.ycombinator.com",
+                "type": "basic",
+                "from": {
+                  "key_code": "y",
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_b",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open https://facebook.com"
+                  }
+                ],
+                "description": "Open https://facebook.com",
+                "type": "basic",
+                "from": {
+                  "key_code": "f",
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_b",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open https://reddit.com"
+                  }
+                ],
+                "description": "Open https://reddit.com",
+                "type": "basic",
+                "from": {
+                  "key_code": "r",
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_b",
+                    "value": 1
+                  }
+                ]
               }
             ]
           },
@@ -627,10 +699,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open https://web.whatsapp.com"
+                    "shell_command": "open Texts"
                   }
                 ],
-                "description": "Open https://web.whatsapp.com",
+                "description": "Open Texts",
                 "type": "basic",
                 "from": {
                   "key_code": "w",

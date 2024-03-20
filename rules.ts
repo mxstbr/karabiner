@@ -47,6 +47,9 @@ const rules: KarabinerRules[] = [
     b: {
       t: open("https://twitter.com"),
       q: open("https://qrtr.ly/plan"),
+      y: open("https://news.ycombinator.com"),
+      f: open("https://facebook.com"),
+      r: open("https://reddit.com"),
     },
     // o = "Open" applications
     o: {
@@ -72,7 +75,8 @@ const rules: KarabinerRules[] = [
       i: app("Texts"),
       p: app("Spotify"),
       a: app("iA Presenter"),
-      w: open("https://web.whatsapp.com"),
+      // "W"hatsApp has been replaced by Texts
+      w: open("Texts"),
       l: open(
         "raycast://extensions/stellate/mxstbr-commands/open-mxs-is-shortlink"
       ),
