@@ -46,6 +46,7 @@ const rules: KarabinerRules[] = [
     // b = "B"rowse
     b: {
       t: open("https://twitter.com"),
+      q: open("https://qrtr.ly/plan"),
     },
     // o = "Open" applications
     o: {
@@ -75,7 +76,6 @@ const rules: KarabinerRules[] = [
       l: open(
         "raycast://extensions/stellate/mxstbr-commands/open-mxs-is-shortlink"
       ),
-      q: open("https://qrtr.ly/plan"),
     },
 
     // w = "Window" via rectangle.app
