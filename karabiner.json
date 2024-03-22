@@ -842,13 +842,37 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -g rectangle://execute-action?name=first-third"
+                    "shell_command": "open -g rectangle://execute-action?name=previous-display"
                   }
                 ],
-                "description": "Window: first-third",
+                "description": "Window: previous-display",
                 "type": "basic",
                 "from": {
                   "key_code": "y",
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_w",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open -g rectangle://execute-action?name=next-display"
+                  }
+                ],
+                "description": "Window: next-display",
+                "type": "basic",
+                "from": {
+                  "key_code": "o",
                   "modifiers": {
                     "mandatory": [
                       "any"
@@ -897,30 +921,6 @@
                 "type": "basic",
                 "from": {
                   "key_code": "j",
-                  "modifiers": {
-                    "mandatory": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_w",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "shell_command": "open -g rectangle://execute-action?name=last-third"
-                  }
-                ],
-                "description": "Window: last-third",
-                "type": "basic",
-                "from": {
-                  "key_code": "o",
                   "modifiers": {
                     "mandatory": [
                       "any"
@@ -1464,6 +1464,30 @@
                 "type": "basic",
                 "from": {
                   "key_code": "h",
+                  "modifiers": {
+                    "mandatory": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_s",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open raycast://extensions/yakitrak/do-not-disturb/toggle"
+                  }
+                ],
+                "description": "Open raycast://extensions/yakitrak/do-not-disturb/toggle",
+                "type": "basic",
+                "from": {
+                  "key_code": "d",
                   "modifiers": {
                     "mandatory": [
                       "any"

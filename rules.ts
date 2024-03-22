@@ -94,10 +94,10 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      y: rectangle("first-third"),
+      y: rectangle("previous-display"),
+      o: rectangle("next-display"),
       k: rectangle("top-half"),
       j: rectangle("bottom-half"),
-      o: rectangle("last-third"),
       h: rectangle("left-half"),
       l: rectangle("right-half"),
       f: rectangle("maximize"),
@@ -234,6 +234,8 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
+      // "D"o not disturb toggle
+      d: open(`raycast://extensions/yakitrak/do-not-disturb/toggle`),
     },
 
     // v = "moVe" which isn't "m" because we want it to be on the left hand
