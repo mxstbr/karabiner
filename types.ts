@@ -18,61 +18,71 @@ export interface Parameters {
   "basic.simultaneous_threshold_milliseconds"?: number;
 }
 
-type Conditions = FrontMostApplicationCondition | DeviceCondition | KeybaordTypeCondition | InputSourceCondition | VaribaleCondition | EventChangedCondition;
+type Conditions =
+  | FrontMostApplicationCondition
+  | DeviceCondition
+  | KeybaordTypeCondition
+  | InputSourceCondition
+  | VaribaleCondition
+  | EventChangedCondition;
 
 type FrontMostApplicationCondition = {
-  type: "frontmost_application_if" | "frontmost_application_unless",
-  bundle_identifiers?: string[],
-  file_paths?: string[],
-  description?: string,
-}
+  type: "frontmost_application_if" | "frontmost_application_unless";
+  bundle_identifiers?: string[];
+  file_paths?: string[];
+  description?: string;
+};
 
 type DeviceCondition = {
-  type: "device_if" | "device_unless" | "device_exists_if" | "device_exists_unless",
-  identifiers: Identifiers,
-  description?: string,
-}
+  type:
+    | "device_if"
+    | "device_unless"
+    | "device_exists_if"
+    | "device_exists_unless";
+  identifiers: Identifiers;
+  description?: string;
+};
 
 interface Identifiers {
   vendor_id?: number;
   product_id?: number;
   location_id?: number;
   is_keyboard?: boolean;
-  is_pointing_device?:boolean;
+  is_pointing_device?: boolean;
   is_touch_bar?: boolean;
   is_built_in_keyboard?: boolean;
 }
 
 type KeybaordTypeCondition = {
-  type: "keyboard_type_if" | "keyboard_type_unless",
-  keyboard_types: string[],
-  description?: string,
-}
+  type: "keyboard_type_if" | "keyboard_type_unless";
+  keyboard_types: string[];
+  description?: string;
+};
 
 type InputSourceCondition = {
-  type:"input_source_if" | "input_source_unless", 
-  input_sources: InputSource[],
-  description?: string, 
-}
+  type: "input_source_if" | "input_source_unless";
+  input_sources: InputSource[];
+  description?: string;
+};
 
 interface InputSource {
-  language?: string,
-  input_source_id?: string,
-  input_mode_id?: string,
+  language?: string;
+  input_source_id?: string;
+  input_mode_id?: string;
 }
 
 type VaribaleCondition = {
-  type: "variable_if" | "variable_unless",
-  name: string | number | boolean,
-  value: string,
-  description?: string,
-}
+  type: "variable_if" | "variable_unless";
+  name: string | number | boolean;
+  value: string | number;
+  description?: string;
+};
 
 type EventChangedCondition = {
-  type: "event_changed_if" | "event_changed_unless",
-  value: boolean, 
-  description?: string,
-}
+  type: "event_changed_if" | "event_changed_unless";
+  value: boolean;
+  description?: string;
+};
 
 export interface SimultaneousFrom {
   key_code: KeyCode;
@@ -105,7 +115,7 @@ export interface To {
   };
   mouse_key?: MouseKey;
   /**
-   * Power Management plugin 
+   * Power Management plugin
    * @example: sleep system
    * @see: {@link https://karabiner-elements.pqrs.org/docs/json/complex-modifications-manipulator-definition/to/software_function/iokit_power_management_sleep_system/}
    */
