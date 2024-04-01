@@ -32,6 +32,9 @@ export function createHyperSubLayer(
       type: "basic",
       from: {
         key_code: sublayer_key,
+        modifiers: {
+          optional: ["any"],
+        },
       },
       to_after_key_up: [
         {
@@ -78,6 +81,9 @@ export function createHyperSubLayer(
         type: "basic" as const,
         from: {
           key_code: command_key,
+          modifiers: {
+            optional: ["any"],
+          },
         },
         // Only trigger this command if the variable is 1 (i.e., if Hyper + sublayer is held)
         conditions: [
@@ -114,6 +120,9 @@ export function createHyperSubLayers(subLayers: {
               type: "basic" as const,
               from: {
                 key_code: key as KeyCode,
+                modifiers: {
+                  optional: ["any"],
+                },
               },
               conditions: [
                 {
