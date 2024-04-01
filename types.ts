@@ -114,6 +114,7 @@ export interface To {
     value: boolean | number | string;
   };
   mouse_key?: MouseKey;
+  pointing_button?: string;
   /**
    * Power Management plugin
    * @example: sleep system
@@ -126,6 +127,8 @@ export interface MouseKey {
   y?: number;
   x?: number;
   speed_multiplier?: number;
+  vertical_wheel?: number;
+  horizontal_wheel?: number;
 }
 
 export interface SoftwareFunction {
