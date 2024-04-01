@@ -56,6 +56,9 @@ const rules: KarabinerRules[] = [
     ],
   },
   ...createHyperSubLayers({
+    spacebar: open(
+      "raycast://extensions/stellate/mxstbr-commands/create-notion-todo"
+    ),
     // b = "B"rowse
     b: {
       t: open("https://twitter.com"),
