@@ -33,12 +33,7 @@ export function createHyperSubLayer(
       from: {
         key_code: sublayer_key,
         modifiers: {
-          mandatory: [
-            "left_command",
-            "left_control",
-            "left_shift",
-            "left_option",
-          ],
+          optional: ["any"],
         },
       },
       to_after_key_up: [
@@ -62,13 +57,22 @@ export function createHyperSubLayer(
       // This enables us to press other sublayer keys in the current sublayer
       // (e.g. Hyper + O > M even though Hyper + M is also a sublayer)
       // basically, only trigger a sublayer if no other sublayer is active
-      conditions: allSubLayerVariables
-        .filter((subLayerVariable) => subLayerVariable !== subLayerVariableName)
-        .map((subLayerVariable) => ({
+      conditions: [
+        ...allSubLayerVariables
+          .filter(
+            (subLayerVariable) => subLayerVariable !== subLayerVariableName
+          )
+          .map((subLayerVariable) => ({
+            type: "variable_if" as const,
+            name: subLayerVariable,
+            value: 0,
+          })),
+        {
           type: "variable_if",
-          name: subLayerVariable,
-          value: 0,
-        })),
+          name: "hyper",
+          value: 1,
+        },
+      ],
     },
     // Define the individual commands that are meant to trigger in the sublayer
     ...(Object.keys(commands) as (keyof typeof commands)[]).map(
@@ -78,8 +82,7 @@ export function createHyperSubLayer(
         from: {
           key_code: command_key,
           modifiers: {
-            // Mandatory modifiers are *not* added to the "to" event
-            mandatory: ["any"],
+            optional: ["any"],
           },
         },
         // Only trigger this command if the variable is 1 (i.e., if Hyper + sublayer is held)
@@ -118,15 +121,16 @@ export function createHyperSubLayers(subLayers: {
               from: {
                 key_code: key as KeyCode,
                 modifiers: {
-                  // Mandatory modifiers are *not* added to the "to" event
-                  mandatory: [
-                    "left_command",
-                    "left_control",
-                    "left_shift",
-                    "left_option",
-                  ],
+                  optional: ["any"],
                 },
               },
+              conditions: [
+                {
+                  type: "variable_if",
+                  name: "hyper",
+                  value: 1,
+                },
+              ],
             },
           ],
         }

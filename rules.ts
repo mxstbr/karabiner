@@ -11,11 +11,24 @@ const rules: KarabinerRules[] = [
         description: "Caps Lock -> Hyper Key",
         from: {
           key_code: "caps_lock",
+          modifiers: {
+            optional: ["any"],
+          },
         },
         to: [
           {
-            key_code: "left_shift",
-            modifiers: ["left_command", "left_control", "left_option"],
+            set_variable: {
+              name: "hyper",
+              value: 1,
+            },
+          },
+        ],
+        to_after_key_up: [
+          {
+            set_variable: {
+              name: "hyper",
+              value: 0,
+            },
           },
         ],
         to_if_alone: [
@@ -43,6 +56,9 @@ const rules: KarabinerRules[] = [
     ],
   },
   ...createHyperSubLayers({
+    spacebar: open(
+      "raycast://extensions/stellate/mxstbr-commands/create-notion-todo"
+    ),
     // b = "B"rowse
     b: {
       t: open("https://twitter.com"),

@@ -13,16 +13,27 @@
               {
                 "description": "Caps Lock -> Hyper Key",
                 "from": {
-                  "key_code": "caps_lock"
+                  "key_code": "caps_lock",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
                 },
                 "to": [
                   {
-                    "key_code": "left_shift",
-                    "modifiers": [
-                      "left_command",
-                      "left_control",
-                      "left_option"
-                    ]
+                    "set_variable": {
+                      "name": "hyper",
+                      "value": 1
+                    }
+                  }
+                ],
+                "to_after_key_up": [
+                  {
+                    "set_variable": {
+                      "name": "hyper",
+                      "value": 0
+                    }
                   }
                 ],
                 "to_if_alone": [
@@ -35,6 +46,35 @@
             ]
           },
           {
+            "description": "Hyper Key + spacebar",
+            "manipulators": [
+              {
+                "to": [
+                  {
+                    "shell_command": "open raycast://extensions/stellate/mxstbr-commands/create-notion-todo"
+                  }
+                ],
+                "description": "Open raycast://extensions/stellate/mxstbr-commands/create-notion-todo",
+                "type": "basic",
+                "from": {
+                  "key_code": "spacebar",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper",
+                    "value": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
             "description": "Hyper Key sublayer \"b\"",
             "manipulators": [
               {
@@ -43,11 +83,8 @@
                 "from": {
                   "key_code": "b",
                   "modifiers": {
-                    "mandatory": [
-                      "left_command",
-                      "left_control",
-                      "left_shift",
-                      "left_option"
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
@@ -68,6 +105,11 @@
                   }
                 ],
                 "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_spacebar",
+                    "value": 0
+                  },
                   {
                     "type": "variable_if",
                     "name": "hyper_sublayer_o",
@@ -97,6 +139,11 @@
                     "type": "variable_if",
                     "name": "hyper_sublayer_r",
                     "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper",
+                    "value": 1
                   }
                 ]
               },
@@ -111,7 +158,7 @@
                 "from": {
                   "key_code": "t",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -135,7 +182,7 @@
                 "from": {
                   "key_code": "p",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -159,7 +206,7 @@
                 "from": {
                   "key_code": "y",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -183,7 +230,7 @@
                 "from": {
                   "key_code": "f",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -207,7 +254,7 @@
                 "from": {
                   "key_code": "r",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -231,11 +278,8 @@
                 "from": {
                   "key_code": "o",
                   "modifiers": {
-                    "mandatory": [
-                      "left_command",
-                      "left_control",
-                      "left_shift",
-                      "left_option"
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
@@ -256,6 +300,11 @@
                   }
                 ],
                 "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_spacebar",
+                    "value": 0
+                  },
                   {
                     "type": "variable_if",
                     "name": "hyper_sublayer_b",
@@ -285,6 +334,11 @@
                     "type": "variable_if",
                     "name": "hyper_sublayer_r",
                     "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper",
+                    "value": 1
                   }
                 ]
               },
@@ -299,7 +353,7 @@
                 "from": {
                   "key_code": "1",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -323,7 +377,7 @@
                 "from": {
                   "key_code": "g",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -347,7 +401,7 @@
                 "from": {
                   "key_code": "c",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -371,7 +425,7 @@
                 "from": {
                   "key_code": "v",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -395,7 +449,7 @@
                 "from": {
                   "key_code": "d",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -419,7 +473,7 @@
                 "from": {
                   "key_code": "s",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -443,7 +497,7 @@
                 "from": {
                   "key_code": "e",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -467,7 +521,7 @@
                 "from": {
                   "key_code": "n",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -491,7 +545,7 @@
                 "from": {
                   "key_code": "t",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -515,7 +569,7 @@
                 "from": {
                   "key_code": "h",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -539,7 +593,7 @@
                 "from": {
                   "key_code": "z",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -563,7 +617,7 @@
                 "from": {
                   "key_code": "m",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -587,7 +641,7 @@
                 "from": {
                   "key_code": "f",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -611,7 +665,7 @@
                 "from": {
                   "key_code": "r",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -635,7 +689,7 @@
                 "from": {
                   "key_code": "i",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -659,7 +713,7 @@
                 "from": {
                   "key_code": "p",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -683,7 +737,7 @@
                 "from": {
                   "key_code": "a",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -707,7 +761,7 @@
                 "from": {
                   "key_code": "w",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -731,7 +785,7 @@
                 "from": {
                   "key_code": "l",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -755,11 +809,8 @@
                 "from": {
                   "key_code": "w",
                   "modifiers": {
-                    "mandatory": [
-                      "left_command",
-                      "left_control",
-                      "left_shift",
-                      "left_option"
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
@@ -780,6 +831,11 @@
                   }
                 ],
                 "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_spacebar",
+                    "value": 0
+                  },
                   {
                     "type": "variable_if",
                     "name": "hyper_sublayer_b",
@@ -809,6 +865,11 @@
                     "type": "variable_if",
                     "name": "hyper_sublayer_r",
                     "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper",
+                    "value": 1
                   }
                 ]
               },
@@ -826,7 +887,7 @@
                 "from": {
                   "key_code": "semicolon",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -850,7 +911,7 @@
                 "from": {
                   "key_code": "y",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -874,7 +935,7 @@
                 "from": {
                   "key_code": "o",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -898,7 +959,7 @@
                 "from": {
                   "key_code": "k",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -922,7 +983,7 @@
                 "from": {
                   "key_code": "j",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -946,7 +1007,7 @@
                 "from": {
                   "key_code": "h",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -970,7 +1031,7 @@
                 "from": {
                   "key_code": "l",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -994,7 +1055,7 @@
                 "from": {
                   "key_code": "f",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -1022,7 +1083,7 @@
                 "from": {
                   "key_code": "u",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -1049,7 +1110,7 @@
                 "from": {
                   "key_code": "i",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -1076,7 +1137,7 @@
                 "from": {
                   "key_code": "n",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -1103,7 +1164,7 @@
                 "from": {
                   "key_code": "b",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -1130,7 +1191,7 @@
                 "from": {
                   "key_code": "m",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -1159,7 +1220,7 @@
                 "from": {
                   "key_code": "d",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -1183,11 +1244,8 @@
                 "from": {
                   "key_code": "s",
                   "modifiers": {
-                    "mandatory": [
-                      "left_command",
-                      "left_control",
-                      "left_shift",
-                      "left_option"
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
@@ -1208,6 +1266,11 @@
                   }
                 ],
                 "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_spacebar",
+                    "value": 0
+                  },
                   {
                     "type": "variable_if",
                     "name": "hyper_sublayer_b",
@@ -1237,6 +1300,11 @@
                     "type": "variable_if",
                     "name": "hyper_sublayer_r",
                     "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper",
+                    "value": 1
                   }
                 ]
               },
@@ -1250,7 +1318,7 @@
                 "from": {
                   "key_code": "u",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -1273,7 +1341,7 @@
                 "from": {
                   "key_code": "j",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -1296,7 +1364,7 @@
                 "from": {
                   "key_code": "i",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -1319,7 +1387,7 @@
                 "from": {
                   "key_code": "k",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -1346,7 +1414,7 @@
                 "from": {
                   "key_code": "l",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -1369,7 +1437,7 @@
                 "from": {
                   "key_code": "p",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -1392,7 +1460,7 @@
                 "from": {
                   "key_code": "semicolon",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -1419,7 +1487,7 @@
                 "from": {
                   "key_code": "e",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -1442,7 +1510,7 @@
                 "from": {
                   "key_code": "y",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -1465,7 +1533,7 @@
                 "from": {
                   "key_code": "h",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -1489,7 +1557,7 @@
                 "from": {
                   "key_code": "d",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -1513,11 +1581,8 @@
                 "from": {
                   "key_code": "v",
                   "modifiers": {
-                    "mandatory": [
-                      "left_command",
-                      "left_control",
-                      "left_shift",
-                      "left_option"
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
@@ -1538,6 +1603,11 @@
                   }
                 ],
                 "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_spacebar",
+                    "value": 0
+                  },
                   {
                     "type": "variable_if",
                     "name": "hyper_sublayer_b",
@@ -1567,6 +1637,11 @@
                     "type": "variable_if",
                     "name": "hyper_sublayer_r",
                     "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper",
+                    "value": 1
                   }
                 ]
               },
@@ -1580,7 +1655,7 @@
                 "from": {
                   "key_code": "h",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -1603,7 +1678,7 @@
                 "from": {
                   "key_code": "j",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -1626,7 +1701,7 @@
                 "from": {
                   "key_code": "k",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -1649,7 +1724,7 @@
                 "from": {
                   "key_code": "l",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -1675,7 +1750,7 @@
                 "from": {
                   "key_code": "m",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -1701,7 +1776,7 @@
                 "from": {
                   "key_code": "s",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -1728,7 +1803,7 @@
                 "from": {
                   "key_code": "d",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -1751,7 +1826,7 @@
                 "from": {
                   "key_code": "u",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -1774,7 +1849,7 @@
                 "from": {
                   "key_code": "i",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -1798,11 +1873,8 @@
                 "from": {
                   "key_code": "c",
                   "modifiers": {
-                    "mandatory": [
-                      "left_command",
-                      "left_control",
-                      "left_shift",
-                      "left_option"
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
@@ -1823,6 +1895,11 @@
                   }
                 ],
                 "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_spacebar",
+                    "value": 0
+                  },
                   {
                     "type": "variable_if",
                     "name": "hyper_sublayer_b",
@@ -1852,6 +1929,11 @@
                     "type": "variable_if",
                     "name": "hyper_sublayer_r",
                     "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper",
+                    "value": 1
                   }
                 ]
               },
@@ -1865,7 +1947,7 @@
                 "from": {
                   "key_code": "p",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -1888,7 +1970,7 @@
                 "from": {
                   "key_code": "n",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -1911,7 +1993,7 @@
                 "from": {
                   "key_code": "b",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -1935,11 +2017,8 @@
                 "from": {
                   "key_code": "r",
                   "modifiers": {
-                    "mandatory": [
-                      "left_command",
-                      "left_control",
-                      "left_shift",
-                      "left_option"
+                    "optional": [
+                      "any"
                     ]
                   }
                 },
@@ -1960,6 +2039,11 @@
                   }
                 ],
                 "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_spacebar",
+                    "value": 0
+                  },
                   {
                     "type": "variable_if",
                     "name": "hyper_sublayer_b",
@@ -1989,6 +2073,11 @@
                     "type": "variable_if",
                     "name": "hyper_sublayer_c",
                     "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper",
+                    "value": 1
                   }
                 ]
               },
@@ -2003,7 +2092,7 @@
                 "from": {
                   "key_code": "1",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -2027,7 +2116,7 @@
                 "from": {
                   "key_code": "2",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -2051,7 +2140,7 @@
                 "from": {
                   "key_code": "n",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -2075,7 +2164,7 @@
                 "from": {
                   "key_code": "l",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -2099,7 +2188,7 @@
                 "from": {
                   "key_code": "e",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -2123,7 +2212,7 @@
                 "from": {
                   "key_code": "c",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -2147,7 +2236,7 @@
                 "from": {
                   "key_code": "p",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -2171,7 +2260,7 @@
                 "from": {
                   "key_code": "a",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -2195,7 +2284,7 @@
                 "from": {
                   "key_code": "s",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
@@ -2219,7 +2308,7 @@
                 "from": {
                   "key_code": "h",
                   "modifiers": {
-                    "mandatory": [
+                    "optional": [
                       "any"
                     ]
                   }
