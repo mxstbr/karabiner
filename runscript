@@ -1,0 +1,3 @@
+rm -rf ~/.config/karabiner
+ln -s "$PWD" ~/.config/karabiner
+launchctl kickstart -k gui/`id -u`/org.pqrs.karabiner.karabiner_console_user_server
