@@ -19,10 +19,14 @@ You probably don't want to use my exact configuration, as it's optimized for my 
 ## Installation
 
 1. Install & start [Karabiner Elements](https://karabiner-elements.pqrs.org/)
-1. Clone this repository
+2. Clone this repository
+3. Navigate to the cloned repository
+4. Run `sh runscript` to symlink the configuration to the correct location, and restart `karabiner_console_user_server` to apply the changes
+
+The details of what the `runscript` does are:
 1. Delete the default `~/.config/karabiner` folder
-1. Create a symlink with `ln -s ~/github/mxstbr/karabiner ~/.config` (where `~/github/mxstbr/karabiner` is your local path to where you cloned the repository)
-1. [Restart karabiner_console_user_server](https://karabiner-elements.pqrs.org/docs/manual/misc/configuration-file-path/) with `` launchctl kickstart -k gui/`id -u`/org.pqrs.karabiner.karabiner_console_user_server ``
+2. Create a symlink between the current working directory and `~/.config/karabiner` with `ln -s "$PWD" ~/.config`
+3. [Restart karabiner_console_user_server](https://karabiner-elements.pqrs.org/docs/manual/misc/configuration-file-path/) with `` launchctl kickstart -k gui/`id -u`/org.pqrs.karabiner.karabiner_console_user_server ``
 
 ## Development
 
