@@ -1,6 +1,6 @@
 import fs from "fs";
 import { KarabinerRules } from "./types";
-import { createHyperSubLayers, app, open, rectangle } from "./utils";
+import { createHyperSubLayers, app, open, yabai, raycast } from "./utils";
 
 const rules: KarabinerRules[] = [
   // Caps Lock to F18
@@ -101,6 +101,7 @@ const rules: KarabinerRules[] = [
     b: {
       s: {
         to: [
+          // open new Litte Arc
           {
             key_code: "n",
             modifiers: ["left_command", "left_option"],
@@ -162,159 +163,79 @@ const rules: KarabinerRules[] = [
       // ),
     },
 
-    // w = "Window" via rectangle.app
-    w: {
-      semicolon: {
-        description: "Window: Hide",
-        to: [
-          {
-            key_code: "h",
-            modifiers: ["right_command"],
-          },
-        ],
-      },
-      y: rectangle("previous-display"),
-      o: rectangle("next-display"),
-      k: rectangle("top-half"),
-      j: rectangle("bottom-half"),
-      h: rectangle("left-half"),
-      l: rectangle("right-half"),
-      f: rectangle("maximize"),
-      u: {
-        description: "Window: Previous Tab",
-        to: [
-          {
-            key_code: "grave_accent_and_tilde",
-            modifiers: ["right_control"],
-          },
-        ],
-      },
-      i: {
-        description: "Window: Next Tab",
-        to: [
-          {
-            key_code: "tab",
-            modifiers: ["right_control"],
-          },
-        ],
-      },
-      n: {
-        description: "Window: Next Window",
-        to: [
-          {
-            key_code: "grave_accent_and_tilde",
-            modifiers: ["right_command"],
-          },
-        ],
-      },
-      b: {
-        description: "Window: Back",
-        to: [
-          {
-            key_code: "open_bracket",
-            modifiers: ["right_command"],
-          },
-        ],
-      },
-      // Note: No literal connection. Both f and n are already taken.
-      m: {
-        description: "Window: Forward",
-        to: [
-          {
-            key_code: "close_bracket",
-            modifiers: ["right_command"],
-          },
-        ],
-      },
-      d: {
-        description: "Window: Next display",
-        to: [
-          {
-            key_code: "right_arrow",
-            modifiers: ["right_control", "right_option", "right_command"],
-          },
-        ],
-      },
+    // Window management via Yabai
+    // Shift Layer gives access to routine window management
+    // Control Layer gives access to more advanced window management
+    left_shift: {
+      m: yabai(["space --focus main"]), // m for main
+      n: yabai(["space --focus sub"]), // sub-main
+      t: yabai(["space --focus text"]), // t for texts
+      w: yabai(["space --focus terminal"]), // w for warp
+      d: yabai(["space --focus figma"]), // d for design
+      c: yabai(["space --focus code"]), // c for code
+      r: yabai(["space --rotate 90"]),
+      comma: yabai(["space --focus prev"]), // <
+      period: yabai(["space --focus next"]), // >
+      slash: yabai(["window --toggle float", "window --grid 8:8:1:1:6:6"]),
+      quote: yabai(["window --toggle split"]),
+      j: yabai(["window --focus prev"]),
+      k: yabai(["window --focus next"]),
+      f: yabai(["window --toggle zoom-fullscreen"]),
+      l: yabai(["window --display next", "display --focus next"]),
+      0: yabai(["space --balance"]),
+      z: yabai(["space --focus recent"]),
+    },
+    left_control: {
+      m: yabai(["window --space main", "space --focus main"]),
+      n: yabai(["window --space sub", "space --focus sub"]),
+      t: yabai(["window --space text", "space --focus text"]),
+      w: yabai(["window --space terminal", "space --focus terminal"]),
+      d: yabai(["window --space figma", "space --focus figma"]),
+      c: yabai(["window --space code", "space --focus code"]),
     },
 
-    // s = "System"
-    s: {
-      // u: {
-      //   to: [
-      //     {
-      //       key_code: "volume_increment",
-      //     },
-      //   ],
-      // },
-      // j: {
-      //   to: [
-      //     {
-      //       key_code: "volume_decrement",
-      //     },
-      //   ],
-      // },
-      // i: {
-      //   to: [
-      //     {
-      //       key_code: "display_brightness_increment",
-      //     },
-      //   ],
-      // },
-      // k: {
-      //   to: [
-      //     {
-      //       key_code: "display_brightness_decrement",
-      //     },
-      //   ],
-      // },
-      // l: {
-      //   to: [
-      //     {
-      //       key_code: "q",
-      //       modifiers: ["right_control", "right_command"],
-      //     },
-      //   ],
-      // },
-      // p: {
-      //   to: [
-      //     {
-      //       key_code: "play_or_pause",
-      //     },
-      //   ],
-      // },
-      // semicolon: {
-      //   to: [
-      //     {
-      //       key_code: "fastforward",
-      //     },
-      //   ],
-      // },
-      // e: {
-      //   to: [
-      //     {
-      //       // Emoji picker
-      //       key_code: "spacebar",
-      //       modifiers: ["right_control", "right_command"],
-      //     },
-      //   ],
-      // },
-      // // Turn on Elgato KeyLight
-      // y: {
-      //   to: [
-      //     {
-      //       shell_command: `curl -H 'Content-Type: application/json' --request PUT --data '{ "numberOfLights": 1, "lights": [ { "on": 1, "brightness": 100, "temperature": 215 } ] }' http://192.168.8.84:9123/elgato/lights`,
-      //     },
-      //   ],
-      // },
-      // h: {
-      //   to: [
-      //     {
-      //       shell_command: `curl -H 'Content-Type: application/json' --request PUT --data '{ "numberOfLights": 1, "lights": [ { "on": 0, "brightness": 100, "temperature": 215 } ] }' http://192.168.8.84:9123/elgato/lights`,
-      //     },
-      //   ],
-      // },
-      // "D"o not disturb toggle
-      // d: open(`raycast://extensions/yakitrak/do-not-disturb/toggle`),
+    // r = "Raycast"
+    r: {
+      // n: open("raycast://script-commands/dismiss-notifications"),
+      // l: open(
+      //   "raycast://extensions/stellate/mxstbr-commands/create-mxs-is-shortlink"
+      // ),
+      // e: open(
+      //   "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
+      // ),
+      // c: open("raycast://extensions/raycast/system/open-camera"),
+      y: raycast("raycast://extensions/raycast/raycast/confetti"),
+      p: raycast("raycast://extensions/thomas/color-picker/pick-color"),
+      c: raycast("raycast://extensions/mooxl/coffee/caffeinateToggle"),
+      t: raycast("raycast://extensions/huzef44/screenocr/recognize-text"),
+      // a: open("raycast://extensions/raycast/raycast-ai/ai-chat"),
+      // s: open("raycast://extensions/peduarte/silent-mention/index"),
+      h: open(
+        "raycast://extensions/raycast/clipboard-history/clipboard-history"
+      ),
+      k: raycast(
+        "raycast://extensions/huzef44/keyboard-brightness/toggle-keyboard-brightness"
+      ),
+      m: raycast("raycast://extensions/Hugo-Persson/duckduckgo-email/index"),
+      // 1: open(
+      //   "raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-1"
+      // ),
+      // 2: open(
+      //   "raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-2"
+      // ),
+    },
+
+    // uTilities
+    t: {
+      p: {
+        // pokeclicker
+        to: [
+          {
+            shell_command:
+              "cat ~/Developer/pokeclicker-stuff/AutoClicker.js | pbcopy",
+          },
+        ],
+      },
     },
 
     // v = "moVe" which isn't "m" because we want it to be on the left hand
@@ -363,35 +284,6 @@ const rules: KarabinerRules[] = [
     //     to: [{ key_code: "rewind" }],
     //   },
     // },
-
-    // r = "Raycast"
-    r: {
-      // n: open("raycast://script-commands/dismiss-notifications"),
-      // l: open(
-      //   "raycast://extensions/stellate/mxstbr-commands/create-mxs-is-shortlink"
-      // ),
-      // e: open(
-      //   "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
-      // ),
-      // c: open("raycast://extensions/raycast/system/open-camera"),
-      p: open("raycast://extensions/raycast/raycast/confetti"),
-      c: open("raycast://extensions/mooxl/coffee/caffeinateToggle"),
-      t: open("raycast://extensions/huzef44/screenocr/recognize-text"),
-      // a: open("raycast://extensions/raycast/raycast-ai/ai-chat"),
-      // s: open("raycast://extensions/peduarte/silent-mention/index"),
-      h: open(
-        "raycast://extensions/raycast/clipboard-history/clipboard-history"
-      ),
-      k: open(
-        "raycast://extensions/huzef44/keyboard-brightness/toggle-keyboard-brightness"
-      ),
-      // 1: open(
-      //   "raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-1"
-      // ),
-      // 2: open(
-      //   "raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-2"
-      // ),
-    },
   }),
 ];
 
