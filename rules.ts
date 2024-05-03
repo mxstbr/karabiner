@@ -10,28 +10,26 @@ const rules: KarabinerRules[] = [
       {
         description: "Change caps_lock to command+control+option+shift.",
         from: {
-            key_code: "caps_lock",
-            modifiers: {
-                optional: [
-                    "any"
-                ]
-            }
+          key_code: "caps_lock",
+          modifiers: {
+            optional: ["any"],
+          },
         },
         to: [
-            // {
-            //     key_code: "left_shift",
-            //     modifiers: [
-            //         "left_command",
-            //         "left_control",
-            //         "left_option"
-            //     ]
-            // },
-            {
-              set_variable: {
-                name: "hyper",
-                value: 1,
-              },
+          // {
+          //     key_code: "left_shift",
+          //     modifiers: [
+          //         "left_command",
+          //         "left_control",
+          //         "left_option"
+          //     ]
+          // },
+          {
+            set_variable: {
+              name: "hyper",
+              value: 1,
             },
+          },
         ],
         to_after_key_up: [
           {
@@ -46,8 +44,8 @@ const rules: KarabinerRules[] = [
             key_code: "escape",
           },
         ],
-        type: "basic"
-    },
+        type: "basic",
+      },
       //      {
       //        type: "basic",
       //        description: "Disable CMD + Tab to force Hyper Key usage",
@@ -92,6 +90,7 @@ const rules: KarabinerRules[] = [
 
     // s = "System"
     s: {
+      m: open("raycast://extensions/raycast/navigation/search-menu-items"),
       u: {
         to: [
           {
@@ -178,7 +177,9 @@ const rules: KarabinerRules[] = [
       l: open("raycast://extensions/mattisssa/spotify-player/like"),
       d: open("raycast://extensions/mattisssa/spotify-player/dislike"),
       p: open("raycast://extensions/mattisssa/spotify-player/togglePlayPause"),
-      open_bracket: open("raycast://extensions/mattisssa/spotify-player/previous"),
+      open_bracket: open(
+        "raycast://extensions/mattisssa/spotify-player/previous"
+      ),
       close_bracket: open("raycast://extensions/mattisssa/spotify-player/next"),
       s: open("raycast://extensions/mattisssa/spotify-player/toggleShuffle"),
       r: open("raycast://extensions/mattisssa/spotify-player/cycleRepeat"),
@@ -207,6 +208,14 @@ const rules: KarabinerRules[] = [
       4: open(
         "raycast://extensions/VladCuciureanu/toothpick/disconnect-favorite-device-2"
       ),
+    },
+    n: {
+      // "D"aily note
+      d: open("raycast://extensions/KevinBatdorf/obsidian/dailyNoteCommand"),
+      // "S"earch
+      s: open("raycast://extensions/KevinBatdorf/obsidian/searchNoteCommand"),
+      // "C"reate
+      c: open("raycast://extensions/KevinBatdorf/obsidian/createNoteCommand"),
     },
   }),
 ];
