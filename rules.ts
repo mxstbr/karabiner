@@ -251,7 +251,11 @@ const rules: KarabinerRules[] = [
         ],
       },
       // "D"o not disturb toggle
-      d: open(`raycast://extensions/yakitrak/do-not-disturb/toggle`),
+      d: open(
+        `raycast://extensions/yakitrak/do-not-disturb/toggle?launchType=background`
+      ),
+      // "T"heme
+      t: open(`raycast://extensions/raycast/system/toggle-system-appearance`),
     },
 
     // v = "moVe" which isn't "m" because we want it to be on the left hand
