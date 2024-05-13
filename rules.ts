@@ -226,30 +226,9 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      e: {
-        to: [
-          {
-            // Emoji picker
-            key_code: "spacebar",
-            modifiers: ["right_control", "right_command"],
-          },
-        ],
-      },
-      // Turn on Elgato KeyLight
-      y: {
-        to: [
-          {
-            shell_command: `curl -H 'Content-Type: application/json' --request PUT --data '{ "numberOfLights": 1, "lights": [ { "on": 1, "brightness": 100, "temperature": 215 } ] }' http://192.168.8.84:9123/elgato/lights`,
-          },
-        ],
-      },
-      h: {
-        to: [
-          {
-            shell_command: `curl -H 'Content-Type: application/json' --request PUT --data '{ "numberOfLights": 1, "lights": [ { "on": 0, "brightness": 100, "temperature": 215 } ] }' http://192.168.8.84:9123/elgato/lights`,
-          },
-        ],
-      },
+      e: open(
+        `raycast://extensions/thomas/elgato-key-light/toggle?launchType=background`
+      ),
       // "D"o not disturb toggle
       d: open(
         `raycast://extensions/yakitrak/do-not-disturb/toggle?launchType=background`
@@ -276,6 +255,7 @@ const rules: KarabinerRules[] = [
       // Magicmove via homerow.app
       m: {
         to: [{ key_code: "f", modifiers: ["right_control"] }],
+        // TODO: Trigger Vim Easymotion when VSCode is focused
       },
       // Scroll mode via homerow.app
       s: {

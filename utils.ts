@@ -130,12 +130,11 @@ export function createHyperSubLayers(subLayers: {
                   name: "hyper",
                   value: 1,
                 },
-                ...allSubLayerVariables
-                  .map((subLayerVariable) => ({
-                    type: "variable_if" as const,
-                    name: subLayerVariable,
-                    value: 0,
-                  })),
+                ...allSubLayerVariables.map((subLayerVariable) => ({
+                  type: "variable_if" as const,
+                  name: subLayerVariable,
+                  value: 0,
+                })),
               ],
             },
           ],

@@ -1516,62 +1516,13 @@
               {
                 "to": [
                   {
-                    "key_code": "spacebar",
-                    "modifiers": [
-                      "right_control",
-                      "right_command"
-                    ]
+                    "shell_command": "open raycast://extensions/thomas/elgato-key-light/toggle?launchType=background"
                   }
                 ],
+                "description": "Open raycast://extensions/thomas/elgato-key-light/toggle?launchType=background",
                 "type": "basic",
                 "from": {
                   "key_code": "e",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_s",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "shell_command": "curl -H 'Content-Type: application/json' --request PUT --data '{ \"numberOfLights\": 1, \"lights\": [ { \"on\": 1, \"brightness\": 100, \"temperature\": 215 } ] }' http://192.168.8.84:9123/elgato/lights"
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "y",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_s",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "shell_command": "curl -H 'Content-Type: application/json' --request PUT --data '{ \"numberOfLights\": 1, \"lights\": [ { \"on\": 0, \"brightness\": 100, \"temperature\": 215 } ] }' http://192.168.8.84:9123/elgato/lights"
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "h",
                   "modifiers": {
                     "optional": [
                       "any"
