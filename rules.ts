@@ -46,6 +46,22 @@ const rules: KarabinerRules[] = [
         ],
         type: "basic",
       },
+      {
+        type: "basic",
+        description: "Change Command Q to minimize window",
+        from: {
+          key_code: "q",
+          modifiers: {
+            mandatory: ["left_command"],
+          },
+        },
+        to: [
+          {
+            key_code: "m",
+            modifiers: ["left_command"],
+          },
+        ],
+      },
       //      {
       //        type: "basic",
       //        description: "Disable CMD + Tab to force Hyper Key usage",
@@ -68,7 +84,7 @@ const rules: KarabinerRules[] = [
     b: {
       y: open("https://youtube.com"),
       c: open("https://crunchyroll.com"),
-      r: open("httpsL//rocketmoney.com"),
+      r: open("https//rocketmoney.com"),
       l: open("https://ldjam.com"),
       g: open("https://github.com"),
     },
@@ -86,6 +102,7 @@ const rules: KarabinerRules[] = [
       r: app("Rider 2024.1"),
       // "G"ames
       g: app("Steam"),
+      c: open("raycast://extensions/raycast/raycast-ai/ai-chat"),
     },
 
     // s = "System"
