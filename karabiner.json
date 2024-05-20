@@ -649,10 +649,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Texts.app'"
+                    "shell_command": "open -a 'Obsidian.app'"
                   }
                 ],
-                "description": "Open -a 'Texts.app'",
+                "description": "Open -a 'Obsidian.app'",
                 "type": "basic",
                 "from": {
                   "key_code": "m",

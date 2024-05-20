@@ -84,8 +84,8 @@ const rules: KarabinerRules[] = [
         "notion://www.notion.so/stellatehq/7b33b924746647499d906c55f89d5026"
       ),
       z: app("zoom.us"),
-      // "M"essages
-      m: app("Texts"),
+      // "M"arkdown (Obsidian.md)
+      m: app("Obsidian"),
       f: app("Finder"),
       r: app("Texts"),
       // "i"Message
