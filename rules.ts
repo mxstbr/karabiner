@@ -288,6 +288,7 @@ const rules: KarabinerRules[] = [
 
     // r = "Raycast"
     r: {
+      c: open("raycast://extensions/thomas/color-picker/pick-color"),
       n: open("raycast://script-commands/dismiss-notifications"),
       l: open(
         "raycast://extensions/stellate/mxstbr-commands/create-mxs-is-shortlink"
