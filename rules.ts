@@ -1,6 +1,6 @@
 import fs from "fs";
 import { KarabinerRules } from "./types";
-import { createHyperSubLayers, app, open, rectangle } from "./utils";
+import { createHyperSubLayers, app, open, rectangle, shell } from "./utils";
 
 const rules: KarabinerRules[] = [
   // Define the Hyper key itself
@@ -103,12 +103,15 @@ const rules: KarabinerRules[] = [
     // l = "Layouts" via Raycast's custom window management
     // l: {
     //   // Coding layout
-    //   c: open(
-    //     "Visual Studio Code",
-    //     `-g "raycast://customWindowManagementCommand?position=topLeft&relativeWidth=0.5"`,
-    //     "Terminal",
-    //     `-g "raycast://customWindowManagementCommand?position=topRight&relativeWidth=0.5"`
-    //   ),
+    //   c: shell`
+    //     open -a "Visual Studio Code.app"
+    //     sleep 0.2
+    //     open -g "raycast://customWindowManagementCommand?position=topLeft&relativeWidth=0.5"
+
+    //     open -a "Terminal.app"
+    //     sleep 0.2
+    //     open -g "raycast://customWindowManagementCommand?position=topRight&relativeWidth=0.5"
+    //   `,
     // },
 
     // w = "Window" via rectangle.app
