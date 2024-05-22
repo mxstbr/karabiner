@@ -99,6 +99,18 @@ const rules: KarabinerRules[] = [
       ),
     },
 
+    // TODO: This doesn't quite work yet.
+    // l = "Layouts" via Raycast's custom window management
+    // l: {
+    //   // Coding layout
+    //   c: open(
+    //     "Visual Studio Code",
+    //     `-g "raycast://customWindowManagementCommand?position=topLeft&relativeWidth=0.5"`,
+    //     "Terminal",
+    //     `-g "raycast://customWindowManagementCommand?position=topRight&relativeWidth=0.5"`
+    //   ),
+    // },
+
     // w = "Window" via rectangle.app
     w: {
       semicolon: {
