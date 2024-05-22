@@ -157,14 +157,12 @@ function generateSubLayerVariableName(key: KeyCode) {
 /**
  * Shortcut for "open" shell command
  */
-export function open(what: string): LayerCommand {
+export function open(...what: string[]): LayerCommand {
   return {
-    to: [
-      {
-        shell_command: `open ${what}`,
-      },
-    ],
-    description: `Open ${what}`,
+    to: what.map((w) => ({
+      shell_command: `open ${w}`,
+    })),
+    description: `Open ${what.join(" & ")}`,
   };
 }
 
