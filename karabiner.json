@@ -95,10 +95,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open raycast://extensions/stellate/mxstbr-commands/create-notion-todo"
+                    "shell_command": "open raycast://extensions/raycast/navigation/search-menu-items?launchType=background"
                   }
                 ],
-                "description": "Open raycast://extensions/stellate/mxstbr-commands/create-notion-todo",
+                "description": "Open raycast://extensions/raycast/navigation/search-menu-items?launchType=background",
                 "type": "basic",
                 "from": {
                   "key_code": "spacebar",
@@ -131,12 +131,12 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_left_shift",
+                    "name": "hyper_sublayer_right_shift",
                     "value": 0
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_left_control",
+                    "name": "hyper_sublayer_slash",
                     "value": 0
                   },
                   {
@@ -147,11 +147,6 @@
                   {
                     "type": "variable_if",
                     "name": "hyper_sublayer_t",
-                    "value": 0
-                  },
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_v",
                     "value": 0
                   }
                 ]
@@ -201,12 +196,12 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_left_shift",
+                    "name": "hyper_sublayer_right_shift",
                     "value": 0
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_left_control",
+                    "name": "hyper_sublayer_slash",
                     "value": 0
                   },
                   {
@@ -217,11 +212,6 @@
                   {
                     "type": "variable_if",
                     "name": "hyper_sublayer_t",
-                    "value": 0
-                  },
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_v",
                     "value": 0
                   },
                   {
@@ -244,6 +234,30 @@
                 "type": "basic",
                 "from": {
                   "key_code": "s",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_b",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open https://github.com"
+                  }
+                ],
+                "description": "Open https://github.com",
+                "type": "basic",
+                "from": {
+                  "key_code": "g",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -303,12 +317,12 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_left_shift",
+                    "name": "hyper_sublayer_right_shift",
                     "value": 0
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_left_control",
+                    "name": "hyper_sublayer_slash",
                     "value": 0
                   },
                   {
@@ -319,11 +333,6 @@
                   {
                     "type": "variable_if",
                     "name": "hyper_sublayer_t",
-                    "value": 0
-                  },
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_v",
                     "value": 0
                   },
                   {
@@ -596,17 +605,43 @@
                     "value": 1
                   }
                 ]
+              },
+              {
+                "to": [
+                  {
+                    "key_code": "grave_accent_and_tilde",
+                    "modifiers": [
+                      "left_command"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "tab",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_o",
+                    "value": 1
+                  }
+                ]
               }
             ]
           },
           {
-            "description": "Hyper Key sublayer \"left_shift\"",
+            "description": "Hyper Key sublayer \"right_shift\"",
             "manipulators": [
               {
-                "description": "Toggle Hyper sublayer left_shift",
+                "description": "Toggle Hyper sublayer right_shift",
                 "type": "basic",
                 "from": {
-                  "key_code": "left_shift",
+                  "key_code": "right_shift",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -616,7 +651,7 @@
                 "to_after_key_up": [
                   {
                     "set_variable": {
-                      "name": "hyper_sublayer_left_shift",
+                      "name": "hyper_sublayer_right_shift",
                       "value": 0
                     }
                   }
@@ -624,7 +659,7 @@
                 "to": [
                   {
                     "set_variable": {
-                      "name": "hyper_sublayer_left_shift",
+                      "name": "hyper_sublayer_right_shift",
                       "value": 1
                     }
                   }
@@ -647,7 +682,7 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_left_control",
+                    "name": "hyper_sublayer_slash",
                     "value": 0
                   },
                   {
@@ -658,11 +693,6 @@
                   {
                     "type": "variable_if",
                     "name": "hyper_sublayer_t",
-                    "value": 0
-                  },
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_v",
                     "value": 0
                   },
                   {
@@ -690,7 +720,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_left_shift",
+                    "name": "hyper_sublayer_right_shift",
                     "value": 1
                   }
                 ]
@@ -698,12 +728,12 @@
               {
                 "to": [
                   {
-                    "shell_command": "/opt/homebrew/bin/yabai -m space --focus main"
+                    "shell_command": "/opt/homebrew/bin/yabai -m space --focus 1"
                   }
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "m",
+                  "key_code": "1",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -713,7 +743,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_left_shift",
+                    "name": "hyper_sublayer_right_shift",
                     "value": 1
                   }
                 ]
@@ -721,12 +751,12 @@
               {
                 "to": [
                   {
-                    "shell_command": "/opt/homebrew/bin/yabai -m space --focus sub"
+                    "shell_command": "/opt/homebrew/bin/yabai -m space --focus 2"
                   }
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "n",
+                  "key_code": "2",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -736,7 +766,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_left_shift",
+                    "name": "hyper_sublayer_right_shift",
                     "value": 1
                   }
                 ]
@@ -744,12 +774,12 @@
               {
                 "to": [
                   {
-                    "shell_command": "/opt/homebrew/bin/yabai -m space --focus text"
+                    "shell_command": "/opt/homebrew/bin/yabai -m space --focus 3"
                   }
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "t",
+                  "key_code": "3",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -759,7 +789,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_left_shift",
+                    "name": "hyper_sublayer_right_shift",
                     "value": 1
                   }
                 ]
@@ -767,12 +797,12 @@
               {
                 "to": [
                   {
-                    "shell_command": "/opt/homebrew/bin/yabai -m space --focus terminal"
+                    "shell_command": "/opt/homebrew/bin/yabai -m space --focus 4"
                   }
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "w",
+                  "key_code": "4",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -782,7 +812,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_left_shift",
+                    "name": "hyper_sublayer_right_shift",
                     "value": 1
                   }
                 ]
@@ -790,12 +820,12 @@
               {
                 "to": [
                   {
-                    "shell_command": "/opt/homebrew/bin/yabai -m space --focus figma"
+                    "shell_command": "/opt/homebrew/bin/yabai -m space --focus 5"
                   }
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "d",
+                  "key_code": "5",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -805,7 +835,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_left_shift",
+                    "name": "hyper_sublayer_right_shift",
                     "value": 1
                   }
                 ]
@@ -813,12 +843,12 @@
               {
                 "to": [
                   {
-                    "shell_command": "/opt/homebrew/bin/yabai -m space --focus code"
+                    "shell_command": "/opt/homebrew/bin/yabai -m space --focus 6"
                   }
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "c",
+                  "key_code": "6",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -828,7 +858,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_left_shift",
+                    "name": "hyper_sublayer_right_shift",
                     "value": 1
                   }
                 ]
@@ -851,99 +881,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_left_shift",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "shell_command": "/opt/homebrew/bin/yabai -m space --focus prev"
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "comma",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_left_shift",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "shell_command": "/opt/homebrew/bin/yabai -m space --focus next"
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "period",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_left_shift",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "shell_command": "/opt/homebrew/bin/yabai -m window --toggle float && /opt/homebrew/bin/yabai -m window --grid 8:8:1:1:6:6"
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "slash",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_left_shift",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "shell_command": "/opt/homebrew/bin/yabai -m window --toggle split"
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "quote",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_left_shift",
+                    "name": "hyper_sublayer_right_shift",
                     "value": 1
                   }
                 ]
@@ -956,7 +894,7 @@
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "j",
+                  "key_code": "q",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -966,7 +904,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_left_shift",
+                    "name": "hyper_sublayer_right_shift",
                     "value": 1
                   }
                 ]
@@ -979,7 +917,7 @@
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "k",
+                  "key_code": "e",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -989,7 +927,99 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_left_shift",
+                    "name": "hyper_sublayer_right_shift",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "/opt/homebrew/bin/yabai -m window --display next && /opt/homebrew/bin/yabai -m display --focus next"
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "w",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_right_shift",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "/opt/homebrew/bin/yabai -m space --focus prev"
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "a",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_right_shift",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "/opt/homebrew/bin/yabai -m window --display prev && /opt/homebrew/bin/yabai -m display --focus prev"
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "s",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_right_shift",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "/opt/homebrew/bin/yabai -m space --focus next"
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "d",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_right_shift",
                     "value": 1
                   }
                 ]
@@ -1012,30 +1042,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_left_shift",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "shell_command": "/opt/homebrew/bin/yabai -m window --display next && /opt/homebrew/bin/yabai -m display --focus next"
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "l",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_left_shift",
+                    "name": "hyper_sublayer_right_shift",
                     "value": 1
                   }
                 ]
@@ -1058,7 +1065,79 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_left_shift",
+                    "name": "hyper_sublayer_right_shift",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "/opt/homebrew/bin/yabai -m window --toggle split"
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "x",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_right_shift",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "/opt/homebrew/bin/yabai -m window --toggle float && /opt/homebrew/bin/yabai -m window --grid 8:8:1:1:6:6"
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "c",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_right_shift",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "key_code": "grave_accent_and_tilde",
+                    "modifiers": [
+                      "left_command"
+                    ]
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "tab",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_right_shift",
                     "value": 1
                   }
                 ]
@@ -1066,13 +1145,13 @@
             ]
           },
           {
-            "description": "Hyper Key sublayer \"left_control\"",
+            "description": "Hyper Key sublayer \"slash\"",
             "manipulators": [
               {
-                "description": "Toggle Hyper sublayer left_control",
+                "description": "Toggle Hyper sublayer slash",
                 "type": "basic",
                 "from": {
-                  "key_code": "left_control",
+                  "key_code": "slash",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1082,7 +1161,7 @@
                 "to_after_key_up": [
                   {
                     "set_variable": {
-                      "name": "hyper_sublayer_left_control",
+                      "name": "hyper_sublayer_slash",
                       "value": 0
                     }
                   }
@@ -1090,7 +1169,7 @@
                 "to": [
                   {
                     "set_variable": {
-                      "name": "hyper_sublayer_left_control",
+                      "name": "hyper_sublayer_slash",
                       "value": 1
                     }
                   }
@@ -1113,7 +1192,7 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_left_shift",
+                    "name": "hyper_sublayer_right_shift",
                     "value": 0
                   },
                   {
@@ -1128,11 +1207,6 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_v",
-                    "value": 0
-                  },
-                  {
-                    "type": "variable_if",
                     "name": "hyper",
                     "value": 1
                   }
@@ -1141,12 +1215,12 @@
               {
                 "to": [
                   {
-                    "shell_command": "/opt/homebrew/bin/yabai -m window --space main && /opt/homebrew/bin/yabai -m space --focus main"
+                    "shell_command": "/opt/homebrew/bin/yabai -m window --space 1 && /opt/homebrew/bin/yabai -m space --focus 1"
                   }
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "m",
+                  "key_code": "1",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1156,7 +1230,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_left_control",
+                    "name": "hyper_sublayer_slash",
                     "value": 1
                   }
                 ]
@@ -1164,12 +1238,12 @@
               {
                 "to": [
                   {
-                    "shell_command": "/opt/homebrew/bin/yabai -m window --space sub && /opt/homebrew/bin/yabai -m space --focus sub"
+                    "shell_command": "/opt/homebrew/bin/yabai -m window --space 2 && /opt/homebrew/bin/yabai -m space --focus 2"
                   }
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "n",
+                  "key_code": "2",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1179,7 +1253,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_left_control",
+                    "name": "hyper_sublayer_slash",
                     "value": 1
                   }
                 ]
@@ -1187,12 +1261,12 @@
               {
                 "to": [
                   {
-                    "shell_command": "/opt/homebrew/bin/yabai -m window --space text && /opt/homebrew/bin/yabai -m space --focus text"
+                    "shell_command": "/opt/homebrew/bin/yabai -m window --space 3 && /opt/homebrew/bin/yabai -m space --focus 3"
                   }
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "t",
+                  "key_code": "3",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1202,7 +1276,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_left_control",
+                    "name": "hyper_sublayer_slash",
                     "value": 1
                   }
                 ]
@@ -1210,12 +1284,12 @@
               {
                 "to": [
                   {
-                    "shell_command": "/opt/homebrew/bin/yabai -m window --space terminal && /opt/homebrew/bin/yabai -m space --focus terminal"
+                    "shell_command": "/opt/homebrew/bin/yabai -m window --space 4 && /opt/homebrew/bin/yabai -m space --focus 4"
                   }
                 ],
                 "type": "basic",
                 "from": {
-                  "key_code": "w",
+                  "key_code": "4",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -1225,7 +1299,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_left_control",
+                    "name": "hyper_sublayer_slash",
                     "value": 1
                   }
                 ]
@@ -1233,7 +1307,76 @@
               {
                 "to": [
                   {
-                    "shell_command": "/opt/homebrew/bin/yabai -m window --space figma && /opt/homebrew/bin/yabai -m space --focus figma"
+                    "shell_command": "/opt/homebrew/bin/yabai -m window --space 5 && /opt/homebrew/bin/yabai -m space --focus 5"
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "5",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_slash",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "/opt/homebrew/bin/yabai -m window --space 6 && /opt/homebrew/bin/yabai -m space --focus 6"
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "6",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_slash",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "/opt/homebrew/bin/yabai -m window --space prev && /opt/homebrew/bin/yabai -m space --focus prev"
+                  }
+                ],
+                "type": "basic",
+                "from": {
+                  "key_code": "a",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_slash",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "/opt/homebrew/bin/yabai -m window --space next && /opt/homebrew/bin/yabai -m space --focus next"
                   }
                 ],
                 "type": "basic",
@@ -1248,30 +1391,7 @@
                 "conditions": [
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_left_control",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "shell_command": "/opt/homebrew/bin/yabai -m window --space code && /opt/homebrew/bin/yabai -m space --focus code"
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "c",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_left_control",
+                    "name": "hyper_sublayer_slash",
                     "value": 1
                   }
                 ]
@@ -1326,22 +1446,17 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_left_shift",
+                    "name": "hyper_sublayer_right_shift",
                     "value": 0
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_left_control",
+                    "name": "hyper_sublayer_slash",
                     "value": 0
                   },
                   {
                     "type": "variable_if",
                     "name": "hyper_sublayer_t",
-                    "value": 0
-                  },
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_v",
                     "value": 0
                   },
                   {
@@ -1569,22 +1684,17 @@
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_left_shift",
+                    "name": "hyper_sublayer_right_shift",
                     "value": 0
                   },
                   {
                     "type": "variable_if",
-                    "name": "hyper_sublayer_left_control",
+                    "name": "hyper_sublayer_slash",
                     "value": 0
                   },
                   {
                     "type": "variable_if",
                     "name": "hyper_sublayer_r",
-                    "value": 0
-                  },
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_v",
                     "value": 0
                   },
                   {
@@ -1613,298 +1723,6 @@
                   {
                     "type": "variable_if",
                     "name": "hyper_sublayer_t",
-                    "value": 1
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "description": "Hyper Key sublayer \"v\"",
-            "manipulators": [
-              {
-                "description": "Toggle Hyper sublayer v",
-                "type": "basic",
-                "from": {
-                  "key_code": "v",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "to_after_key_up": [
-                  {
-                    "set_variable": {
-                      "name": "hyper_sublayer_v",
-                      "value": 0
-                    }
-                  }
-                ],
-                "to": [
-                  {
-                    "set_variable": {
-                      "name": "hyper_sublayer_v",
-                      "value": 1
-                    }
-                  }
-                ],
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_spacebar",
-                    "value": 0
-                  },
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_b",
-                    "value": 0
-                  },
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_o",
-                    "value": 0
-                  },
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_left_shift",
-                    "value": 0
-                  },
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_left_control",
-                    "value": 0
-                  },
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_r",
-                    "value": 0
-                  },
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_t",
-                    "value": 0
-                  },
-                  {
-                    "type": "variable_if",
-                    "name": "hyper",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "key_code": "left_arrow"
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "h",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_v",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "key_code": "down_arrow"
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "j",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_v",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "key_code": "up_arrow"
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "k",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_v",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "key_code": "right_arrow"
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "l",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_v",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "key_code": "f",
-                    "modifiers": [
-                      "right_control"
-                    ]
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "m",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_v",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "key_code": "j",
-                    "modifiers": [
-                      "right_control"
-                    ]
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "s",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_v",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "key_code": "d",
-                    "modifiers": [
-                      "right_shift",
-                      "right_command"
-                    ]
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "d",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_v",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "key_code": "page_down"
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "u",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_v",
-                    "value": 1
-                  }
-                ]
-              },
-              {
-                "to": [
-                  {
-                    "key_code": "page_up"
-                  }
-                ],
-                "type": "basic",
-                "from": {
-                  "key_code": "i",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_v",
                     "value": 1
                   }
                 ]

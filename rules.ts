@@ -94,11 +94,12 @@ const rules: KarabinerRules[] = [
   },
   // Actual Hyper Key
   ...createHyperSubLayers({
-    spacebar: open(
-      "raycast://extensions/stellate/mxstbr-commands/create-notion-todo"
+    spacebar: raycast(
+      "raycast://extensions/raycast/navigation/search-menu-items"
     ),
     // b = "B"rowse
     b: {
+      // s = "S"earch
       s: {
         to: [
           // open new Litte Arc
@@ -108,6 +109,7 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
+      g: open("https://github.com"),
       // t: open("https://twitter.com"),
       // // Quarterly "P"lan
       // p: open("https://qrtr.ly/plan"),
@@ -161,37 +163,56 @@ const rules: KarabinerRules[] = [
       // l: open(
       //   "raycast://extensions/stellate/mxstbr-commands/open-mxs-is-shortlink"
       // ),
+      tab: {
+        to: [
+          {
+            key_code: "grave_accent_and_tilde",
+            modifiers: ["left_command"],
+          },
+        ],
+      },
     },
 
     // Window management via Yabai
     // Shift Layer gives access to routine window management
     // Control Layer gives access to more advanced window management
-    left_shift: {
-      m: yabai(["space --focus main"]), // m for main
-      n: yabai(["space --focus sub"]), // sub-main
-      t: yabai(["space --focus text"]), // t for texts
-      w: yabai(["space --focus terminal"]), // w for warp
-      d: yabai(["space --focus figma"]), // d for design
-      c: yabai(["space --focus code"]), // c for code
+    right_shift: {
       r: yabai(["space --rotate 90"]),
-      comma: yabai(["space --focus prev"]), // <
-      period: yabai(["space --focus next"]), // >
-      slash: yabai(["window --toggle float", "window --grid 8:8:1:1:6:6"]),
-      quote: yabai(["window --toggle split"]),
-      j: yabai(["window --focus prev"]),
-      k: yabai(["window --focus next"]),
+      q: yabai(["window --focus prev"]),
+      e: yabai(["window --focus next"]),
+      w: yabai(["window --display next", "display --focus next"]),
+      a: yabai(["space --focus prev"]),
+      s: yabai(["window --display prev", "display --focus prev"]),
+      d: yabai(["space --focus next"]),
       f: yabai(["window --toggle zoom-fullscreen"]),
-      l: yabai(["window --display next", "display --focus next"]),
-      0: yabai(["space --balance"]),
       z: yabai(["space --focus recent"]),
+      x: yabai(["window --toggle split"]),
+      c: yabai(["window --toggle float", "window --grid 8:8:1:1:6:6"]),
+      0: yabai(["space --balance"]),
+      1: yabai(["space --focus 1"]), // w for warp
+      2: yabai(["space --focus 2"]), // d for design
+      3: yabai(["space --focus 3"]), // c for code
+      4: yabai(["space --focus 4"]), // m for main
+      5: yabai(["space --focus 5"]), // sub-main
+      6: yabai(["space --focus 6"]), // t for texts
+      tab: {
+        to: [
+          {
+            key_code: "grave_accent_and_tilde",
+            modifiers: ["left_command"],
+          },
+        ],
+      },
     },
-    left_control: {
-      m: yabai(["window --space main", "space --focus main"]),
-      n: yabai(["window --space sub", "space --focus sub"]),
-      t: yabai(["window --space text", "space --focus text"]),
-      w: yabai(["window --space terminal", "space --focus terminal"]),
-      d: yabai(["window --space figma", "space --focus figma"]),
-      c: yabai(["window --space code", "space --focus code"]),
+    slash: {
+      1: yabai(["window --space 1", "space --focus 1"]),
+      2: yabai(["window --space 2", "space --focus 2"]),
+      3: yabai(["window --space 3", "space --focus 3"]),
+      4: yabai(["window --space 4", "space --focus 4"]),
+      5: yabai(["window --space 5", "space --focus 5"]),
+      6: yabai(["window --space 6", "space --focus 6"]),
+      a: yabai(["window --space prev", "space --focus prev"]),
+      d: yabai(["window --space next", "space --focus next"]),
     },
 
     // r = "Raycast"
@@ -240,37 +261,37 @@ const rules: KarabinerRules[] = [
 
     // v = "moVe" which isn't "m" because we want it to be on the left hand
     // so that hjkl work like they do in vim
-    v: {
-      h: {
-        to: [{ key_code: "left_arrow" }],
-      },
-      j: {
-        to: [{ key_code: "down_arrow" }],
-      },
-      k: {
-        to: [{ key_code: "up_arrow" }],
-      },
-      l: {
-        to: [{ key_code: "right_arrow" }],
-      },
-      // Magicmove via homerow.app
-      m: {
-        to: [{ key_code: "f", modifiers: ["right_control"] }],
-      },
-      // Scroll mode via homerow.app
-      s: {
-        to: [{ key_code: "j", modifiers: ["right_control"] }],
-      },
-      d: {
-        to: [{ key_code: "d", modifiers: ["right_shift", "right_command"] }],
-      },
-      u: {
-        to: [{ key_code: "page_down" }],
-      },
-      i: {
-        to: [{ key_code: "page_up" }],
-      },
-    },
+    // v: {
+    //   h: {
+    //     to: [{ key_code: "left_arrow" }],
+    //   },
+    //   j: {
+    //     to: [{ key_code: "down_arrow" }],
+    //   },
+    //   k: {
+    //     to: [{ key_code: "up_arrow" }],
+    //   },
+    //   l: {
+    //     to: [{ key_code: "right_arrow" }],
+    //   },
+    //   // Magicmove via homerow.app
+    //   m: {
+    //     to: [{ key_code: "f", modifiers: ["right_control"] }],
+    //   },
+    //   // Scroll mode via homerow.app
+    //   s: {
+    //     to: [{ key_code: "j", modifiers: ["right_control"] }],
+    //   },
+    //   d: {
+    //     to: [{ key_code: "d", modifiers: ["right_shift", "right_command"] }],
+    //   },
+    //   u: {
+    //     to: [{ key_code: "page_down" }],
+    //   },
+    //   i: {
+    //     to: [{ key_code: "page_up" }],
+    //   },
+    // },
 
     // c = Musi*c* which isn't "m" because we want it to be on the left hand
     // c: {
