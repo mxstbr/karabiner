@@ -227,6 +227,7 @@ const rules: KarabinerRules[] = [
       ),
     },
     n: {
+      q: open("raycast://extensions/raycast/raycast/create-quicklink"),
       // "D"aily note
       d: open("raycast://extensions/KevinBatdorf/obsidian/dailyNoteCommand"),
       // "S"earch
