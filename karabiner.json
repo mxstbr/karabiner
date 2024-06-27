@@ -1708,6 +1708,30 @@
               {
                 "to": [
                   {
+                    "shell_command": "open raycast://extensions/raycast/raycast/create-quicklink"
+                  }
+                ],
+                "description": "Open raycast://extensions/raycast/raycast/create-quicklink",
+                "type": "basic",
+                "from": {
+                  "key_code": "q",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_n",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
                     "shell_command": "open raycast://extensions/KevinBatdorf/obsidian/dailyNoteCommand"
                   }
                 ],
