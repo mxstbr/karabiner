@@ -46,22 +46,22 @@ const rules: KarabinerRules[] = [
         ],
         type: "basic",
       },
-      {
-        type: "basic",
-        description: "Change Command Q to minimize window",
-        from: {
-          key_code: "q",
-          modifiers: {
-            mandatory: ["left_command"],
-          },
-        },
-        to: [
-          {
-            key_code: "m",
-            modifiers: ["left_command"],
-          },
-        ],
-      },
+      // {
+      //   type: "basic",
+      //   description: "Change Command Q to minimize window",
+      //   from: {
+      //     key_code: "q",
+      //     modifiers: {
+      //       mandatory: ["left_command"],
+      //     },
+      //   },
+      //   to: [
+      //     {
+      //       key_code: "m",
+      //       modifiers: ["left_command"],
+      //     },
+      //   ],
+      // },
       //      {
       //        type: "basic",
       //        description: "Disable CMD + Tab to force Hyper Key usage",
