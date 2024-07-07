@@ -53,7 +53,7 @@ interface Identifiers {
   is_built_in_keyboard?: boolean;
 }
 
-type KeybaordTypeCondition = {
+type KeyboardTypeCondition = {
   type: "keyboard_type_if" | "keyboard_type_unless";
   keyboard_types: string[];
   description?: string;
