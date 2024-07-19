@@ -105,8 +105,9 @@ const rules: KarabinerRules[] = [
       c: open("raycast://extensions/raycast/raycast-ai/ai-chat"),
     },
 
-    // s = "System"
+    // s = "System/Search"
     s: {
+      d: open("raycast://extensions/RSO/dash/index"),
       m: open("raycast://extensions/raycast/navigation/search-menu-items"),
       u: {
         to: [
@@ -174,8 +175,6 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      // "D"o not disturb toggle
-      d: open(`raycast://extensions/yakitrak/do-not-disturb/toggle`),
     },
 
     // c = Musi*c* which isn't "m" because we want it to be on the left hand
