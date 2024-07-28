@@ -96,7 +96,7 @@ const rules: KarabinerRules[] = [
       n: app("Obsidian"),
       v: app("Visual Studio Code"),
       d: app("Discord"),
-      e: app("Spark Desktop"),
+      e: app("Spark Mail"),
       t: app("Todoist"),
       f: app("Finder"),
       u: app("Unity Hub"),

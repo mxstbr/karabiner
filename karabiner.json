@@ -46,6 +46,129 @@
             ]
           },
           {
+            "description": "Hyper Key sublayer \"3\"",
+            "manipulators": [
+              {
+                "description": "Toggle Hyper sublayer 3",
+                "type": "basic",
+                "from": {
+                  "key_code": "3",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to_after_key_up": [
+                  {
+                    "set_variable": {
+                      "name": "hyper_sublayer_3",
+                      "value": 0
+                    }
+                  }
+                ],
+                "to": [
+                  {
+                    "set_variable": {
+                      "name": "hyper_sublayer_3",
+                      "value": 1
+                    }
+                  }
+                ],
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_b",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_o",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_s",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_c",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_m",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_r",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_n",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
+                    "name": "hyper",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open -a 'PrusaSlicer.app'"
+                  }
+                ],
+                "description": "Open -a 'PrusaSlicer.app'",
+                "type": "basic",
+                "from": {
+                  "key_code": "s",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_3",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open -a 'Blender.app'"
+                  }
+                ],
+                "description": "Open -a 'Blender.app'",
+                "type": "basic",
+                "from": {
+                  "key_code": "m",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_3",
+                    "value": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
             "description": "Hyper Key sublayer \"b\"",
             "manipulators": [
               {
@@ -76,6 +199,11 @@
                   }
                 ],
                 "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_3",
+                    "value": 0
+                  },
                   {
                     "type": "variable_if",
                     "name": "hyper_sublayer_o",
@@ -268,6 +396,11 @@
                 "conditions": [
                   {
                     "type": "variable_if",
+                    "name": "hyper_sublayer_3",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
                     "name": "hyper_sublayer_b",
                     "value": 0
                   },
@@ -378,10 +511,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open -a 'Spark Desktop.app'"
+                    "shell_command": "open -a 'Spark Mail.app'"
                   }
                 ],
-                "description": "Open -a 'Spark Desktop.app'",
+                "description": "Open -a 'Spark Mail.app'",
                 "type": "basic",
                 "from": {
                   "key_code": "e",
@@ -590,30 +723,6 @@
                     "value": 1
                   }
                 ]
-              },
-              {
-                "to": [
-                  {
-                    "shell_command": "open raycast://extensions/raycast/raycast-ai/ai-chat"
-                  }
-                ],
-                "description": "Open raycast://extensions/raycast/raycast-ai/ai-chat",
-                "type": "basic",
-                "from": {
-                  "key_code": "c",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "conditions": [
-                  {
-                    "type": "variable_if",
-                    "name": "hyper_sublayer_o",
-                    "value": 1
-                  }
-                ]
               }
             ]
           },
@@ -648,6 +757,11 @@
                   }
                 ],
                 "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_3",
+                    "value": 0
+                  },
                   {
                     "type": "variable_if",
                     "name": "hyper_sublayer_b",
@@ -983,6 +1097,11 @@
                 "conditions": [
                   {
                     "type": "variable_if",
+                    "name": "hyper_sublayer_3",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
                     "name": "hyper_sublayer_b",
                     "value": 0
                   },
@@ -1120,6 +1239,11 @@
                   }
                 ],
                 "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_3",
+                    "value": 0
+                  },
                   {
                     "type": "variable_if",
                     "name": "hyper_sublayer_b",
@@ -1408,6 +1532,11 @@
                 "conditions": [
                   {
                     "type": "variable_if",
+                    "name": "hyper_sublayer_3",
+                    "value": 0
+                  },
+                  {
+                    "type": "variable_if",
                     "name": "hyper_sublayer_b",
                     "value": 0
                   },
@@ -1668,6 +1797,11 @@
                   }
                 ],
                 "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_3",
+                    "value": 0
+                  },
                   {
                     "type": "variable_if",
                     "name": "hyper_sublayer_b",
