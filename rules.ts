@@ -88,6 +88,10 @@ const rules: KarabinerRules[] = [
       l: open("https://ldjam.com"),
       g: open("https://github.com"),
     },
+    "3": {
+      s: app("PrusaSlicer"),
+      m: app("Blender"),
+    },
     o: {
       n: app("Obsidian"),
       v: app("Visual Studio Code"),
@@ -102,7 +106,6 @@ const rules: KarabinerRules[] = [
       r: app("Rider 2024.1"),
       // "G"ames
       g: app("Steam"),
-      c: open("raycast://extensions/raycast/raycast-ai/ai-chat"),
     },
 
     // s = "System/Search"
