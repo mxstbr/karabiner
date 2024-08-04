@@ -127,7 +127,7 @@
                 "description": "Open -a 'PrusaSlicer.app'",
                 "type": "basic",
                 "from": {
-                  "key_code": "s",
+                  "key_code": "p",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -152,6 +152,30 @@
                 "type": "basic",
                 "from": {
                   "key_code": "m",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_3",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "to": [
+                  {
+                    "shell_command": "open -a 'Autodesk Fusion.app'"
+                  }
+                ],
+                "description": "Open -a 'Autodesk Fusion.app'",
+                "type": "basic",
+                "from": {
+                  "key_code": "f",
                   "modifiers": {
                     "optional": [
                       "any"

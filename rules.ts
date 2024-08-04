@@ -89,8 +89,9 @@ const rules: KarabinerRules[] = [
       g: open("https://github.com"),
     },
     "3": {
-      s: app("PrusaSlicer"),
+      p: app("PrusaSlicer"),
       m: app("Blender"),
+      f: app("Autodesk Fusion")
     },
     o: {
       n: app("Obsidian"),
