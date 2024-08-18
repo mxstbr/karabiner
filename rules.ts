@@ -67,6 +67,7 @@ const rules: KarabinerRules[] = [
       y: open("https://news.ycombinator.com"),
       f: open("https://facebook.com"),
       r: open("https://reddit.com"),
+      h: open("https://hashnode.com/draft"),
     },
     // o = "Open" applications
     o: {
