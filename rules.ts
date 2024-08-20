@@ -74,7 +74,7 @@ const rules: KarabinerRules[] = [
       1: app("1Password"),
       g: app("Google Chrome"),
       c: app("Notion Calendar"),
-      v: app("Visual Studio Code"),
+      v: app("Zed"),
       d: app("Discord"),
       s: app("Slack"),
       e: app("Superhuman"),
