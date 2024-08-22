@@ -63,7 +63,7 @@ const rules: KarabinerRules[] = [
     b: {
       t: open("https://twitter.com"),
       // Quarterly "P"lan
-      p: open("https://qrtr.ly/plan"),
+      p: open("https://mxstbr.com/cal"),
       y: open("https://news.ycombinator.com"),
       f: open("https://facebook.com"),
       r: open("https://reddit.com"),

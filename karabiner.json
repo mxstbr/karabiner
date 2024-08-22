@@ -214,10 +214,10 @@
               {
                 "to": [
                   {
-                    "shell_command": "open https://qrtr.ly/plan"
+                    "shell_command": "open https://mxstbr.com/cal"
                   }
                 ],
-                "description": "Open https://qrtr.ly/plan",
+                "description": "Open https://mxstbr.com/cal",
                 "type": "basic",
                 "from": {
                   "key_code": "p",
