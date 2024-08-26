@@ -252,6 +252,15 @@ const rules: KarabinerRules[] = [
       // "T"heme
       t: open(`raycast://extensions/raycast/system/toggle-system-appearance`),
       c: open("raycast://extensions/raycast/system/open-camera"),
+      // 'v'oice
+      v: {
+        to: [
+          {
+            key_code: "spacebar",
+            modifiers: ["left_option"],
+          },
+        ],
+      },
     },
 
     // v = "moVe" which isn't "m" because we want it to be on the left hand
