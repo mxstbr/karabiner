@@ -179,15 +179,6 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      d: {
-        description: "Window: Next display",
-        to: [
-          {
-            key_code: "right_arrow",
-            modifiers: ["right_control", "right_option", "right_command"],
-          },
-        ],
-      },
     },
 
     // s = "System"
