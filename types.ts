@@ -93,6 +93,27 @@ export interface SimultaneousOptions {
   detect_key_down_uninterruptedly?: boolean;
 }
 
+type ModifiersKeys =
+  | "caps_lock"
+  | "left_command"
+  | "left_control"
+  | "left_option"
+  | "left_shift"
+  | "right_command"
+  | "right_control"
+  | "right_option"
+  | "right_shift"
+  | "fn"
+  | "command"
+  | "control"
+  | "option"
+  | "shift"
+  | "left_alt"
+  | "left_gui"
+  | "right_alt"
+  | "right_gui"
+  | "any";
+
 export interface From {
   key_code?: KeyCode;
   simultaneous?: SimultaneousFrom[];
@@ -101,13 +122,13 @@ export interface From {
 }
 
 export interface Modifiers {
-  optional?: string[];
-  mandatory?: string[];
+  optional?: ModifiersKeys[];
+  mandatory?: ModifiersKeys[];
 }
 
 export interface To {
   key_code?: KeyCode;
-  modifiers?: string[];
+  modifiers?: ModifiersKeys[];
   shell_command?: string;
   set_variable?: {
     name: string;
