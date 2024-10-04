@@ -57,37 +57,35 @@ const rules: KarabinerRules[] = [
   },
   ...createHyperSubLayers({
     spacebar: open(
-      "raycast://extensions/stellate/mxstbr-commands/create-notion-todo"
+      "raycast://extensions/raycast/apple-reminders/create-reminder"
     ),
     // b = "B"rowse
     b: {
-      t: open("https://twitter.com"),
+      c: open("https://mxstbr.com/cal"),
       // Quarterly "P"lan
       p: open("https://mxstbr.com/cal"),
       y: open("https://news.ycombinator.com"),
       f: open("https://facebook.com"),
-      r: open("https://reddit.com"),
       h: open("https://hashnode.com/draft"),
+      t: open("https://calendar.google.com/calendar/u/0/r/tasks"),
     },
     // o = "Open" applications
     o: {
-      1: app("1Password"),
+      1: app("1Password 7"),
       g: app("Google Chrome"),
-      c: app("Notion Calendar"),
-      v: app("Zed"),
-      d: app("Discord"),
+      c: app("Calendar"),
+      v: app("Cursor"),
+      d: app("Figma"),
       s: app("Slack"),
-      e: app("Superhuman"),
+      e: app("Gmail"),
       n: app("Notion"),
       t: app("Terminal"),
       // Open todo list managed via *H*ypersonic
-      h: open(
-        "notion://www.notion.so/stellatehq/7b33b924746647499d906c55f89d5026"
-      ),
-      z: app("zoom.us"),
+      r: open("raycast://extensions/elliotdes/google-tasks/view-lists"),
+      h: open("raycast://extensions/elliotdes/google-tasks/view-lists"),
+      z: app("Google Meet"),
       // "M"arkdown (Reflect.app)
-      m: app("Reflect"),
-      r: app("Reflect"),
+      m: app("Logseq"),
       f: app("Finder"),
       // "i"Message
       i: app("Texts"),
@@ -133,6 +131,10 @@ const rules: KarabinerRules[] = [
       h: rectangle("left-half"),
       l: rectangle("right-half"),
       f: rectangle("maximize"),
+      r: rectangle("bottom-left"),
+      t: rectangle("bottom-right"),
+      4: rectangle("top-left"),
+      5: rectangle("top-right"),
       u: {
         description: "Window: Previous Tab",
         to: [
@@ -169,13 +171,12 @@ const rules: KarabinerRules[] = [
           },
         ],
       },
-      // Note: No literal connection. Both f and n are already taken.
       m: {
-        description: "Window: Forward",
+        description: "Window: Fullscreen",
         to: [
           {
-            key_code: "close_bracket",
-            modifiers: ["right_command"],
+            key_code: "f",
+            modifiers: ["fn"],
           },
         ],
       },
@@ -183,6 +184,9 @@ const rules: KarabinerRules[] = [
 
     // s = "System"
     s: {
+      n: open(
+        "raycast://script-commands/dismiss-notifications?launchType=background"
+      ),
       u: {
         to: [
           {
@@ -254,6 +258,12 @@ const rules: KarabinerRules[] = [
       },
     },
 
+    // s"H"opify???
+    h: {
+      v: open("https://vault.shopify.io"),
+      k: open("https://kepler.shopifycloud.com"),
+    },
+
     // v = "moVe" which isn't "m" because we want it to be on the left hand
     // so that hjkl work like they do in vim
     v: {
@@ -313,7 +323,7 @@ const rules: KarabinerRules[] = [
         "raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"
       ),
       p: open("raycast://extensions/raycast/raycast/confetti"),
-      a: open("raycast://extensions/raycast/raycast-ai/ai-chat"),
+      a: open("https://chat.shopify.io/c/new"),
       s: open("raycast://extensions/peduarte/silent-mention/index"),
       h: open(
         "raycast://extensions/raycast/clipboard-history/clipboard-history"
