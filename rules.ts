@@ -131,7 +131,14 @@ const rules: KarabinerRules[] = [
       // a:
       // s:
       d: app("Docker"), // D for Docker
-      f: app("Finder"),
+      f: {
+        to: [
+          {
+            shell_command:
+              "osascript -e 'tell application \"Finder\" to make new Finder window' -e 'tell application \"Finder\" to activate'",
+          },
+        ],
+      },
       g: app("Figma"),
       // ZXCV
       z: app("Zed"),
@@ -177,6 +184,7 @@ const rules: KarabinerRules[] = [
     // Shift Layer gives access to routine window management
     // Control Layer gives access to more advanced window management
     right_shift: {
+      y: raycast("raycast://extensions/raycast/raycast/confetti"),
       r: yabai(["space --rotate 90"]),
       q: yabai(["window --focus prev"]),
       e: yabai(["window --focus next"]),
@@ -214,6 +222,9 @@ const rules: KarabinerRules[] = [
       a: yabai(["window --space prev", "space --focus prev"]),
       d: yabai(["window --space next", "space --focus next"]),
     },
+    // Yabai Quick Access
+    left_arrow: yabai(["space --focus prev"]),
+    right_arrow: yabai(["space --focus next"]),
 
     // r = "Raycast"
     r: {
@@ -254,6 +265,15 @@ const rules: KarabinerRules[] = [
           {
             shell_command:
               "cat ~/Developer/pokeclicker-stuff/AutoClicker.js | pbcopy",
+          },
+        ],
+      },
+      d: {
+        // A Dark Room
+        to: [
+          {
+            shell_command:
+              "cat ~/Developer/pokeclicker-stuff/ADarkRoom.js | pbcopy",
           },
         ],
       },

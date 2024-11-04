@@ -197,9 +197,17 @@ export function shell(
   }, [] as string[]);
 
   return {
-    to: commands.map((command) => ({
-      shell_command: command.trim(),
-    })),
+    to: [
+      {
+        shell_command: commands.reduce((acc, command, index) => {
+          acc += command.trim();
+          if (index < commands.length - 1) {
+            acc += " && ";
+          }
+          return acc;
+        }, ""),
+      },
+    ],
     description: commands.join(" && "),
   };
 }
@@ -227,4 +235,26 @@ export function app(name: string): LayerCommand {
 
 export function raycast(deeplink: string): LayerCommand {
   return open(`${deeplink}?launchType=background`);
+}
+
+export function getShellScriptToIssueKeyStrokeToApp(
+  key: KeyCode,
+  modifiers: KeyCode[] = [],
+  app?: string
+): string {
+  if (!app) {
+    return `osascript -e 'tell application "System Events" to keystroke "${key}" using {${modifiers
+      .map((m) => m.replace("left_", "").replace("right_", ""))
+      .map((m) => `${m} down`)
+      .join(", ")}}'`;
+  }
+  return `open -a Arc.app & osascript -e 'tell application "${app}" to activate' -e 'tell application "System Events" to keystroke "${key}" using {${modifiers
+    .map((m) => m.replace("left_", "").replace("right_", ""))
+    .map((m) => `${m} down`)
+    .join(", ")}}'`;
+  //osascript -e 'tell application "Arc" to activate' -e 'tell application "System Events" to keystroke "c" using {command down, shift down}'
+}
+
+export function typeToFocus(text: string): string {
+  return `osascript -e 'tell application "System Events" to keystroke "${text}"'`;
 }
