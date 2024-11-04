@@ -130,12 +130,11 @@ export function createHyperSubLayers(subLayers: {
                   name: "hyper",
                   value: 1,
                 },
-                ...allSubLayerVariables
-                  .map((subLayerVariable) => ({
-                    type: "variable_if" as const,
-                    name: subLayerVariable,
-                    value: 0,
-                  })),
+                ...allSubLayerVariables.map((subLayerVariable) => ({
+                  type: "variable_if" as const,
+                  name: subLayerVariable,
+                  value: 0,
+                })),
               ],
             },
           ],
@@ -158,14 +157,58 @@ function generateSubLayerVariableName(key: KeyCode) {
 /**
  * Shortcut for "open" shell command
  */
-export function open(what: string): LayerCommand {
+export function open(...what: string[]): LayerCommand {
+  return {
+    to: what.map((w) => ({
+      shell_command: `open ${w}`,
+    })),
+    description: `Open ${what.join(" & ")}`,
+  };
+}
+
+export function yabai(commands: string[]): LayerCommand {
   return {
     to: [
       {
-        shell_command: `open ${what}`,
+        shell_command: commands
+          .map((command) => `/opt/homebrew/bin/yabai -m ${command}`)
+          .join(" && "),
       },
     ],
-    description: `Open ${what}`,
+    // description: `Yabai: ${command}`,
+  };
+}
+
+/**
+ * Utility function to create a LayerCommand from a tagged template literal
+ * where each line is a shell command to be executed.
+ */
+export function shell(
+  strings: TemplateStringsArray,
+  ...values: any[]
+): LayerCommand {
+  const commands = strings.reduce((acc, str, i) => {
+    const value = i < values.length ? values[i] : "";
+    const lines = (str + value)
+      .split("\n")
+      .filter((line) => line.trim() !== "");
+    acc.push(...lines);
+    return acc;
+  }, [] as string[]);
+
+  return {
+    to: [
+      {
+        shell_command: commands.reduce((acc, command, index) => {
+          acc += command.trim();
+          if (index < commands.length - 1) {
+            acc += " && ";
+          }
+          return acc;
+        }, ""),
+      },
+    ],
+    description: commands.join(" && "),
   };
 }
 
@@ -188,4 +231,30 @@ export function rectangle(name: string): LayerCommand {
  */
 export function app(name: string): LayerCommand {
   return open(`-a '${name}.app'`);
+}
+
+export function raycast(deeplink: string): LayerCommand {
+  return open(`${deeplink}?launchType=background`);
+}
+
+export function getShellScriptToIssueKeyStrokeToApp(
+  key: KeyCode,
+  modifiers: KeyCode[] = [],
+  app?: string
+): string {
+  if (!app) {
+    return `osascript -e 'tell application "System Events" to keystroke "${key}" using {${modifiers
+      .map((m) => m.replace("left_", "").replace("right_", ""))
+      .map((m) => `${m} down`)
+      .join(", ")}}'`;
+  }
+  return `open -a Arc.app & osascript -e 'tell application "${app}" to activate' -e 'tell application "System Events" to keystroke "${key}" using {${modifiers
+    .map((m) => m.replace("left_", "").replace("right_", ""))
+    .map((m) => `${m} down`)
+    .join(", ")}}'`;
+  //osascript -e 'tell application "Arc" to activate' -e 'tell application "System Events" to keystroke "c" using {command down, shift down}'
+}
+
+export function typeToFocus(text: string): string {
+  return `osascript -e 'tell application "System Events" to keystroke "${text}"'`;
 }
