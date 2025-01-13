@@ -56,9 +56,7 @@ const rules: KarabinerRules[] = [
     ],
   },
   ...createHyperSubLayers({
-    spacebar: open(
-      "raycast://extensions/raycast/apple-reminders/create-reminder"
-    ),
+    spacebar: open("raycast://extensions/stellate/mxstbr-commands/create-todo"),
     // b = "B"rowse
     b: {
       c: open("https://mxstbr.com/cal"),
@@ -71,6 +69,7 @@ const rules: KarabinerRules[] = [
     },
     // o = "Open" applications
     o: {
+      p: open("https://github.com/users/mxstbr/projects/2/views/1"),
       1: app("1Password 7"),
       g: app("Google Chrome"),
       c: app("Calendar"),
@@ -78,18 +77,17 @@ const rules: KarabinerRules[] = [
       d: app("Figma"),
       s: app("Slack"),
       e: app("Gmail"),
-      n: app("Notion"),
-      t: app("Terminal"),
+      n: app("Fellow"),
+      t: app("Ghostty"),
       // Open todo list managed via *H*ypersonic
-      r: open("raycast://extensions/elliotdes/google-tasks/view-lists"),
-      h: open("raycast://extensions/elliotdes/google-tasks/view-lists"),
+      r: open("https://github.com/users/mxstbr/projects/1/views/1"),
+      h: open("https://github.com/users/mxstbr/projects/1/views/1"),
       z: app("Google Meet"),
       // "M"arkdown (Reflect.app)
       m: app("Logseq"),
       f: app("Finder"),
       // "i"Message
       i: app("Texts"),
-      p: app("Spotify"),
       a: app("iA Presenter"),
       // "W"hatsApp has been replaced by Texts
       w: open("Texts"),
