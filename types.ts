@@ -39,7 +39,7 @@ type DeviceCondition = {
     | "device_unless"
     | "device_exists_if"
     | "device_exists_unless";
-  identifiers: Identifiers;
+  identifiers: Identifiers[];
   description?: string;
 };
 
