@@ -115,7 +115,7 @@ const rules: KarabinerRules[] = [
     //   `,
     // },
 
-    // w = "Window" via rectangle.app
+    // w = "Window"
     w: {
       semicolon: {
         description: "Window: Hide",
