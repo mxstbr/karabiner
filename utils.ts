@@ -192,7 +192,7 @@ export function shell(
 }
 
 /**
- * Shortcut for managing window sizing with Rectangle
+ * Shortcut for managing window sizing
  */
 export function window(name: string): LayerCommand {
   return {
