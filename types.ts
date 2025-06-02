@@ -142,6 +142,9 @@ export interface To {
    * @see: {@link https://karabiner-elements.pqrs.org/docs/json/complex-modifications-manipulator-definition/to/software_function/iokit_power_management_sleep_system/}
    */
   software_function?: SoftwareFunction;
+  select_input_source?: {
+    language: string;
+  };
 }
 
 export interface MouseKey {
