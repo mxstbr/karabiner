@@ -1,4 +1,4 @@
-import { To, KeyCode, Manipulator, KarabinerRules } from "./types";
+import { To, KeyCode, Manipulator, KarabinerRules, Device, DeviceOptions } from "./types";
 
 /**
  * Custom way to describe a command in a layer
@@ -152,6 +152,31 @@ export function createHyperSubLayers(subLayers: {
 
 function generateSubLayerVariableName(key: KeyCode) {
   return `hyper_sublayer_${key}`;
+}
+
+export function createDeviceConfiguration(productId: number, vendorId: number, options?: DeviceOptions): Device {
+  return {
+    disable_built_in_keyboard_if_exists: false,
+    fn_function_keys: [],
+    game_pad_swap_sticks: false,
+    identifiers: {
+      is_game_pad: false,
+      is_keyboard: false,
+      is_pointing_device: true,
+      product_id: productId,
+      vendor_id: vendorId
+    },
+    ignore: false,
+    manipulate_caps_lock_led: false,
+    mouse_flip_horizontal_wheel: options?.reverseHWheel ?? false,
+    mouse_flip_vertical_wheel: options?.reverseVWheel ?? false,
+    mouse_flip_x: false,
+    mouse_flip_y: false,
+    mouse_swap_wheels: false,
+    mouse_swap_xy: false,
+    simple_modifications: [],
+    treat_as_built_in_keyboard: false
+  };
 }
 
 /**

@@ -119,6 +119,7 @@ export interface From {
   simultaneous?: SimultaneousFrom[];
   simultaneous_options?: SimultaneousOptions;
   modifiers?: Modifiers;
+  pointing_button?: string;
 }
 
 export interface Modifiers {
@@ -150,6 +151,34 @@ export interface MouseKey {
   speed_multiplier?: number;
   vertical_wheel?: number;
   horizontal_wheel?: number;
+}
+
+export interface Device {
+  disable_built_in_keyboard_if_exists: boolean,
+  fn_function_keys: Pick<Manipulator, "to" | "from">[],
+  game_pad_swap_sticks: boolean,
+  identifiers: {
+    is_game_pad: boolean,
+    is_keyboard: boolean,
+    is_pointing_device: boolean,
+    product_id: number,
+    vendor_id: number
+  },
+  ignore: boolean,
+  manipulate_caps_lock_led: boolean,
+  mouse_flip_horizontal_wheel: boolean,
+  mouse_flip_vertical_wheel: boolean,
+  mouse_flip_x: boolean,
+  mouse_flip_y: boolean,
+  mouse_swap_wheels: boolean,
+  mouse_swap_xy: boolean,
+  simple_modifications: Pick<Manipulator, "to" | "from">[],
+  treat_as_built_in_keyboard: boolean
+}
+
+export interface DeviceOptions {
+  reverseVWheel?: boolean,
+  reverseHWheel?: boolean
 }
 
 export interface SoftwareFunction {
